@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Mana Infrastructure</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1B2A4A',
+            amber: '#D4922E',
+            gold: '#E8A435',
+            dark: '#0F1B2D',
+            light: '#F8FAFC',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="font-body text-slate-800">
+
+  <!-- Navbar -->
+  <div id="navbar"></div>
+
+  <!-- ============================================
+       1. HERO BANNER
+       ============================================ -->
+  <section class="relative w-full" style="height: 40vh; min-height: 300px;">
+    <img src="images/conclusion-bg.jpg" alt="Infrastructure project" class="absolute inset-0 w-full h-full object-cover">
+    <div class="hero-overlay"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+      <h1 class="font-heading text-5xl md:text-6xl font-bold mb-4 animate-fade-in-up">
+        <span class="text-white">GET IN </span><span class="text-gold italic">TOUCH</span>
+      </h1>
+      <p class="text-white/70 text-lg mb-4 animate-fade-in-up delay-100">We'd love to hear from you</p>
+      <nav class="animate-fade-in-up delay-200" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2 text-sm text-white/60">
+          <li><a href="index.html" class="hover:text-gold transition-colors duration-300">Home</a></li>
+          <li class="text-white/40">&gt;</li>
+          <li class="text-gold font-medium">Contact Us</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ============================================
+       2. CONTACT FORM + INFO SECTION
+       ============================================ -->
+  <section class="bg-white section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+
+        <!-- Left Column: Contact Form -->
+        <div class="animate-fade-in-left">
+          <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy mb-8">Send Us a Message</h2>
+
+          <!-- Success Banner (hidden by default) -->
+          <div id="form-success" class="hidden bg-green-50 border border-green-300 text-green-800 px-4 py-3 rounded-lg mb-6 text-sm font-medium">
+            Thank you for your message. We'll get back to you soon.
+          </div>
+
+          <form id="contact-form" novalidate>
+            <!-- Full Name -->
+            <div class="mb-5">
+              <label for="fullName" class="block text-sm font-medium text-slate-700 mb-1.5">Full Name <span class="text-red-500">*</span></label>
+              <input type="text" id="fullName" name="fullName" required placeholder="Your full name"
+                class="w-full border border-gray-200 rounded-lg px-4 py-3 text-slate-800 placeholder-slate-400 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors duration-200">
+              <p class="text-red-500 text-xs mt-1 hidden" data-error="fullName">Please enter your full name.</p>
+            </div>
+
+            <!-- Email Address -->
+            <div class="mb-5">
+              <label for="email" class="block text-sm font-medium text-slate-700 mb-1.5">Email Address <span class="text-red-500">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="you@example.com"
+                class="w-full border border-gray-200 rounded-lg px-4 py-3 text-slate-800 placeholder-slate-400 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors duration-200">
+              <p class="text-red-500 text-xs mt-1 hidden" data-error="email">Please enter a valid email address.</p>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="mb-5">
+              <label for="phone" class="block text-sm font-medium text-slate-700 mb-1.5">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210"
+                class="w-full border border-gray-200 rounded-lg px-4 py-3 text-slate-800 placeholder-slate-400 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors duration-200">
+            </div>
+
+            <!-- Subject -->
+            <div class="mb-5">
+              <label for="subject" class="block text-sm font-medium text-slate-700 mb-1.5">Subject <span class="text-red-500">*</span></label>
+              <select id="subject" name="subject" required
+                class="w-full border border-gray-200 rounded-lg px-4 py-3 text-slate-800 bg-white focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors duration-200 appearance-none"
+                style="background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748B' d='M6 8L1 3h10z'/%3E%3C/svg%3E&quot;); background-repeat: no-repeat; background-position: right 16px center;">
+                <option value="" disabled selected>Select a subject</option>
+                <option value="general">General Inquiry</option>
+                <option value="project">Project Inquiry</option>
+                <option value="partnership">Partnership Opportunity</option>
+                <option value="career">Career Inquiry</option>
+                <option value="other">Other</option>
+              </select>
+              <p class="text-red-500 text-xs mt-1 hidden" data-error="subject">Please select a subject.</p>
+            </div>
+
+            <!-- Message -->
+            <div class="mb-6">
+              <label for="message" class="block text-sm font-medium text-slate-700 mb-1.5">Message <span class="text-red-500">*</span></label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell us about your inquiry..."
+                class="w-full border border-gray-200 rounded-lg px-4 py-3 text-slate-800 placeholder-slate-400 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors duration-200 resize-vertical"></textarea>
+              <p class="text-red-500 text-xs mt-1 hidden" data-error="message">Please enter your message.</p>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit"
+              class="w-full sm:w-auto bg-gold text-dark px-8 py-3 rounded-lg font-semibold hover:bg-amber transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2">
+              Send Message
+            </button>
+
+            <!-- Note -->
+            <p class="text-xs text-slate-400 italic mt-4">
+              This form is for demonstration purposes. Please contact us directly at the details provided.
+            </p>
+          </form>
+        </div>
+
+        <!-- Right Column: Contact Information -->
+        <div class="animate-fade-in-right">
+          <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy mb-8">Contact Information</h2>
+
+          <!-- Email Card -->
+          <div class="bg-light rounded-lg p-6 mb-4 card-hover">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-navy text-sm uppercase tracking-wide mb-1">Email Us</h3>
+                <a href="mailto:info@manainfra.in" class="text-navy font-medium hover:text-gold transition-colors duration-300">info@manainfra.in</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Registered Office Card -->
+          <div class="bg-light rounded-lg p-6 mb-4 card-hover">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-navy text-sm uppercase tracking-wide mb-1">Registered Office</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                  D.No. 19-3-145/A, Postal Colony<br>
+                  Tirupati – 517501<br>
+                  Andhra Pradesh
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Corporate Office Card -->
+          <div class="bg-light rounded-lg p-6 mb-4 card-hover">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-navy text-sm uppercase tracking-wide mb-1">Corporate Office</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                  Subishi Town Center, Mokila Village<br>
+                  Shankarpally Mandal<br>
+                  Hyderabad – 501203, Telangana
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sectors We Serve Card -->
+          <div class="bg-light rounded-lg p-6 mb-4 card-hover">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-navy text-sm uppercase tracking-wide mb-3">Sectors We Serve</h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="border border-gold text-navy px-3 py-1 rounded-full text-sm font-medium">Highways</span>
+                  <span class="border border-gold text-navy px-3 py-1 rounded-full text-sm font-medium">Railways</span>
+                  <span class="border border-gold text-navy px-3 py-1 rounded-full text-sm font-medium">Irrigation</span>
+                  <span class="border border-gold text-navy px-3 py-1 rounded-full text-sm font-medium">Tunnels</span>
+                  <span class="border border-gold text-navy px-3 py-1 rounded-full text-sm font-medium">Bridges</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- States of Operation Card -->
+          <div class="bg-light rounded-lg p-6 card-hover">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-navy text-sm uppercase tracking-wide mb-1">States of Operation</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                  Andhra Pradesh &middot; Telangana &middot; Karnataka &middot; Maharashtra &middot; Odisha
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       3. MAP SECTION
+       ============================================ -->
+  <section class="relative animate-fade-in-up">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-t-2xl overflow-hidden shadow-lg" style="box-shadow: 0 -10px 30px rgba(0,0,0,0.08);">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.0427069374!2d79.41828647507563!3d13.628815986898247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4d4b0f50cbe0a7%3A0xd2e81b9801ebc2a!2sTirupati%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+          class="w-full h-[300px] md:h-[400px]"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mana Infrastructure office location">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       4. CTA SECTION
+       ============================================ -->
+  <section class="bg-light section-padding">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-4 animate-fade-in-up">Let's Build Together</h2>
+      <p class="text-slate-500 text-lg max-w-2xl mx-auto mb-8 animate-fade-in-up delay-100">
+        Whether you're looking for a reliable infrastructure partner or want to discuss a project, we're here to help.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-200">
+        <a href="projects.html"
+          class="bg-gold text-dark px-8 py-3 rounded-lg font-semibold hover:bg-amber transition-colors duration-300 inline-block">
+          View Our Projects
+        </a>
+        <a href="about.html"
+          class="border-2 border-navy text-navy px-8 py-3 rounded-lg font-semibold hover:bg-navy hover:text-white transition-colors duration-300 inline-block">
+          About Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Shared Components -->
+  <script src="shared/nav.js"></script>
+  <script src="shared/footer.js"></script>
+
+  <!-- ============================================
+       Form Behavior
+       ============================================ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var form = document.getElementById('contact-form');
+      var successBanner = document.getElementById('form-success');
+
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Reset previous error states
+        var errorMessages = form.querySelectorAll('[data-error]');
+        errorMessages.forEach(function (el) {
+          el.classList.add('hidden');
+        });
+        var inputs = form.querySelectorAll('input, select, textarea');
+        inputs.forEach(function (input) {
+          input.classList.remove('border-red-400');
+        });
+
+        // Validate required fields
+        var isValid = true;
+
+        var fullName = document.getElementById('fullName');
+        if (!fullName.value.trim()) {
+          isValid = false;
+          fullName.classList.add('border-red-400');
+          form.querySelector('[data-error="fullName"]').classList.remove('hidden');
+        }
+
+        var email = document.getElementById('email');
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email.value.trim() || !emailPattern.test(email.value.trim())) {
+          isValid = false;
+          email.classList.add('border-red-400');
+          form.querySelector('[data-error="email"]').classList.remove('hidden');
+        }
+
+        var subject = document.getElementById('subject');
+        if (!subject.value) {
+          isValid = false;
+          subject.classList.add('border-red-400');
+          form.querySelector('[data-error="subject"]').classList.remove('hidden');
+        }
+
+        var message = document.getElementById('message');
+        if (!message.value.trim()) {
+          isValid = false;
+          message.classList.add('border-red-400');
+          form.querySelector('[data-error="message"]').classList.remove('hidden');
+        }
+
+        if (!isValid) return;
+
+        // Show success banner
+        successBanner.classList.remove('hidden');
+        successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+        // Reset form after 3 seconds
+        setTimeout(function () {
+          form.reset();
+          successBanner.classList.add('hidden');
+        }, 3000);
+      });
+
+      // Remove error state on input
+      var requiredFields = form.querySelectorAll('[required]');
+      requiredFields.forEach(function (field) {
+        field.addEventListener('input', function () {
+          field.classList.remove('border-red-400');
+          var errorEl = form.querySelector('[data-error="' + field.name + '"]');
+          if (errorEl) errorEl.classList.add('hidden');
+        });
+        field.addEventListener('change', function () {
+          field.classList.remove('border-red-400');
+          var errorEl = form.querySelector('[data-error="' + field.name + '"]');
+          if (errorEl) errorEl.classList.add('hidden');
+        });
+      });
+    });
+  </script>
+
+  <!-- ============================================
+       Scroll Animation (IntersectionObserver)
+       ============================================ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var animatedElements = document.querySelectorAll(
+        '.animate-fade-in-up, .animate-fade-in-left, .animate-fade-in-right, .animate-scale-in'
+      );
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: '0px 0px -50px 0px'
+        });
+
+        animatedElements.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        /* Fallback: show everything immediately */
+        animatedElements.forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Location - Mana Infrastructure</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1B2A4A',
+            amber: '#D4922E',
+            gold: '#E8A435',
+            dark: '#0F1B2D',
+            light: '#F8FAFC',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="font-body text-slate-800">
+
+  <!-- Navbar -->
+  <div id="navbar"></div>
+
+  <!-- ============================================
+       1. HERO BANNER
+       ============================================ -->
+  <section class="relative w-full" style="height: 45vh; min-height: 320px;">
+    <img src="images/expertise-bg.jpg" alt="Mana Infrastructure project locations" class="absolute inset-0 w-full h-full object-cover">
+    <div class="hero-overlay"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+      <h1 class="font-heading text-5xl md:text-6xl font-bold mb-3 animate-fade-in-up">
+        <span class="text-white">OUR </span><span class="text-gold italic">LOCATIONS</span>
+      </h1>
+      <p class="text-white/70 text-lg mb-4 animate-fade-in-up delay-100">Our Presence Across India</p>
+      <nav class="animate-fade-in-up delay-200" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2 text-sm text-white/60">
+          <li><a href="index.html" class="hover:text-gold transition-colors duration-300">Home</a></li>
+          <li class="text-white/40">&gt;</li>
+          <li class="text-gold font-medium">Location</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ============================================
+       2. OFFICE LOCATIONS
+       ============================================ -->
+  <section class="bg-white section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="text-center mb-12 animate-fade-in-up">
+        <span class="text-gold uppercase tracking-widest text-sm font-semibold">OUR OFFICES</span>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mt-3">Where We Operate From</h2>
+      </div>
+
+      <!-- Office Cards -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        <!-- Registered Office -->
+        <div class="bg-white rounded-xl shadow-lg p-8 card-hover animate-fade-in-left">
+          <!-- Icon + Label -->
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+              </svg>
+            </div>
+            <span class="text-gold uppercase text-sm font-bold tracking-wider">Registered Office</span>
+          </div>
+          <!-- Address -->
+          <p class="text-slate-600 leading-relaxed mb-6">
+            D.No. 19-3-145/A, Postal Colony, Tirupati &ndash; 517501, Andhra Pradesh
+          </p>
+          <!-- Map -->
+          <div class="rounded-lg overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.8!2d79.42!3d13.63!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDM3JzQ4LjAiTiA3OcKwMjUnMTIuMCJF!5e0!3m2!1sen!2sin!4v1"
+              width="100%"
+              height="250"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="rounded-lg"
+              title="Registered Office - Tirupati Location">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Corporate Office -->
+        <div class="bg-white rounded-xl shadow-lg p-8 card-hover animate-fade-in-right">
+          <!-- Icon + Label -->
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+              </svg>
+            </div>
+            <span class="text-gold uppercase text-sm font-bold tracking-wider">Corporate Office</span>
+          </div>
+          <!-- Address -->
+          <p class="text-slate-600 leading-relaxed mb-6">
+            Subishi Town Center, Mokila Village, Shankarpally Mandal, Hyderabad &ndash; 501203, Telangana
+          </p>
+          <!-- Map -->
+          <div class="rounded-lg overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.5!2d78.25!3d17.38!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDIyJzQ4LjAiTiA3OMKwMTUnMDAuMCJF!5e0!3m2!1sen!2sin!4v1"
+              width="100%"
+              height="250"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="rounded-lg"
+              title="Corporate Office - Hyderabad Location">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       3. OPERATIONAL STATES
+       ============================================ -->
+  <section class="bg-light section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="text-center mb-12 animate-fade-in-up">
+        <span class="text-gold uppercase tracking-widest text-sm font-semibold">OPERATIONAL STATES</span>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mt-3">Spanning Five States</h2>
+      </div>
+
+      <!-- State Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+
+        <!-- Andhra Pradesh -->
+        <div class="bg-white rounded-xl shadow-md border-t-4 border-navy p-6 card-hover animate-fade-in-up">
+          <div class="w-10 h-10 rounded-full bg-navy/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-navy text-lg mb-1">Andhra Pradesh</h3>
+          <p class="text-slate-500 text-sm mb-4">Headquarters &middot; Tirupati</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">NH-130-CD</span>
+            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Polavaram</span>
+            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">HNSS</span>
+            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Kadapa Expressway</span>
+          </div>
+        </div>
+
+        <!-- Telangana -->
+        <div class="bg-white rounded-xl shadow-md border-t-4 border-navy p-6 card-hover animate-fade-in-up delay-100">
+          <div class="w-10 h-10 rounded-full bg-navy/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-navy text-lg mb-1">Telangana</h3>
+          <p class="text-slate-500 text-sm mb-4">Corporate Office &middot; Hyderabad</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Jurala Canal</span>
+            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">JLNSS</span>
+            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Kistlapur</span>
+            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Bhuvanagiri Musi</span>
+          </div>
+        </div>
+
+        <!-- Karnataka -->
+        <div class="bg-white rounded-xl shadow-md border-t-4 border-navy p-6 card-hover animate-fade-in-up delay-200">
+          <div class="w-10 h-10 rounded-full bg-navy/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-navy text-lg mb-1">Karnataka</h3>
+          <p class="text-slate-500 text-sm mb-4">Active Project Sites</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Mundragi Branch Canal</span>
+            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Haveri STP</span>
+          </div>
+        </div>
+
+        <!-- Maharashtra -->
+        <div class="bg-white rounded-xl shadow-md border-t-4 border-navy p-6 card-hover animate-fade-in-up delay-300">
+          <div class="w-10 h-10 rounded-full bg-navy/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-navy text-lg mb-1">Maharashtra</h3>
+          <p class="text-slate-500 text-sm mb-4">Active Project Sites</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Yavatmal-Nanded Railway</span>
+          </div>
+        </div>
+
+        <!-- Odisha -->
+        <div class="bg-white rounded-xl shadow-md border-t-4 border-navy p-6 card-hover animate-fade-in-up delay-400">
+          <div class="w-10 h-10 rounded-full bg-navy/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-navy text-lg mb-1">Odisha</h3>
+          <p class="text-slate-500 text-sm mb-4">Active Project Sites</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">NH-130-CD Pkg OD-08</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       4. ACTIVE PROJECT SITES
+       ============================================ -->
+  <section class="bg-white section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="text-center mb-12 animate-fade-in-up">
+        <span class="text-gold uppercase tracking-widest text-sm font-semibold">PROJECT LOCATIONS</span>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mt-3">Where We're Currently Building</h2>
+      </div>
+
+      <!-- Project Location Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Location 1 -->
+        <div class="bg-white rounded-xl shadow-md card-gold-border card-hover p-6 animate-fade-in-up">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-navy text-base mb-1">Kandili-Tumbigura, Odisha</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">NH-130-CD Highway</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location 2 -->
+        <div class="bg-white rounded-xl shadow-md card-gold-border card-hover p-6 animate-fade-in-up delay-100">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-navy text-base mb-1">Kadapa, Andhra Pradesh</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">Bengaluru-Vijayawada Expressway</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location 3 -->
+        <div class="bg-white rounded-xl shadow-md card-gold-border card-hover p-6 animate-fade-in-up delay-200">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-navy text-base mb-1">Polavaram, Andhra Pradesh</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">Twin Tunnels (Pkg 63 &amp; 64)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location 4 -->
+        <div class="bg-white rounded-xl shadow-md card-gold-border card-hover p-6 animate-fade-in-up delay-300">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-navy text-base mb-1">Yavatmal-Nanded, Maharashtra</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">Broad Gauge Railway</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location 5 -->
+        <div class="bg-white rounded-xl shadow-md card-gold-border card-hover p-6 animate-fade-in-up delay-400">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-navy text-base mb-1">Haveri, Karnataka</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">STP Plant</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location 6 -->
+        <div class="bg-white rounded-xl shadow-md card-gold-border card-hover p-6 animate-fade-in-up delay-500">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-navy text-base mb-1">Bhuvanagiri, Telangana</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">Musi Irrigation</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       5. CTA SECTION
+       ============================================ -->
+  <section class="bg-dark section-padding">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-5 animate-fade-in-up">Ready to Partner With Us?</h2>
+      <p class="text-white/60 text-lg leading-relaxed mb-8 animate-fade-in-up delay-100">
+        With offices in Tirupati and Hyderabad, and projects spanning five states, we're always close to where India needs infrastructure.
+      </p>
+      <a href="contact.html" class="inline-block bg-gold hover:bg-amber text-white font-bold py-3.5 px-10 rounded-lg transition-all duration-300 text-lg pulse-gold animate-fade-in-up delay-200">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Shared Components -->
+  <script src="shared/nav.js"></script>
+  <script src="shared/footer.js"></script>
+
+  <!-- ============================================
+       Scroll Animation (IntersectionObserver)
+       ============================================ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var animatedElements = document.querySelectorAll(
+        '.animate-fade-in-up, .animate-fade-in-left, .animate-fade-in-right, .animate-scale-in'
+      );
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: '0px 0px -50px 0px'
+        });
+
+        animatedElements.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        /* Fallback: show everything immediately */
+        animatedElements.forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

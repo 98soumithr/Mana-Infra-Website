@@ -141,10 +141,12 @@
 
       /* Expanded links */
       ".mana-pill-links {",
+      "  position: absolute;",
+      "  inset: 0;",
       "  display: flex;",
       "  align-items: center;",
       "  justify-content: space-evenly;",
-      "  width: 100%;",
+      "  padding: 0 24px;",
       "  opacity: 0;",
       "  pointer-events: none;",
       "  transition: opacity 0.3s ease 0.1s;",

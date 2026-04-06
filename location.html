@@ -37,7 +37,7 @@
        1. HERO BANNER
        ============================================ -->
   <section class="relative w-full" style="height: 45vh; min-height: 320px;">
-    <img src="images/expertise-bg.jpg" alt="Mana Infrastructure project locations" class="absolute inset-0 w-full h-full object-cover">
+    <img src="images/expertise-bg.jpg" alt="Aerial view of Polavaram dam barrage with spillway gates" class="absolute inset-0 w-full h-full object-cover">
     <div class="hero-overlay"></div>
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
       <h1 class="font-heading text-5xl md:text-6xl font-bold mb-3 animate-fade-in-up">
@@ -136,7 +136,7 @@
   </section>
 
   <!-- ============================================
-       3. OPERATIONAL STATES
+       3. OPERATIONAL STATES — India Map
        ============================================ -->
   <section class="bg-light section-padding">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -147,91 +147,72 @@
         <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mt-3">Spanning Five States</h2>
       </div>
 
-      <!-- State Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+      <!-- Map + Legend Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
 
-        <!-- Andhra Pradesh -->
-        <div class="bg-white rounded-xl shadow-md border-t-4 border-navy p-6 card-hover animate-fade-in-up">
-          <div class="w-10 h-10 rounded-full bg-navy/10 flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-            </svg>
-          </div>
-          <h3 class="font-heading font-bold text-navy text-lg mb-1">Andhra Pradesh</h3>
-          <p class="text-slate-500 text-sm mb-4">Headquarters &middot; Tirupati</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">NH-130-CD</span>
-            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Polavaram</span>
-            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">HNSS</span>
-            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Kadapa Expressway</span>
+        <!-- India Map -->
+        <div class="lg:col-span-3 flex justify-center animate-fade-in-left">
+          <div class="w-full max-w-lg bg-white rounded-2xl shadow-lg p-6 md:p-8">
+            <img src="images/india-map.svg" alt="India map with Mana Infrastructure operational states highlighted" class="w-full h-auto">
           </div>
         </div>
 
-        <!-- Telangana -->
-        <div class="bg-white rounded-xl shadow-md border-t-4 border-navy p-6 card-hover animate-fade-in-up delay-100">
-          <div class="w-10 h-10 rounded-full bg-navy/10 flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-            </svg>
-          </div>
-          <h3 class="font-heading font-bold text-navy text-lg mb-1">Telangana</h3>
-          <p class="text-slate-500 text-sm mb-4">Corporate Office &middot; Hyderabad</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Jurala Canal</span>
-            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">JLNSS</span>
-            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Kistlapur</span>
-            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Bhuvanagiri Musi</span>
-          </div>
-        </div>
+        <!-- State Legend Cards -->
+        <div class="lg:col-span-2 space-y-4 animate-fade-in-right">
 
-        <!-- Karnataka -->
-        <div class="bg-white rounded-xl shadow-md border-t-4 border-navy p-6 card-hover animate-fade-in-up delay-200">
-          <div class="w-10 h-10 rounded-full bg-navy/10 flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-            </svg>
+          <!-- Andhra Pradesh -->
+          <div class="bg-white rounded-xl shadow-md border-l-4 border-gold p-5 card-hover">
+            <h3 class="font-heading font-bold text-navy text-base mb-1">Andhra Pradesh</h3>
+            <p class="text-slate-500 text-xs mb-3">Headquarters &middot; Tirupati</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">NH-130-CD</span>
+              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Polavaram</span>
+              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">HNSS</span>
+              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Kadapa Expressway</span>
+            </div>
           </div>
-          <h3 class="font-heading font-bold text-navy text-lg mb-1">Karnataka</h3>
-          <p class="text-slate-500 text-sm mb-4">Active Project Sites</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Mundragi Branch Canal</span>
-            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Haveri STP</span>
-          </div>
-        </div>
 
-        <!-- Maharashtra -->
-        <div class="bg-white rounded-xl shadow-md border-t-4 border-navy p-6 card-hover animate-fade-in-up delay-300">
-          <div class="w-10 h-10 rounded-full bg-navy/10 flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-            </svg>
+          <!-- Telangana -->
+          <div class="bg-white rounded-xl shadow-md border-l-4 border-gold p-5 card-hover">
+            <h3 class="font-heading font-bold text-navy text-base mb-1">Telangana</h3>
+            <p class="text-slate-500 text-xs mb-3">Corporate Office &middot; Hyderabad</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Jurala Canal</span>
+              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">JLNSS</span>
+              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Kistlapur</span>
+              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Bhuvanagiri Musi</span>
+            </div>
           </div>
-          <h3 class="font-heading font-bold text-navy text-lg mb-1">Maharashtra</h3>
-          <p class="text-slate-500 text-sm mb-4">Active Project Sites</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Yavatmal-Nanded Railway</span>
-          </div>
-        </div>
 
-        <!-- Odisha -->
-        <div class="bg-white rounded-xl shadow-md border-t-4 border-navy p-6 card-hover animate-fade-in-up delay-400">
-          <div class="w-10 h-10 rounded-full bg-navy/10 flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-            </svg>
+          <!-- Karnataka -->
+          <div class="bg-white rounded-xl shadow-md border-l-4 border-gold p-5 card-hover">
+            <h3 class="font-heading font-bold text-navy text-base mb-1">Karnataka</h3>
+            <p class="text-slate-500 text-xs mb-3">Active Project Sites</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Mundragi Branch Canal</span>
+              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Haveri STP</span>
+            </div>
           </div>
-          <h3 class="font-heading font-bold text-navy text-lg mb-1">Odisha</h3>
-          <p class="text-slate-500 text-sm mb-4">Active Project Sites</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">NH-130-CD Pkg OD-08</span>
-          </div>
-        </div>
 
+          <!-- Maharashtra -->
+          <div class="bg-white rounded-xl shadow-md border-l-4 border-gold p-5 card-hover">
+            <h3 class="font-heading font-bold text-navy text-base mb-1">Maharashtra</h3>
+            <p class="text-slate-500 text-xs mb-3">Active Project Sites</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Yavatmal-Nanded Railway</span>
+            </div>
+          </div>
+
+          <!-- Odisha -->
+          <div class="bg-white rounded-xl shadow-md border-l-4 border-gold p-5 card-hover">
+            <h3 class="font-heading font-bold text-navy text-base mb-1">Odisha</h3>
+            <p class="text-slate-500 text-xs mb-3">Active Project Sites</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">NH-130-CD Pkg OD-08</span>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>

@@ -715,10 +715,11 @@ html {
 }
 
 /* ============================================
-   19. Mobile Parallax Carousel
+   19. Mobile Scroll Parallax
    ============================================ */
-.mobile-parallax-slide img {
-  will-change: transform;
+.mobile-plx-img {
+  will-change: top;
+  transition: none;
 }
 
 /* ============================================

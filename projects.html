@@ -117,65 +117,59 @@
     </div>
   </section>
 
-  <!-- Mobile Parallax Gallery (replaces zoom parallax on small screens) -->
-  <section class="bg-dark md:hidden overflow-hidden" id="mobile-parallax">
-    <!-- Full-bleed auto-scrolling carousel -->
-    <div class="mobile-parallax-track flex" id="mobileParallaxTrack">
-      <div class="mobile-parallax-slide flex-shrink-0 w-full relative" style="height: 65vh;">
-        <img src="images/project-nh130.jpg" alt="Six-Lane Highway NH-130-CD" class="absolute inset-0 w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent"></div>
-        <div class="absolute bottom-6 left-4 right-4 z-10">
-          <span class="text-gold text-xs font-bold tracking-[2px] uppercase">Featured</span>
-          <h3 class="text-white font-heading text-xl font-bold mt-1">Six-Lane Highway NH-130-CD</h3>
-          <p class="text-slate-300 text-sm mt-1">Raipur-Visakhapatnam Corridor, Odisha</p>
-        </div>
-      </div>
-      <div class="mobile-parallax-slide flex-shrink-0 w-full relative" style="height: 65vh;">
-        <img src="images/project-kadapa.jpg" alt="Kadapa Expressway Tunnel" class="absolute inset-0 w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent"></div>
-        <div class="absolute bottom-6 left-4 right-4 z-10">
-          <span class="text-gold text-xs font-bold tracking-[2px] uppercase">Featured</span>
-          <h3 class="text-white font-heading text-xl font-bold mt-1">Kadapa Expressway Tunnels</h3>
-          <p class="text-slate-300 text-sm mt-1">Tunnel Portal Works, Andhra Pradesh</p>
-        </div>
-      </div>
-      <div class="mobile-parallax-slide flex-shrink-0 w-full relative" style="height: 65vh;">
-        <img src="images/project-polavaram.jpg" alt="Polavaram Tunnel" class="absolute inset-0 w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent"></div>
-        <div class="absolute bottom-6 left-4 right-4 z-10">
-          <span class="text-gold text-xs font-bold tracking-[2px] uppercase">Featured</span>
-          <h3 class="text-white font-heading text-xl font-bold mt-1">Polavaram Tunnel Works</h3>
-          <p class="text-slate-300 text-sm mt-1">Irrigation Tunnel, Andhra Pradesh</p>
-        </div>
-      </div>
-      <div class="mobile-parallax-slide flex-shrink-0 w-full relative" style="height: 65vh;">
-        <img src="images/project-railways.jpg" alt="Yavatmal-Nanded Railway" class="absolute inset-0 w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent"></div>
-        <div class="absolute bottom-6 left-4 right-4 z-10">
-          <span class="text-gold text-xs font-bold tracking-[2px] uppercase">Featured</span>
-          <h3 class="text-white font-heading text-xl font-bold mt-1">Yavatmal-Nanded Railway</h3>
-          <p class="text-slate-300 text-sm mt-1">Railway Excavation, Maharashtra</p>
-        </div>
-      </div>
-      <div class="mobile-parallax-slide flex-shrink-0 w-full relative" style="height: 65vh;">
-        <img src="images/project-nh130-2.jpg" alt="Elevated Viaduct NH-130-CD" class="absolute inset-0 w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent"></div>
-        <div class="absolute bottom-6 left-4 right-4 z-10">
-          <span class="text-gold text-xs font-bold tracking-[2px] uppercase">Featured</span>
-          <h3 class="text-white font-heading text-xl font-bold mt-1">Elevated Viaduct NH-130-CD</h3>
-          <p class="text-slate-300 text-sm mt-1">Mountainous Terrain, Odisha</p>
-        </div>
+  <!-- Mobile Scroll Parallax (replaces zoom parallax on small screens) -->
+  <div class="md:hidden" id="mobile-parallax">
+    <!-- Each block: clipped container with an oversized image that shifts on scroll -->
+    <div class="mobile-plx-block relative overflow-hidden" style="height:50vh;">
+      <img src="images/project-nh130.jpg" alt="Six-Lane Highway NH-130-CD" class="mobile-plx-img absolute inset-0 w-full object-cover" style="height:130%; top:-15%;">
+      <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-dark/10"></div>
+      <div class="absolute bottom-5 left-4 right-4 z-10">
+        <span class="text-gold text-xs font-bold tracking-[2px] uppercase">Highways</span>
+        <h3 class="text-white font-heading text-lg font-bold mt-1">Six-Lane Highway NH-130-CD</h3>
+        <p class="text-slate-300 text-xs mt-1">Raipur-Visakhapatnam Corridor, Odisha</p>
       </div>
     </div>
-    <!-- Slide indicators -->
-    <div class="flex justify-center gap-2 py-4" id="mobileParallaxDots">
-      <button class="w-2.5 h-2.5 rounded-full bg-gold transition-all duration-300" data-slide="0"></button>
-      <button class="w-2.5 h-2.5 rounded-full bg-white/30 transition-all duration-300" data-slide="1"></button>
-      <button class="w-2.5 h-2.5 rounded-full bg-white/30 transition-all duration-300" data-slide="2"></button>
-      <button class="w-2.5 h-2.5 rounded-full bg-white/30 transition-all duration-300" data-slide="3"></button>
-      <button class="w-2.5 h-2.5 rounded-full bg-white/30 transition-all duration-300" data-slide="4"></button>
+
+    <div class="mobile-plx-block relative overflow-hidden" style="height:50vh;">
+      <img src="images/project-kadapa.jpg" alt="Kadapa Expressway Tunnel" class="mobile-plx-img absolute inset-0 w-full object-cover" style="height:130%; top:-15%;">
+      <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-dark/10"></div>
+      <div class="absolute bottom-5 left-4 right-4 z-10">
+        <span class="text-gold text-xs font-bold tracking-[2px] uppercase">Tunnels</span>
+        <h3 class="text-white font-heading text-lg font-bold mt-1">Kadapa Expressway Tunnels</h3>
+        <p class="text-slate-300 text-xs mt-1">Tunnel Portal Works, Andhra Pradesh</p>
+      </div>
     </div>
-  </section>
+
+    <div class="mobile-plx-block relative overflow-hidden" style="height:50vh;">
+      <img src="images/project-polavaram.jpg" alt="Polavaram Tunnel" class="mobile-plx-img absolute inset-0 w-full object-cover" style="height:130%; top:-15%;">
+      <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-dark/10"></div>
+      <div class="absolute bottom-5 left-4 right-4 z-10">
+        <span class="text-gold text-xs font-bold tracking-[2px] uppercase">Irrigation</span>
+        <h3 class="text-white font-heading text-lg font-bold mt-1">Polavaram Tunnel Works</h3>
+        <p class="text-slate-300 text-xs mt-1">Asia's Largest Irrigation Tunnel, AP</p>
+      </div>
+    </div>
+
+    <div class="mobile-plx-block relative overflow-hidden" style="height:50vh;">
+      <img src="images/project-railways.jpg" alt="Yavatmal-Nanded Railway" class="mobile-plx-img absolute inset-0 w-full object-cover" style="height:130%; top:-15%;">
+      <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-dark/10"></div>
+      <div class="absolute bottom-5 left-4 right-4 z-10">
+        <span class="text-gold text-xs font-bold tracking-[2px] uppercase">Railways</span>
+        <h3 class="text-white font-heading text-lg font-bold mt-1">Yavatmal-Nanded Railway</h3>
+        <p class="text-slate-300 text-xs mt-1">Railway Excavation, Maharashtra</p>
+      </div>
+    </div>
+
+    <div class="mobile-plx-block relative overflow-hidden" style="height:50vh;">
+      <img src="images/project-nh130-2.jpg" alt="Elevated Viaduct NH-130-CD" class="mobile-plx-img absolute inset-0 w-full object-cover" style="height:130%; top:-15%;">
+      <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-dark/10"></div>
+      <div class="absolute bottom-5 left-4 right-4 z-10">
+        <span class="text-gold text-xs font-bold tracking-[2px] uppercase">Highways</span>
+        <h3 class="text-white font-heading text-lg font-bold mt-1">Elevated Viaduct NH-130-CD</h3>
+        <p class="text-slate-300 text-xs mt-1">Mountainous Terrain, Odisha</p>
+      </div>
+    </div>
+  </div>
 
   <!-- ============================================================
        2. FEATURED PROJECTS
@@ -938,80 +932,40 @@
   })();
   </script>
 
-  <!-- Mobile Parallax Carousel -->
+  <!-- Mobile Scroll Parallax -->
   <script>
   (function () {
     "use strict";
-    var track = document.getElementById("mobileParallaxTrack");
-    var dotsContainer = document.getElementById("mobileParallaxDots");
-    if (!track || !dotsContainer) return;
+    var blocks = document.querySelectorAll(".mobile-plx-block");
+    if (!blocks.length) return;
 
-    var slides = track.querySelectorAll(".mobile-parallax-slide");
-    var dots = dotsContainer.querySelectorAll("button");
-    var current = 0;
-    var total = slides.length;
-    var autoInterval = null;
-    var touchStartX = 0;
-    var touchEndX = 0;
+    var ticking = false;
 
-    function goTo(index) {
-      current = ((index % total) + total) % total;
-      track.style.transform = "translateX(-" + (current * 100) + "%)";
-      dots.forEach(function (d, i) {
-        d.className = "w-2.5 h-2.5 rounded-full transition-all duration-300 " +
-          (i === current ? "bg-gold w-6" : "bg-white/30");
-      });
-      /* Subtle parallax: shift image slightly for depth feel */
-      slides.forEach(function (slide, i) {
-        var img = slide.querySelector("img");
-        if (i === current) {
-          img.style.transform = "scale(1.05)";
-          img.style.transition = "transform 4s ease-out";
-        } else {
-          img.style.transform = "scale(1)";
-          img.style.transition = "transform 0.3s ease";
+    function updateMobileParallax() {
+      var winH = window.innerHeight;
+      blocks.forEach(function (block) {
+        var rect = block.getBoundingClientRect();
+        /* How far through the viewport is this block? 0 = just entering bottom, 1 = leaving top */
+        var progress = 1 - (rect.bottom / (winH + rect.height));
+        progress = Math.max(0, Math.min(1, progress));
+        /* Shift the oversized image: from +15% to -15% (30% total travel) */
+        var offset = 15 - (progress * 30);
+        var img = block.querySelector(".mobile-plx-img");
+        if (img) {
+          img.style.top = offset + "%";
         }
       });
+      ticking = false;
     }
 
-    function startAuto() {
-      stopAuto();
-      autoInterval = setInterval(function () {
-        goTo(current + 1);
-      }, 4000);
-    }
-
-    function stopAuto() {
-      if (autoInterval) clearInterval(autoInterval);
-    }
-
-    /* Dot click */
-    dots.forEach(function (dot) {
-      dot.addEventListener("click", function () {
-        goTo(parseInt(this.getAttribute("data-slide")));
-        startAuto();
-      });
-    });
-
-    /* Touch swipe */
-    track.addEventListener("touchstart", function (e) {
-      touchStartX = e.changedTouches[0].screenX;
-      stopAuto();
-    }, { passive: true });
-
-    track.addEventListener("touchend", function (e) {
-      touchEndX = e.changedTouches[0].screenX;
-      var diff = touchStartX - touchEndX;
-      if (Math.abs(diff) > 50) {
-        goTo(diff > 0 ? current + 1 : current - 1);
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        requestAnimationFrame(updateMobileParallax);
+        ticking = true;
       }
-      startAuto();
     }, { passive: true });
 
-    /* Init */
-    track.style.transition = "transform 0.5s ease-in-out";
-    goTo(0);
-    startAuto();
+    updateMobileParallax();
   })();
   </script>
 

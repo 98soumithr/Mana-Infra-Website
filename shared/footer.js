@@ -307,6 +307,224 @@
     return col;
   }
 
+  /* ── Build the MANA hover text SVG ──────────────────────────── */
+
+  function buildManaHoverText() {
+    var NS = "http://www.w3.org/2000/svg";
+
+    /* Wrapper - only visible on desktop (>= 768px) */
+    var wrapper = el("div", [
+      "display: flex",
+      "justify-content: center",
+      "align-items: center",
+      "height: 280px",
+      "margin-top: -40px",
+      "margin-bottom: -80px",
+      "overflow: hidden",
+      "position: relative",
+    ].join(";"));
+    wrapper.setAttribute("data-mana-hover", "true");
+
+    /* Hide on mobile */
+    if (window.innerWidth < 768) {
+      wrapper.style.display = "none";
+    }
+
+    /* SVG root */
+    var svg = document.createElementNS(NS, "svg");
+    svg.setAttribute("viewBox", "0 0 300 100");
+    svg.setAttribute("width", "100%");
+    svg.setAttribute("height", "100%");
+    svg.style.cssText = "cursor: pointer; user-select: none; overflow: visible;";
+
+    /* ── Defs ── */
+    var defs = document.createElementNS(NS, "defs");
+
+    /* Linear gradient for colorful text (hidden by default) */
+    var linearGrad = document.createElementNS(NS, "linearGradient");
+    linearGrad.setAttribute("id", "manaTextGradient");
+    linearGrad.setAttribute("x1", "0%");
+    linearGrad.setAttribute("y1", "0%");
+    linearGrad.setAttribute("x2", "100%");
+    linearGrad.setAttribute("y2", "0%");
+
+    var gradientColors = [
+      { offset: "0%", color: COLORS.gold },
+      { offset: "25%", color: "#ef4444" },
+      { offset: "50%", color: "#80eeb4" },
+      { offset: "75%", color: "#06b6d4" },
+      { offset: "100%", color: "#8b5cf6" },
+    ];
+
+    /* We'll store stop elements to toggle their visibility */
+    var gradientStops = [];
+    gradientColors.forEach(function (gc) {
+      var stop = document.createElementNS(NS, "stop");
+      stop.setAttribute("offset", gc.offset);
+      stop.setAttribute("stop-color", "transparent"); /* hidden initially */
+      stop.dataset.activeColor = gc.color;
+      linearGrad.appendChild(stop);
+      gradientStops.push(stop);
+    });
+
+    defs.appendChild(linearGrad);
+
+    /* Radial gradient for reveal mask */
+    var radialGrad = document.createElementNS(NS, "radialGradient");
+    radialGrad.setAttribute("id", "manaRevealMask");
+    radialGrad.setAttribute("r", "20%");
+    radialGrad.setAttribute("cx", "50%");
+    radialGrad.setAttribute("cy", "50%");
+
+    var radStop1 = document.createElementNS(NS, "stop");
+    radStop1.setAttribute("offset", "0%");
+    radStop1.setAttribute("stop-color", "white");
+
+    var radStop2 = document.createElementNS(NS, "stop");
+    radStop2.setAttribute("offset", "100%");
+    radStop2.setAttribute("stop-color", "black");
+
+    radialGrad.appendChild(radStop1);
+    radialGrad.appendChild(radStop2);
+    defs.appendChild(radialGrad);
+
+    /* Mask using radial gradient */
+    var mask = document.createElementNS(NS, "mask");
+    mask.setAttribute("id", "manaTextMask");
+
+    var maskRect = document.createElementNS(NS, "rect");
+    maskRect.setAttribute("x", "0");
+    maskRect.setAttribute("y", "0");
+    maskRect.setAttribute("width", "300");
+    maskRect.setAttribute("height", "100");
+    maskRect.setAttribute("fill", "url(#manaRevealMask)");
+    mask.appendChild(maskRect);
+    defs.appendChild(mask);
+
+    svg.appendChild(defs);
+
+    /* ── Style element for stroke animation ── */
+    var styleEl = document.createElementNS(NS, "style");
+    styleEl.textContent = [
+      "@keyframes manaStrokeDraw {",
+      "  from { stroke-dashoffset: 1000; }",
+      "  to   { stroke-dashoffset: 0; }",
+      "}",
+      ".mana-stroke-anim {",
+      "  stroke-dasharray: 1000;",
+      "  stroke-dashoffset: 1000;",
+      "  animation: manaStrokeDraw 4s ease forwards;",
+      "}",
+    ].join("\n");
+    svg.appendChild(styleEl);
+
+    /* ── Shared text attributes ── */
+    var textAttrs = {
+      x: "50%",
+      y: "55%",
+      "text-anchor": "middle",
+      "dominant-baseline": "middle",
+      "font-size": "7em",
+      "font-weight": "bold",
+      "font-family": "Helvetica, Arial, sans-serif",
+    };
+
+    function createTextEl(extra) {
+      var t = document.createElementNS(NS, "text");
+      var key;
+      for (key in textAttrs) {
+        if (textAttrs.hasOwnProperty(key)) {
+          t.setAttribute(key, textAttrs[key]);
+        }
+      }
+      for (key in extra) {
+        if (extra.hasOwnProperty(key)) {
+          if (key === "class") {
+            t.setAttribute("class", extra[key]);
+          } else {
+            t.setAttribute(key, extra[key]);
+          }
+        }
+      }
+      t.textContent = "MANA";
+      return t;
+    }
+
+    /* 1) Base text - subtle outline, hidden by default, shown on hover */
+    var baseText = createTextEl({
+      stroke: COLORS.border,
+      "stroke-width": "0.3",
+      fill: "transparent",
+      opacity: "0",
+    });
+    baseText.style.transition = "opacity 0.3s ease";
+    svg.appendChild(baseText);
+
+    /* 2) Animated outline text - gold stroke that draws in */
+    var outlineText = createTextEl({
+      stroke: COLORS.gold,
+      "stroke-width": "0.3",
+      fill: "transparent",
+      "class": "mana-stroke-anim",
+    });
+    svg.appendChild(outlineText);
+
+    /* 3) Masked gradient text - revealed by cursor */
+    var gradientText = createTextEl({
+      stroke: "url(#manaTextGradient)",
+      "stroke-width": "0.3",
+      fill: "transparent",
+      mask: "url(#manaTextMask)",
+    });
+    svg.appendChild(gradientText);
+
+    /* ── Event listeners ── */
+
+    svg.addEventListener("mousemove", function (e) {
+      var rect = svg.getBoundingClientRect();
+      var xPct = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+      var yPct = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
+
+      radialGrad.setAttribute("cx", xPct + "%");
+      radialGrad.setAttribute("cy", yPct + "%");
+    });
+
+    svg.addEventListener("mouseenter", function () {
+      /* Show base text */
+      baseText.setAttribute("opacity", "0.7");
+
+      /* Activate gradient stops */
+      gradientStops.forEach(function (stop) {
+        stop.setAttribute("stop-color", stop.dataset.activeColor);
+      });
+    });
+
+    svg.addEventListener("mouseleave", function () {
+      /* Hide base text */
+      baseText.setAttribute("opacity", "0");
+
+      /* Deactivate gradient stops */
+      gradientStops.forEach(function (stop) {
+        stop.setAttribute("stop-color", "transparent");
+      });
+    });
+
+    wrapper.appendChild(svg);
+
+    /* ── Responsive listener: hide/show on resize ── */
+    var mq = window.matchMedia("(max-width: 767px)");
+    function toggleVisibility(e) {
+      wrapper.style.display = e.matches ? "none" : "flex";
+    }
+    if (mq.addEventListener) {
+      mq.addEventListener("change", toggleVisibility);
+    } else if (mq.addListener) {
+      mq.addListener(toggleVisibility);
+    }
+
+    return wrapper;
+  }
+
   /* ── Build the bottom bar ────────────────────────────────────── */
 
   function buildBottomBar() {
@@ -371,6 +589,7 @@
     row.appendChild(buildContactSectors());
 
     container.appendChild(row);
+    container.appendChild(buildManaHoverText());
     container.appendChild(buildBottomBar());
     footer.appendChild(container);
 
@@ -387,6 +606,9 @@
       if (!row) return;
 
       if (e.matches) {
+        /* Mobile: reduce footer padding */
+        footer.style.padding = "40px 0 24px 0";
+
         /* Mobile: stack columns */
         row.style.flexDirection = "column";
         row.style.gap = "32px";
@@ -406,6 +628,9 @@
           bottomBar.style.textAlign = "center";
         }
       } else {
+        /* Desktop: restore footer padding */
+        footer.style.padding = "60px 0 30px 0";
+
         /* Desktop: side by side */
         row.style.flexDirection = "row";
         row.style.gap = "40px";

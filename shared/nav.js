@@ -171,8 +171,8 @@
     logoMana.style.cssText = [
       "color:" + COLORS.gold,
       "font-weight: 800",
-      "font-size: 26px",
-      "letter-spacing: 2px",
+      "font-size: 18px",
+      "letter-spacing: 1.5px",
       "text-transform: uppercase",
     ].join(";");
 
@@ -181,13 +181,35 @@
     logoInfra.style.cssText = [
       "color:" + COLORS.white,
       "font-weight: 700",
-      "font-size: 16px",
+      "font-size: 18px",
+      "letter-spacing: 1.5px",
+      "text-transform: uppercase",
+    ].join(";");
+
+    var logoPvt = document.createElement("span");
+    logoPvt.textContent = "PVT";
+    logoPvt.style.cssText = [
+      "color:" + COLORS.white,
+      "font-weight: 700",
+      "font-size: 18px",
+      "letter-spacing: 1.5px",
+      "text-transform: uppercase",
+    ].join(";");
+
+    var logoLtd = document.createElement("span");
+    logoLtd.textContent = "LTD";
+    logoLtd.style.cssText = [
+      "color:" + COLORS.white,
+      "font-weight: 700",
+      "font-size: 18px",
       "letter-spacing: 1.5px",
       "text-transform: uppercase",
     ].join(";");
 
     logo.appendChild(logoMana);
     logo.appendChild(logoInfra);
+    logo.appendChild(logoPvt);
+    logo.appendChild(logoLtd);
 
     /* 3D Pill — always showing all links */
     var pill = document.createElement("div");
@@ -225,7 +247,7 @@
       "background: none",
       "border: none",
       "cursor: pointer",
-      "padding: 8px",
+      "padding: 12px",
       "flex-direction: column",
       "gap: 5px",
       "z-index: 10001",
@@ -312,7 +334,7 @@
         "text-decoration: none",
         "font-size: 17px",
         "font-weight: 600",
-        "padding: 14px 28px",
+        "padding: 16px 28px",
         "border-left: 4px solid " + (isActive ? COLORS.gold : "transparent"),
         "transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease",
         "text-transform: uppercase",
@@ -374,7 +396,7 @@
     container.appendChild(hamburger);
     nav.appendChild(container);
 
-    return { nav: nav, spacer: spacer, overlay: overlay, drawer: drawer, hamburger: hamburger, pill: pill };
+    return { nav: nav, spacer: spacer, overlay: overlay, drawer: drawer, hamburger: hamburger, pill: pill, logoMana: logoMana, logoInfra: logoInfra, logoPvt: logoPvt, logoLtd: logoLtd };
   }
 
   function applyResponsive(parts) {
@@ -384,6 +406,10 @@
       if (e.matches) {
         parts.pill.style.display = "none";
         parts.hamburger.style.display = "flex";
+        parts.logoMana.style.fontSize = "15px";
+        parts.logoInfra.style.fontSize = "14px";
+        parts.logoPvt.style.fontSize = "14px";
+        parts.logoLtd.style.fontSize = "14px";
       } else {
         parts.pill.style.display = "";
         parts.hamburger.style.display = "none";
@@ -391,6 +417,10 @@
         parts.overlay.style.opacity = "0";
         parts.overlay.style.visibility = "hidden";
         document.body.style.overflow = "";
+        parts.logoMana.style.fontSize = "18px";
+        parts.logoInfra.style.fontSize = "18px";
+        parts.logoPvt.style.fontSize = "18px";
+        parts.logoLtd.style.fontSize = "18px";
       }
     }
 

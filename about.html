@@ -65,7 +65,10 @@
         </div>
         <!-- Text -->
         <div class="animate-fade-in-right">
-          <span class="text-gold uppercase tracking-widest text-sm font-semibold">WHO WE ARE</span>
+          <div class="flex items-center gap-4">
+            <span class="text-gold uppercase tracking-widest text-sm font-semibold">WHO WE ARE</span>
+            <div class="mana-scan-text"><span>MANA</span></div>
+          </div>
           <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mt-3 mb-6">Building India's Critical Infrastructure</h2>
           <p class="text-slate-600 leading-relaxed mb-5">
             MANA Infrastructure Private Limited is a civil engineering and infrastructure company focused on delivering large-scale projects with precision, reliability, and efficiency. Established in 2012 and incorporated as a private limited company in 2025, the company has built a strong execution track record across highways, tunnels, irrigation systems, railways, and bridges.
@@ -81,8 +84,12 @@
   <!-- ============================================
        3. CERTIFICATIONS
        ============================================ -->
-  <section class="bg-light section-padding">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="bg-light section-padding relative overflow-hidden">
+    <!-- Grid Background -->
+    <div class="absolute inset-0 z-0" style="background-image: linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px); background-size: 40px 40px;"></div>
+    <!-- Soft Yellow Glow -->
+    <div class="absolute inset-0 z-0" style="background-image: radial-gradient(circle at center, #FFF991 0%, transparent 70%); opacity: 0.6; mix-blend-mode: multiply;"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-12 animate-fade-in-up">
         <span class="text-gold uppercase tracking-widest text-sm font-semibold">OUR CREDENTIALS</span>
         <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mt-3">Certifications & Registrations</h2>
@@ -127,7 +134,7 @@
        ============================================ -->
   <section class="bg-white section-padding">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0">
 
         <!-- VISION -->
         <div class="animate-fade-in-left pr-0 lg:pr-10 pb-10 lg:pb-0 lg:border-r border-slate-200">
@@ -203,8 +210,12 @@
   <!-- ============================================
        5. MANAGEMENT
        ============================================ -->
-  <section class="bg-light section-padding">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="bg-light section-padding relative overflow-hidden">
+    <!-- Grid Background -->
+    <div class="absolute inset-0 z-0" style="background-image: linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px); background-size: 40px 40px;"></div>
+    <!-- Soft Yellow Glow -->
+    <div class="absolute inset-0 z-0" style="background-image: radial-gradient(circle at center, #FFF991 0%, transparent 70%); opacity: 0.6; mix-blend-mode: multiply;"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
       <!-- Section Header -->
       <div class="text-center mb-12 animate-fade-in-up">
@@ -345,13 +356,22 @@
             }
           });
         }, {
-          threshold: 0.15,
-          rootMargin: '0px 0px -50px 0px'
+          threshold: 0.05,
+          rootMargin: '50px 0px 0px 0px'
         });
 
         animatedElements.forEach(function (el) {
           observer.observe(el);
         });
+
+        /* Safety fallback: reveal all animated elements after 2s */
+        setTimeout(function () {
+          animatedElements.forEach(function (el) {
+            if (!el.classList.contains('is-visible')) {
+              el.classList.add('is-visible');
+            }
+          });
+        }, 2000);
       } else {
         /* Fallback: show everything immediately */
         animatedElements.forEach(function (el) {
@@ -360,6 +380,7 @@
       }
     });
   </script>
+
 
 </body>
 </html>

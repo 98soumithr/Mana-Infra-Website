@@ -46,17 +46,12 @@
       <!-- Main Heading -->
       <h1 class="animate-fade-in-up delay-100 font-heading mb-2">
         <span class="block text-6xl md:text-7xl lg:text-8xl font-black text-gold leading-tight">MANA</span>
-        <span class="block text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-1">INFRASTRUCTURE</span>
-        <span class="block text-lg md:text-xl text-white/70 font-light mt-2 tracking-wider">PRIVATE LIMITED</span>
+        <span class="block text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-1">INFRA</span>
       </h1>
       <!-- Tagline -->
       <p class="animate-fade-in-up delay-200 text-xl md:text-2xl mt-6 mb-4">
         <span class="text-white font-medium">BUILD TOGETHER,</span>
         <span class="text-gold italic font-semibold"> GROW TOGETHER</span>
-      </p>
-      <!-- Sector Line -->
-      <p class="animate-fade-in-up delay-300 text-white/80 tracking-[0.2em] text-xs md:text-sm uppercase mb-10">
-        Highways &bull; Tunnels &bull; Irrigation &bull; Railways &bull; Bridges
       </p>
       <!-- CTA Button -->
       <div class="animate-fade-in-up delay-400 mb-6">
@@ -67,8 +62,8 @@
         </a>
       </div>
       <!-- Since badge -->
-      <p class="animate-fade-in-up delay-500 text-white/50 text-sm tracking-wide">
-        <span class="inline-block border border-white/20 rounded-full px-4 py-1">Since 2012</span>
+      <p class="animate-fade-in-up delay-500 text-sm tracking-wide">
+        <span class="inline-block border border-gold/40 rounded-full px-4 py-1 text-gold font-semibold">Since 2012</span>
       </p>
     </div>
     <!-- Scroll Indicator -->
@@ -79,50 +74,62 @@
     </div>
   </section>
 
-  <!-- ===== 2. STATS COUNTER BAR ===== -->
+  <!-- ===== 2. STATS COUNTER BAR (Auto-scrolling Carousel) ===== -->
   <section id="stats" class="bg-dark py-10 md:py-14">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-6 text-center">
-        <!-- Stat 1 -->
-        <div class="animate-fade-in-up">
-          <p class="font-heading font-bold text-3xl md:text-4xl text-gold mb-1">
-            <span class="counter-value" data-target="400">0</span><span class="text-gold">+</span> Cr
-          </p>
+    <div class="relative overflow-hidden mx-auto" style="max-width: 1200px;">
+      <!-- Fade edges -->
+      <div class="absolute inset-y-0 left-0 w-16 md:w-28 z-10" style="background: linear-gradient(to right, #0F1B2D, transparent);"></div>
+      <div class="absolute inset-y-0 right-0 w-16 md:w-28 z-10" style="background: linear-gradient(to left, #0F1B2D, transparent);"></div>
+      <!-- Scrolling track -->
+      <div class="marquee-track flex items-center gap-10 md:gap-14 py-2">
+        <!-- Set 1 -->
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-3xl md:text-4xl text-gold mb-1">400+ Cr</p>
           <p class="text-white/70 text-sm">Annual Turnover</p>
         </div>
-        <!-- Stat 2 -->
-        <div class="animate-fade-in-up delay-100">
-          <p class="font-heading font-bold text-3xl md:text-4xl text-gold mb-1">
-            <span class="text-gold/60 text-xl align-top mr-0.5"></span><span class="counter-value" data-target="1500">0</span><span class="text-gold">+</span> Cr
-          </p>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-3xl md:text-4xl text-gold mb-1">1,500+ Cr</p>
           <p class="text-white/70 text-sm">Current Book Order</p>
         </div>
-        <!-- Stat 3 -->
-        <div class="animate-fade-in-up delay-200">
-          <p class="font-heading font-bold text-3xl md:text-4xl text-gold mb-1">
-            <span class="counter-value" data-target="13">0</span><span class="text-gold">+</span>
-          </p>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-3xl md:text-4xl text-gold mb-1">13+</p>
           <p class="text-white/70 text-sm">Years in Infrastructure</p>
         </div>
-        <!-- Stat 4 -->
-        <div class="animate-fade-in-up delay-100">
-          <p class="font-heading font-bold text-3xl md:text-4xl text-gold mb-1">
-            <span class="counter-value" data-target="500">0</span><span class="text-gold">+</span>
-          </p>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-3xl md:text-4xl text-gold mb-1">500+</p>
           <p class="text-white/70 text-sm">Machines &amp; Equipment</p>
         </div>
-        <!-- Stat 5 -->
-        <div class="animate-fade-in-up delay-200">
-          <p class="font-heading font-bold text-3xl md:text-4xl text-gold mb-1">
-            <span class="counter-value" data-target="1000">0</span><span class="text-gold">+</span>
-          </p>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-3xl md:text-4xl text-gold mb-1">1,000+</p>
           <p class="text-white/70 text-sm">Skilled Workforce</p>
         </div>
-        <!-- Stat 6 -->
-        <div class="animate-fade-in-up delay-300">
-          <p class="font-heading font-bold text-3xl md:text-4xl text-gold mb-1">
-            <span class="counter-value" data-target="5">0</span>
-          </p>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-3xl md:text-4xl text-gold mb-1">5</p>
+          <p class="text-white/70 text-sm">States of Operation</p>
+        </div>
+        <!-- Set 2 (duplicate for seamless loop) -->
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-3xl md:text-4xl text-gold mb-1">400+ Cr</p>
+          <p class="text-white/70 text-sm">Annual Turnover</p>
+        </div>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-3xl md:text-4xl text-gold mb-1">1,500+ Cr</p>
+          <p class="text-white/70 text-sm">Current Book Order</p>
+        </div>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-3xl md:text-4xl text-gold mb-1">13+</p>
+          <p class="text-white/70 text-sm">Years in Infrastructure</p>
+        </div>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-3xl md:text-4xl text-gold mb-1">500+</p>
+          <p class="text-white/70 text-sm">Machines &amp; Equipment</p>
+        </div>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-3xl md:text-4xl text-gold mb-1">1,000+</p>
+          <p class="text-white/70 text-sm">Skilled Workforce</p>
+        </div>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-3xl md:text-4xl text-gold mb-1">5</p>
           <p class="text-white/70 text-sm">States of Operation</p>
         </div>
       </div>
@@ -134,9 +141,19 @@
     <div class="max-w-7xl mx-auto px-6">
       <!-- Heading -->
       <div class="text-center mb-14 animate-fade-in-up">
-        <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
-          <span class="text-navy">CORE </span><span class="text-gold italic">EXPERTISE</span>
-        </h2>
+        <div class="flex items-center justify-center gap-4 mb-4">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold">
+            <span class="text-navy">CORE </span><span class="text-gold italic">EXPERTISE</span>
+          </h2>
+          <!-- Animated Square Spinner -->
+          <div class="loadingspinner" style="transform: scale(0.55); margin: 0; flex-shrink: 0;">
+            <div id="square1"></div>
+            <div id="square2"></div>
+            <div id="square3"></div>
+            <div id="square4"></div>
+            <div id="square5"></div>
+          </div>
+        </div>
         <p class="text-slate-600 max-w-3xl mx-auto leading-relaxed">
           Mana Infrastructure operates across six major engineering verticals bringing deep technical capability,
           a proven equipment fleet, and experienced site teams to every project domain.
@@ -238,9 +255,12 @@
     <div class="max-w-7xl mx-auto px-6">
       <!-- Heading -->
       <div class="text-center mb-14 animate-fade-in-up">
-        <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
-          <span class="text-navy">FEATURED </span><span class="text-gold italic">PROJECTS</span>
-        </h2>
+        <div class="flex items-center justify-center gap-4 mb-4">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold">
+            <span class="text-navy">FEATURED </span><span class="text-gold italic">PROJECTS</span>
+          </h2>
+          <div class="matrix-loader hidden sm:block" style="flex-shrink: 0;"></div>
+        </div>
         <p class="text-slate-600 max-w-2xl mx-auto leading-relaxed">
           Delivering large-scale infrastructure across India with precision, speed, and unwavering quality.
         </p>
@@ -327,8 +347,12 @@
   </section>
 
   <!-- ===== 5. WHY CHOOSE US / CREDENTIALS ===== -->
-  <section id="credentials" class="section-padding bg-white">
-    <div class="max-w-7xl mx-auto px-6">
+  <section id="credentials" class="section-padding relative overflow-hidden bg-white">
+    <!-- Aurora Background -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="aurora-layer"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
       <!-- Heading -->
       <div class="text-center mb-14 animate-fade-in-up">
         <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
@@ -522,6 +546,7 @@
     }
   })();
   </script>
+
 
 </body>
 </html>

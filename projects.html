@@ -58,6 +58,76 @@
   </section>
 
   <!-- ============================================================
+       ZOOM PARALLAX SHOWCASE (Desktop only)
+       ============================================================ -->
+  <section class="bg-dark hidden md:block">
+    <div id="zoom-parallax" class="relative" style="height: 300vh;">
+      <div class="sticky top-0 h-screen overflow-hidden">
+
+        <!-- Image 0: Center hero (scale 4x) -->
+        <div class="zoom-img absolute inset-0 flex items-center justify-center" data-scale="4">
+          <div class="relative" style="height:25vh; width:25vw;">
+            <img src="images/project-nh130.jpg" alt="Six-Lane Highway NH-130-CD" class="w-full h-full object-cover rounded-lg shadow-2xl">
+          </div>
+        </div>
+
+        <!-- Image 1: Top-left offset (scale 5x) -->
+        <div class="zoom-img absolute inset-0 flex items-center justify-center" data-scale="5">
+          <div class="relative" style="height:30vh; width:35vw; top:-30vh; left:5vw;">
+            <img src="images/project-kadapa.jpg" alt="Kadapa Expressway Tunnel Portals" class="w-full h-full object-cover rounded-lg shadow-2xl">
+          </div>
+        </div>
+
+        <!-- Image 2: Left offset tall (scale 6x) -->
+        <div class="zoom-img absolute inset-0 flex items-center justify-center" data-scale="6">
+          <div class="relative" style="height:45vh; width:20vw; top:-10vh; left:-25vw;">
+            <img src="images/project-polavaram.jpg" alt="Polavaram Tunnel Interior" class="w-full h-full object-cover rounded-lg shadow-2xl">
+          </div>
+        </div>
+
+        <!-- Image 3: Right offset (scale 5x) -->
+        <div class="zoom-img absolute inset-0 flex items-center justify-center" data-scale="5">
+          <div class="relative" style="height:25vh; width:25vw; left:27.5vw;">
+            <img src="images/project-railways.jpg" alt="Yavatmal-Nanded Railway Excavation" class="w-full h-full object-cover rounded-lg shadow-2xl">
+          </div>
+        </div>
+
+        <!-- Image 4: Bottom-right (scale 6x) -->
+        <div class="zoom-img absolute inset-0 flex items-center justify-center" data-scale="6">
+          <div class="relative" style="height:25vh; width:20vw; top:27.5vh; left:5vw;">
+            <img src="images/project-nh130-2.jpg" alt="Elevated Viaduct NH-130-CD" class="w-full h-full object-cover rounded-lg shadow-2xl">
+          </div>
+        </div>
+
+        <!-- Image 5: Bottom-left (scale 8x) -->
+        <div class="zoom-img absolute inset-0 flex items-center justify-center" data-scale="8">
+          <div class="relative" style="height:25vh; width:30vw; top:27.5vh; left:-22.5vw;">
+            <img src="images/project-kadapa-2.jpg" alt="Kadapa Tunnel Interior" class="w-full h-full object-cover rounded-lg shadow-2xl">
+          </div>
+        </div>
+
+        <!-- Image 6: Far right small (scale 9x) -->
+        <div class="zoom-img absolute inset-0 flex items-center justify-center" data-scale="9">
+          <div class="relative" style="height:15vh; width:15vw; top:22.5vh; left:25vw;">
+            <img src="images/project-polavaram-2.jpg" alt="Polavaram Tunnel Portal" class="w-full h-full object-cover rounded-lg shadow-2xl">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile Project Gallery (replaces parallax on small screens) -->
+  <section class="bg-dark py-8 px-4 md:hidden">
+    <div class="grid grid-cols-2 gap-3">
+      <img src="images/project-nh130.jpg" alt="Six-Lane Highway NH-130-CD" class="w-full h-36 object-cover rounded-lg">
+      <img src="images/project-kadapa.jpg" alt="Kadapa Expressway" class="w-full h-36 object-cover rounded-lg">
+      <img src="images/project-polavaram.jpg" alt="Polavaram Tunnel" class="w-full h-36 object-cover rounded-lg">
+      <img src="images/project-railways.jpg" alt="Yavatmal-Nanded Railway" class="w-full h-36 object-cover rounded-lg">
+    </div>
+  </section>
+
+  <!-- ============================================================
        2. FEATURED PROJECTS
        ============================================================ -->
   <section class="bg-white section-padding">
@@ -348,8 +418,13 @@
   <!-- ============================================================
        3. OTHER PROJECTS
        ============================================================ -->
-  <section class="bg-light section-padding">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="bg-white section-padding relative overflow-hidden">
+    <!-- Crosshatch Pattern -->
+    <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: repeating-linear-gradient(22.5deg, transparent, transparent 2px, rgba(75,85,99,0.06) 2px, rgba(75,85,99,0.06) 3px, transparent 3px, transparent 8px), repeating-linear-gradient(67.5deg, transparent, transparent 2px, rgba(107,114,128,0.05) 2px, rgba(107,114,128,0.05) 3px, transparent 3px, transparent 8px), repeating-linear-gradient(112.5deg, transparent, transparent 2px, rgba(55,65,81,0.04) 2px, rgba(55,65,81,0.04) 3px, transparent 3px, transparent 8px), repeating-linear-gradient(157.5deg, transparent, transparent 2px, rgba(31,41,55,0.03) 2px, rgba(31,41,55,0.03) 3px, transparent 3px, transparent 8px);"></div>
+    <!-- Soft Yellow Glow -->
+    <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: radial-gradient(circle at center, #FFF991 0%, transparent 70%); opacity: 0.6; mix-blend-mode: multiply;"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
       <!-- Section Heading -->
       <div class="text-center mb-14 animate-fade-in-up">
@@ -495,11 +570,48 @@
   <!-- ============================================================
        5. CURRENTLY ACTIVE PROJECTS BAR
        ============================================================ -->
-  <section class="bg-dark py-12 md:py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up">
-      <h2 class="font-heading text-xl md:text-2xl font-bold text-gold mb-8 tracking-wide">
-        CURRENTLY ACTIVE &mdash; 6 MAJOR PROJECTS
-      </h2>
+  <section class="bg-dark py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in-up">
+
+      <!-- Heading + Loader side by side -->
+      <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-14 mb-12">
+        <!-- Animated Loader -->
+        <div class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0">
+          <div class="active-loader">
+            <div class="loaders">
+              <div class="loader"></div>
+              <div class="loader"></div>
+              <div class="loader"></div>
+              <div class="loader"></div>
+              <div class="loader"></div>
+              <div class="loader"></div>
+              <div class="loader"></div>
+              <div class="loader"></div>
+              <div class="loader"></div>
+            </div>
+            <div class="loadersB">
+              <div class="loaderA"><div class="ball0"></div></div>
+              <div class="loaderA"><div class="ball1"></div></div>
+              <div class="loaderA"><div class="ball2"></div></div>
+              <div class="loaderA"><div class="ball3"></div></div>
+              <div class="loaderA"><div class="ball4"></div></div>
+              <div class="loaderA"><div class="ball5"></div></div>
+              <div class="loaderA"><div class="ball6"></div></div>
+              <div class="loaderA"><div class="ball7"></div></div>
+              <div class="loaderA"><div class="ball8"></div></div>
+            </div>
+          </div>
+        </div>
+        <!-- Title -->
+        <div class="text-center md:text-left">
+          <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-white mb-2">
+            CURRENTLY <span class="text-gold italic">ACTIVE</span>
+          </h2>
+          <p class="text-white/60 text-sm md:text-base tracking-wider uppercase">Major Projects Across India</p>
+        </div>
+      </div>
+
+      <!-- Project Pills -->
       <div class="flex flex-wrap justify-center gap-3 md:gap-4">
         <span class="inline-block border border-amber text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-dark transition-all duration-300">NH 130-CD 100-OD</span>
         <span class="inline-block border border-amber text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-dark transition-all duration-300">NH-544G Bengaluru-Vijayawada</span>
@@ -509,14 +621,20 @@
         <span class="inline-block border border-amber text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-dark transition-all duration-300">STP Haveri</span>
         <span class="inline-block border border-amber text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-dark transition-all duration-300">Musi MLCJ</span>
       </div>
+
     </div>
   </section>
 
   <!-- ============================================================
        6. ACHIEVEMENTS / MILESTONES
        ============================================================ -->
-  <section class="bg-light section-padding">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="bg-light section-padding relative overflow-hidden">
+    <!-- Grid + Dots background -->
+    <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(to right, rgba(0,0,0,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.06) 1px, transparent 1px), radial-gradient(circle, rgba(51,65,85,0.4) 1px, transparent 1px); background-size: 20px 20px, 20px 20px, 20px 20px;"></div>
+    <!-- Yellow glow -->
+    <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(circle at center, #FFF991 0%, transparent 70%); opacity: 0.6; mix-blend-mode: multiply;"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
       <!-- Section Heading -->
       <div class="text-center mb-14 animate-fade-in-up">
@@ -728,6 +846,46 @@
         });
       }
     });
+  </script>
+
+  <!-- Zoom Parallax Scroll Animation -->
+  <script>
+  (function () {
+    "use strict";
+    var container = document.getElementById("zoom-parallax");
+    if (!container) return;
+
+    var images = container.querySelectorAll(".zoom-img");
+    var ticking = false;
+
+    function updateParallax() {
+      var rect = container.getBoundingClientRect();
+      var containerTop = -rect.top;
+      var containerHeight = container.offsetHeight - window.innerHeight;
+
+      /* scrollYProgress: 0 at top, 1 at bottom */
+      var progress = Math.max(0, Math.min(1, containerTop / containerHeight));
+
+      images.forEach(function (el) {
+        var maxScale = parseFloat(el.getAttribute("data-scale")) || 4;
+        /* scale: 1 at progress=0, maxScale at progress=1 */
+        var scale = 1 + (maxScale - 1) * progress;
+        el.style.transform = "scale(" + scale.toFixed(3) + ")";
+      });
+
+      ticking = false;
+    }
+
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    /* Initial call */
+    updateParallax();
+  })();
   </script>
 
 </body>

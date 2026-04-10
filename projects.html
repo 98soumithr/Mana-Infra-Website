@@ -117,59 +117,65 @@
     </div>
   </section>
 
-  <!-- Mobile Scroll Parallax (replaces zoom parallax on small screens) -->
-  <div class="md:hidden" id="mobile-parallax">
-    <!-- Each block: clipped container with an oversized image that shifts on scroll -->
-    <div class="mobile-plx-block relative overflow-hidden" style="height:50vh;">
-      <img src="images/project-nh130.jpg" alt="Six-Lane Highway NH-130-CD" class="mobile-plx-img absolute inset-0 w-full object-cover" style="height:130%; top:-15%;">
-      <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-dark/10"></div>
-      <div class="absolute bottom-5 left-4 right-4 z-10">
-        <span class="text-gold text-xs font-bold tracking-[2px] uppercase">Highways</span>
-        <h3 class="text-white font-heading text-lg font-bold mt-1">Six-Lane Highway NH-130-CD</h3>
-        <p class="text-slate-300 text-xs mt-1">Raipur-Visakhapatnam Corridor, Odisha</p>
-      </div>
-    </div>
+  <!-- ============================================================
+       ZOOM PARALLAX SHOWCASE (Mobile – same zoom effect as desktop)
+       ============================================================ -->
+  <section class="bg-dark md:hidden">
+    <div id="zoom-parallax-mobile" class="relative" style="height: 300vh;">
+      <div class="sticky top-0 h-screen overflow-hidden">
 
-    <div class="mobile-plx-block relative overflow-hidden" style="height:50vh;">
-      <img src="images/project-kadapa.jpg" alt="Kadapa Expressway Tunnel" class="mobile-plx-img absolute inset-0 w-full object-cover" style="height:130%; top:-15%;">
-      <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-dark/10"></div>
-      <div class="absolute bottom-5 left-4 right-4 z-10">
-        <span class="text-gold text-xs font-bold tracking-[2px] uppercase">Tunnels</span>
-        <h3 class="text-white font-heading text-lg font-bold mt-1">Kadapa Expressway Tunnels</h3>
-        <p class="text-slate-300 text-xs mt-1">Tunnel Portal Works, Andhra Pradesh</p>
-      </div>
-    </div>
+        <!-- Image 0: Center hero (scale 4x) -->
+        <div class="zoom-img-m absolute inset-0 flex items-center justify-center" data-scale="4">
+          <div class="relative" style="height:22vh; width:40vw;">
+            <img src="images/project-nh130.jpg" alt="Six-Lane Highway NH-130-CD" class="w-full h-full object-cover rounded-lg shadow-2xl">
+          </div>
+        </div>
 
-    <div class="mobile-plx-block relative overflow-hidden" style="height:50vh;">
-      <img src="images/project-polavaram.jpg" alt="Polavaram Tunnel" class="mobile-plx-img absolute inset-0 w-full object-cover" style="height:130%; top:-15%;">
-      <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-dark/10"></div>
-      <div class="absolute bottom-5 left-4 right-4 z-10">
-        <span class="text-gold text-xs font-bold tracking-[2px] uppercase">Irrigation</span>
-        <h3 class="text-white font-heading text-lg font-bold mt-1">Polavaram Tunnel Works</h3>
-        <p class="text-slate-300 text-xs mt-1">Asia's Largest Irrigation Tunnel, AP</p>
-      </div>
-    </div>
+        <!-- Image 1: Top-left (scale 5x) -->
+        <div class="zoom-img-m absolute inset-0 flex items-center justify-center" data-scale="5">
+          <div class="relative" style="height:18vh; width:42vw; top:-22vh; left:-5vw;">
+            <img src="images/project-kadapa.jpg" alt="Kadapa Expressway Tunnel Portals" class="w-full h-full object-cover rounded-lg shadow-2xl">
+          </div>
+        </div>
 
-    <div class="mobile-plx-block relative overflow-hidden" style="height:50vh;">
-      <img src="images/project-railways.jpg" alt="Yavatmal-Nanded Railway" class="mobile-plx-img absolute inset-0 w-full object-cover" style="height:130%; top:-15%;">
-      <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-dark/10"></div>
-      <div class="absolute bottom-5 left-4 right-4 z-10">
-        <span class="text-gold text-xs font-bold tracking-[2px] uppercase">Railways</span>
-        <h3 class="text-white font-heading text-lg font-bold mt-1">Yavatmal-Nanded Railway</h3>
-        <p class="text-slate-300 text-xs mt-1">Railway Excavation, Maharashtra</p>
-      </div>
-    </div>
+        <!-- Image 2: Left (scale 6x) -->
+        <div class="zoom-img-m absolute inset-0 flex items-center justify-center" data-scale="6">
+          <div class="relative" style="height:28vh; width:30vw; top:-5vh; left:-30vw;">
+            <img src="images/project-polavaram.jpg" alt="Polavaram Tunnel Interior" class="w-full h-full object-cover rounded-lg shadow-2xl">
+          </div>
+        </div>
 
-    <div class="mobile-plx-block relative overflow-hidden" style="height:50vh;">
-      <img src="images/project-nh130-2.jpg" alt="Elevated Viaduct NH-130-CD" class="mobile-plx-img absolute inset-0 w-full object-cover" style="height:130%; top:-15%;">
-      <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-dark/10"></div>
-      <div class="absolute bottom-5 left-4 right-4 z-10">
-        <span class="text-gold text-xs font-bold tracking-[2px] uppercase">Highways</span>
-        <h3 class="text-white font-heading text-lg font-bold mt-1">Elevated Viaduct NH-130-CD</h3>
-        <p class="text-slate-300 text-xs mt-1">Mountainous Terrain, Odisha</p>
+        <!-- Image 3: Right (scale 5x) -->
+        <div class="zoom-img-m absolute inset-0 flex items-center justify-center" data-scale="5">
+          <div class="relative" style="height:18vh; width:35vw; left:26vw;">
+            <img src="images/project-railways.jpg" alt="Yavatmal-Nanded Railway Excavation" class="w-full h-full object-cover rounded-lg shadow-2xl">
+          </div>
+        </div>
+
+        <!-- Image 4: Bottom-right (scale 6x) -->
+        <div class="zoom-img-m absolute inset-0 flex items-center justify-center" data-scale="6">
+          <div class="relative" style="height:18vh; width:32vw; top:22vh; left:10vw;">
+            <img src="images/project-nh130-2.jpg" alt="Elevated Viaduct NH-130-CD" class="w-full h-full object-cover rounded-lg shadow-2xl">
+          </div>
+        </div>
+
+        <!-- Image 5: Bottom-left (scale 7x) -->
+        <div class="zoom-img-m absolute inset-0 flex items-center justify-center" data-scale="7">
+          <div class="relative" style="height:18vh; width:38vw; top:22vh; left:-22vw;">
+            <img src="images/project-kadapa-2.jpg" alt="Kadapa Tunnel Interior" class="w-full h-full object-cover rounded-lg shadow-2xl">
+          </div>
+        </div>
+
+        <!-- Image 6: Far right small (scale 8x) -->
+        <div class="zoom-img-m absolute inset-0 flex items-center justify-center" data-scale="8">
+          <div class="relative" style="height:14vh; width:22vw; top:18vh; left:30vw;">
+            <img src="images/project-polavaram-2.jpg" alt="Polavaram Tunnel Portal" class="w-full h-full object-cover rounded-lg shadow-2xl">
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- ============================================================
        2. FEATURED PROJECTS
@@ -932,40 +938,38 @@
   })();
   </script>
 
-  <!-- Mobile Scroll Parallax -->
+  <!-- Mobile Zoom Parallax (same mechanism as desktop) -->
   <script>
   (function () {
     "use strict";
-    var blocks = document.querySelectorAll(".mobile-plx-block");
-    if (!blocks.length) return;
+    var container = document.getElementById("zoom-parallax-mobile");
+    if (!container) return;
 
+    var images = container.querySelectorAll(".zoom-img-m");
     var ticking = false;
 
-    function updateMobileParallax() {
-      var winH = window.innerHeight;
-      blocks.forEach(function (block) {
-        var rect = block.getBoundingClientRect();
-        /* How far through the viewport is this block? 0 = just entering bottom, 1 = leaving top */
-        var progress = 1 - (rect.bottom / (winH + rect.height));
-        progress = Math.max(0, Math.min(1, progress));
-        /* Shift the oversized image: from +15% to -15% (30% total travel) */
-        var offset = 15 - (progress * 30);
-        var img = block.querySelector(".mobile-plx-img");
-        if (img) {
-          img.style.top = offset + "%";
-        }
+    function updateMobileZoom() {
+      var rect = container.getBoundingClientRect();
+      var containerTop = -rect.top;
+      var containerHeight = container.offsetHeight - window.innerHeight;
+      var progress = Math.max(0, Math.min(1, containerTop / containerHeight));
+
+      images.forEach(function (el) {
+        var maxScale = parseFloat(el.getAttribute("data-scale")) || 4;
+        var scale = 1 + (maxScale - 1) * progress;
+        el.style.transform = "scale(" + scale.toFixed(3) + ")";
       });
       ticking = false;
     }
 
     window.addEventListener("scroll", function () {
       if (!ticking) {
-        requestAnimationFrame(updateMobileParallax);
+        requestAnimationFrame(updateMobileZoom);
         ticking = true;
       }
     }, { passive: true });
 
-    updateMobileParallax();
+    updateMobileZoom();
   })();
   </script>
 

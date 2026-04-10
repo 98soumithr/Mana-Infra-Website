@@ -715,11 +715,14 @@ html {
 }
 
 /* ============================================
-   19. Mobile Scroll Parallax
+   19. Mobile Zoom Parallax
    ============================================ */
-.mobile-plx-img {
-  will-change: top;
-  transition: none;
+.zoom-img-m {
+  will-change: transform;
+}
+
+.zoom-img-m img {
+  backface-visibility: hidden;
 }
 
 /* ============================================

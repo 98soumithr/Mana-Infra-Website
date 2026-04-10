@@ -715,7 +715,14 @@ html {
 }
 
 /* ============================================
-   19. Mobile Responsiveness Fixes
+   19. Mobile Parallax Carousel
+   ============================================ */
+.mobile-parallax-slide img {
+  will-change: transform;
+}
+
+/* ============================================
+   20. Mobile Responsiveness Fixes
    ============================================ */
 
 /* Smaller section padding on small screens */

@@ -549,7 +549,7 @@
       "color:" + COLORS.muted,
       "font-size: 13px",
       "margin: 0",
-    ].join(";"), "Consistency is Key | Est. 2012");
+    ].join(";"), "Build Together, Grow Together | Est. 2012");
 
     wrapper.appendChild(left);
     wrapper.appendChild(right);
@@ -589,7 +589,6 @@
     row.appendChild(buildContactSectors());
 
     container.appendChild(row);
-    container.appendChild(buildManaHoverText());
     container.appendChild(buildBottomBar());
     footer.appendChild(container);
 

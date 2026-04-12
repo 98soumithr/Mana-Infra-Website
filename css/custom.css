@@ -759,6 +759,52 @@ html {
   }
 }
 
+/* ============================================
+   21. Interactive India Map (Location Page)
+   ============================================ */
+
+/* Map container */
+#india-map-container {
+  border: 1px solid rgba(42, 74, 112, 0.3);
+}
+
+/* State legend cards — clickable */
+.state-card {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-width 0.15s ease;
+}
+.state-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(232, 164, 53, 0.15);
+}
+
+/* Detail panel project cards */
+#panel-projects > div {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+#panel-projects > div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile bottom sheet (< 1024px) */
+@media (max-width: 1023px) {
+  #state-detail-panel:not(.hidden) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9998;
+    background: white;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.2);
+    max-height: 75vh;
+    overflow-y: auto;
+    padding: 24px;
+    transform: translateY(0) !important;
+  }
+}
+
 /* Reduce animation motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-in-up,

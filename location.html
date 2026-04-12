@@ -158,66 +158,94 @@
       <!-- Map + Legend Layout -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
 
-        <!-- India Map -->
-        <div class="flex justify-center animate-fade-in-left">
-          <div class="w-full max-w-sm rounded-2xl shadow-2xl overflow-hidden">
-            <img src="map.png" alt="India map with Mana Infrastructure operational states highlighted" class="w-full h-auto">
+        <!-- India Map (Interactive SVG) -->
+        <div class="relative animate-fade-in-left">
+          <div id="india-map-container" class="w-full max-w-md mx-auto lg:mx-0 rounded-2xl shadow-2xl overflow-hidden p-4" style="background: linear-gradient(135deg, #0F1B2D 0%, #162642 100%);">
+            <div id="india-map-svg" class="w-full"></div>
+            <p class="text-center text-white/40 text-xs mt-3 font-medium tracking-wide">Click a highlighted state to view projects</p>
           </div>
         </div>
 
-        <!-- State Legend Cards -->
-        <div class="space-y-4 animate-fade-in-right">
+        <!-- State Info Panel (right column) -->
+        <div class="relative animate-fade-in-right">
 
-          <!-- Andhra Pradesh -->
-          <div class="bg-white rounded-xl shadow-md border-l-4 border-gold p-5 card-hover">
-            <h3 class="font-heading font-bold text-navy text-base mb-1">Andhra Pradesh</h3>
-            <p class="text-slate-500 text-xs mb-3">Headquarters &middot; Tirupati</p>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">NH-130-CD</span>
-              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Polavaram</span>
-              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">HNSS</span>
-              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Kadapa Expressway</span>
+          <!-- Default: State Legend Cards -->
+          <div id="state-legend" class="space-y-4" style="transition: opacity 0.25s ease, transform 0.25s ease;">
+
+            <!-- Andhra Pradesh -->
+            <div class="state-card bg-white rounded-xl shadow-md border-l-4 border-gold p-5 card-hover" data-state-card="ap">
+              <h3 class="font-heading font-bold text-navy text-base mb-1">Andhra Pradesh</h3>
+              <p class="text-slate-500 text-xs mb-3">Headquarters &middot; Tirupati</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Kadapa Expressway</span>
+                <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Polavaram</span>
+                <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">HNSS</span>
+              </div>
             </div>
+
+            <!-- Telangana -->
+            <div class="state-card bg-white rounded-xl shadow-md border-l-4 border-gold p-5 card-hover" data-state-card="tg">
+              <h3 class="font-heading font-bold text-navy text-base mb-1">Telangana</h3>
+              <p class="text-slate-500 text-xs mb-3">Corporate Office &middot; Hyderabad</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Musi MLCJ</span>
+                <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">JLNSS</span>
+                <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Jurala Canal</span>
+              </div>
+            </div>
+
+            <!-- Karnataka -->
+            <div class="state-card bg-white rounded-xl shadow-md border-l-4 border-gold p-5 card-hover" data-state-card="ka">
+              <h3 class="font-heading font-bold text-navy text-base mb-1">Karnataka</h3>
+              <p class="text-slate-500 text-xs mb-3">Active Project Sites</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Mundragi Branch Canal</span>
+                <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Haveri STP</span>
+              </div>
+            </div>
+
+            <!-- Maharashtra -->
+            <div class="state-card bg-white rounded-xl shadow-md border-l-4 border-gold p-5 card-hover" data-state-card="mh">
+              <h3 class="font-heading font-bold text-navy text-base mb-1">Maharashtra</h3>
+              <p class="text-slate-500 text-xs mb-3">Active Project Sites</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Yavatmal-Nanded Railway</span>
+              </div>
+            </div>
+
+            <!-- Odisha -->
+            <div class="state-card bg-white rounded-xl shadow-md border-l-4 border-gold p-5 card-hover" data-state-card="or">
+              <h3 class="font-heading font-bold text-navy text-base mb-1">Odisha</h3>
+              <p class="text-slate-500 text-xs mb-3">Active Project Sites</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">NH-130-CD Pkg OD-08</span>
+              </div>
+            </div>
+
           </div>
 
-          <!-- Telangana -->
-          <div class="bg-white rounded-xl shadow-md border-l-4 border-gold p-5 card-hover">
-            <h3 class="font-heading font-bold text-navy text-base mb-1">Telangana</h3>
-            <p class="text-slate-500 text-xs mb-3">Corporate Office &middot; Hyderabad</p>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Jurala Canal</span>
-              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">JLNSS</span>
-              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Kistlapur</span>
-              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Bhuvanagiri Musi</span>
-            </div>
-          </div>
+          <!-- Detail Panel (hidden by default, shown on state click) -->
+          <div id="state-detail-panel" class="hidden" style="opacity: 0; transition: opacity 0.25s ease, transform 0.25s ease; transform: translateX(20px);">
+            <!-- Back button -->
+            <button id="panel-back-btn" class="flex items-center gap-2 text-gold hover:text-amber mb-5 transition-colors cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/>
+              </svg>
+              <span class="text-sm font-semibold uppercase tracking-wider">All States</span>
+            </button>
 
-          <!-- Karnataka -->
-          <div class="bg-white rounded-xl shadow-md border-l-4 border-gold p-5 card-hover">
-            <h3 class="font-heading font-bold text-navy text-base mb-1">Karnataka</h3>
-            <p class="text-slate-500 text-xs mb-3">Active Project Sites</p>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Mundragi Branch Canal</span>
-              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Haveri STP</span>
+            <!-- State header -->
+            <div class="mb-6">
+              <h3 id="panel-state-name" class="font-heading font-bold text-navy text-2xl"></h3>
+              <p id="panel-state-subtitle" class="text-slate-500 text-sm mt-1"></p>
+              <div class="flex items-center gap-3 mt-3">
+                <span id="panel-active-count" class="text-xs font-bold bg-emerald-500/10 text-emerald-600 px-3 py-1 rounded-full"></span>
+                <span id="panel-completed-count" class="text-xs font-bold bg-slate-500/10 text-slate-500 px-3 py-1 rounded-full"></span>
+              </div>
             </div>
-          </div>
 
-          <!-- Maharashtra -->
-          <div class="bg-white rounded-xl shadow-md border-l-4 border-gold p-5 card-hover">
-            <h3 class="font-heading font-bold text-navy text-base mb-1">Maharashtra</h3>
-            <p class="text-slate-500 text-xs mb-3">Active Project Sites</p>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">Yavatmal-Nanded Railway</span>
-            </div>
-          </div>
-
-          <!-- Odisha -->
-          <div class="bg-white rounded-xl shadow-md border-l-4 border-gold p-5 card-hover">
-            <h3 class="font-heading font-bold text-navy text-base mb-1">Odisha</h3>
-            <p class="text-slate-500 text-xs mb-3">Active Project Sites</p>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2.5 py-1 rounded-full">NH-130-CD Pkg OD-08</span>
-            </div>
+            <!-- Projects list -->
+            <div id="panel-projects" class="space-y-3 max-h-[60vh] overflow-y-auto pr-1"></div>
           </div>
 
         </div>
@@ -391,12 +419,269 @@
           observer.observe(el);
         });
       } else {
-        /* Fallback: show everything immediately */
         animatedElements.forEach(function (el) {
           el.classList.add('is-visible');
         });
       }
     });
+  </script>
+
+  <!-- ============================================
+       Interactive India Map
+       ============================================ -->
+  <script>
+  (function () {
+    /* ── Project Data ── */
+    var MANA_PROJECTS = {
+      ap: {
+        name: 'Andhra Pradesh',
+        subtitle: 'Headquarters \u00b7 Tirupati',
+        projects: [
+          { name: 'Bengaluru-Vijayawada Expressway (Kadapa)', location: 'Kadapa District', sector: 'Highways', status: 'Active' },
+          { name: 'Polavaram Twin Tunnels \u2013 Pkg 63', location: 'Polavaram', sector: 'Irrigation', status: 'Active' },
+          { name: 'Polavaram Twin Tunnels \u2013 Pkg 64', location: 'Polavaram', sector: 'Irrigation', status: 'Active' },
+          { name: 'H.N.S.S. Project \u2013 Package 31', location: 'Anantapur', sector: 'Irrigation', status: 'Completed' },
+          { name: 'H.N.S.S. Project \u2013 Packages 28 & 29', location: 'Kurnool', sector: 'Irrigation', status: 'Completed' },
+          { name: 'H.N.S.S. Project \u2013 Packages 54, 57 & 58', location: 'Anantapur', sector: 'Irrigation', status: 'Completed' },
+          { name: 'Thottapalli Barrage \u2013 Package 1', location: 'Vizianagaram', sector: 'Irrigation', status: 'Completed' },
+          { name: 'Paleru Reservoir Project', location: 'Ongole', sector: 'Irrigation', status: 'Completed' }
+        ]
+      },
+      tg: {
+        name: 'Telangana',
+        subtitle: 'Corporate Office \u00b7 Hyderabad',
+        projects: [
+          { name: 'Musi MLCJ Irrigation Project', location: 'Bhuvanagiri', sector: 'Irrigation', status: 'Active' },
+          { name: 'Jurala Parallel Canal', location: 'Atmakur', sector: 'Irrigation', status: 'Completed' },
+          { name: 'JLNSS \u2013 Packages 100, 106 & 108', location: 'Peddapalli', sector: 'Irrigation', status: 'Completed' },
+          { name: 'Kistlapur Canal', location: 'Gajwel', sector: 'Irrigation', status: 'Completed' },
+          { name: 'JCR-DLIS Phase-3 \u2013 Package 4', location: 'Warangal', sector: 'Irrigation', status: 'Completed' }
+        ]
+      },
+      ka: {
+        name: 'Karnataka',
+        subtitle: 'Active Project Sites',
+        projects: [
+          { name: 'STP Haveri', location: 'Haveri', sector: 'Water Treatment', status: 'Active' },
+          { name: 'Mundragi Branch Canal', location: 'Koppal', sector: 'Irrigation', status: 'Completed' }
+        ]
+      },
+      mh: {
+        name: 'Maharashtra',
+        subtitle: 'Active Project Sites',
+        projects: [
+          { name: 'Yavatmal-Nanded Railway Line (Pkg 3A)', location: 'Yavatmal-Nanded', sector: 'Railways', status: 'Active' }
+        ]
+      },
+      or: {
+        name: 'Odisha',
+        subtitle: 'Active Project Sites',
+        projects: [
+          { name: 'NH-130-CD Kandili-Tumbigura (Pkg OD-08)', location: 'Kandili-Tumbigura', sector: 'Highways', status: 'Active' }
+        ]
+      }
+    };
+
+    var OPERATIONAL = ['ap', 'tg', 'ka', 'mh', 'or'];
+    var currentState = null;
+
+    /* ── Load SVG Map ── */
+    function loadMap() {
+      fetch('images/india-map.svg')
+        .then(function (r) { return r.text(); })
+        .then(function (svgText) {
+          var container = document.getElementById('india-map-svg');
+          if (!container) return;
+          container.innerHTML = svgText;
+          var svg = container.querySelector('svg');
+          if (!svg) return;
+          svg.style.width = '100%';
+          svg.style.height = 'auto';
+          svg.setAttribute('role', 'img');
+          svg.setAttribute('aria-label', 'Interactive India map showing Mana Infrastructure operational states');
+          initInteractions(svg);
+        });
+    }
+
+    /* ── Map Interactions ── */
+    function initInteractions(svg) {
+      var paths = svg.querySelectorAll('path[id]');
+      paths.forEach(function (path) {
+        var id = path.getAttribute('id');
+        if (OPERATIONAL.indexOf(id) !== -1) {
+          path.setAttribute('data-state', id);
+          path.setAttribute('role', 'button');
+          path.setAttribute('tabindex', '0');
+          path.setAttribute('aria-label', 'View projects in ' + MANA_PROJECTS[id].name);
+
+          path.addEventListener('mouseenter', function () { highlightCard(id); });
+          path.addEventListener('mouseleave', function () { unhighlightCard(id); });
+          path.addEventListener('click', function () { openPanel(id); setActive(svg, id); });
+          path.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              openPanel(id);
+              setActive(svg, id);
+            }
+          });
+        }
+      });
+    }
+
+    /* ── Legend Card Hover Sync ── */
+    function highlightCard(id) {
+      var card = document.querySelector('[data-state-card="' + id + '"]');
+      if (card) {
+        card.style.transform = 'translateY(-3px)';
+        card.style.boxShadow = '0 10px 30px rgba(232,164,53,0.2)';
+        card.style.borderLeftColor = '#E8A435';
+        card.style.borderLeftWidth = '6px';
+      }
+    }
+    function unhighlightCard(id) {
+      var card = document.querySelector('[data-state-card="' + id + '"]');
+      if (card) {
+        card.style.transform = '';
+        card.style.boxShadow = '';
+        card.style.borderLeftWidth = '';
+      }
+    }
+
+    /* ── Active State on Map ── */
+    function setActive(svg, id) {
+      svg.querySelectorAll('.state-highlight').forEach(function (p) { p.classList.remove('active'); });
+      var el = svg.querySelector('#' + id);
+      if (el) el.classList.add('active');
+    }
+    function clearActive() {
+      var c = document.getElementById('india-map-svg');
+      if (c) c.querySelectorAll('.state-highlight').forEach(function (p) { p.classList.remove('active'); });
+    }
+
+    /* ── Open Detail Panel ── */
+    function openPanel(id) {
+      var data = MANA_PROJECTS[id];
+      if (!data) return;
+      currentState = id;
+
+      var legend = document.getElementById('state-legend');
+      var panel = document.getElementById('state-detail-panel');
+
+      // Populate header
+      document.getElementById('panel-state-name').textContent = data.name;
+      document.getElementById('panel-state-subtitle').textContent = data.subtitle;
+
+      var active = data.projects.filter(function (p) { return p.status === 'Active'; }).length;
+      var completed = data.projects.filter(function (p) { return p.status === 'Completed'; }).length;
+      document.getElementById('panel-active-count').textContent = active + ' Active';
+      document.getElementById('panel-completed-count').textContent = completed + ' Completed';
+
+      // Build project cards
+      var list = document.getElementById('panel-projects');
+      list.innerHTML = '';
+      data.projects.forEach(function (proj) {
+        var card = document.createElement('div');
+        card.className = 'bg-white rounded-lg shadow-sm border border-slate-100 p-4 hover:shadow-md transition-shadow';
+        card.innerHTML =
+          '<div class="flex items-start justify-between gap-3">' +
+            '<div class="flex-1">' +
+              '<h4 class="font-heading font-bold text-navy text-sm">' + proj.name + '</h4>' +
+              '<p class="text-slate-500 text-xs mt-1">' + proj.location + '</p>' +
+            '</div>' +
+            '<span class="text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0 ' +
+              (proj.status === 'Active' ? 'bg-emerald-500/10 text-emerald-600' : 'bg-slate-100 text-slate-500') +
+            '">' + proj.status + '</span>' +
+          '</div>' +
+          '<div class="flex items-center gap-2 mt-2 pt-2 border-t border-slate-50">' +
+            '<span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2 py-0.5 rounded-full">' + proj.sector + '</span>' +
+          '</div>';
+        list.appendChild(card);
+      });
+
+      // Transition: legend out, panel in
+      legend.style.opacity = '0';
+      legend.style.transform = 'translateX(-20px)';
+      setTimeout(function () {
+        legend.classList.add('hidden');
+        panel.classList.remove('hidden');
+        // Mobile: show backdrop
+        if (window.innerWidth < 1024) showBackdrop();
+        requestAnimationFrame(function () {
+          panel.style.opacity = '1';
+          panel.style.transform = 'translateX(0)';
+        });
+      }, 250);
+    }
+
+    /* ── Close Detail Panel ── */
+    function closePanel() {
+      currentState = null;
+      var legend = document.getElementById('state-legend');
+      var panel = document.getElementById('state-detail-panel');
+
+      panel.style.opacity = '0';
+      panel.style.transform = window.innerWidth < 1024 ? 'translateY(100%)' : 'translateX(20px)';
+      hideBackdrop();
+      setTimeout(function () {
+        panel.classList.add('hidden');
+        legend.classList.remove('hidden');
+        requestAnimationFrame(function () {
+          legend.style.opacity = '1';
+          legend.style.transform = 'translateX(0)';
+        });
+      }, 250);
+      clearActive();
+    }
+
+    /* ── Mobile Backdrop ── */
+    var backdrop = null;
+    function createBackdrop() {
+      if (backdrop) return;
+      backdrop = document.createElement('div');
+      backdrop.id = 'map-backdrop';
+      backdrop.className = 'fixed inset-0 bg-black/40 z-[9997] hidden';
+      backdrop.style.opacity = '0';
+      backdrop.style.transition = 'opacity 0.3s ease';
+      document.body.appendChild(backdrop);
+      backdrop.addEventListener('click', closePanel);
+    }
+    function showBackdrop() {
+      if (!backdrop) createBackdrop();
+      backdrop.classList.remove('hidden');
+      requestAnimationFrame(function () { backdrop.style.opacity = '1'; });
+    }
+    function hideBackdrop() {
+      if (!backdrop) return;
+      backdrop.style.opacity = '0';
+      setTimeout(function () { backdrop.classList.add('hidden'); }, 300);
+    }
+
+    /* ── Init ── */
+    document.addEventListener('DOMContentLoaded', function () {
+      loadMap();
+      createBackdrop();
+
+      // Back button
+      var backBtn = document.getElementById('panel-back-btn');
+      if (backBtn) backBtn.addEventListener('click', closePanel);
+
+      // Legend card clicks → open panel
+      document.querySelectorAll('[data-state-card]').forEach(function (card) {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', function () {
+          var id = card.getAttribute('data-state-card');
+          openPanel(id);
+          var svg = document.querySelector('#india-map-svg svg');
+          if (svg) setActive(svg, id);
+        });
+      });
+
+      // Escape key closes panel
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && currentState) closePanel();
+      });
+    });
+  })();
   </script>
 
 </body>

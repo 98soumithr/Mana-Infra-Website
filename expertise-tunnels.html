@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tunnels - Mana Infrastructure</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1B2A4A',
+            amber: '#D4922E',
+            gold: '#E8A435',
+            dark: '#0F1B2D',
+            light: '#F8FAFC',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="font-body text-slate-800">
+
+  <div id="navbar"></div>
+
+  <!-- Hero -->
+  <section class="relative w-full" style="height: 45vh; min-height: 320px;">
+    <img src="images/tunnels-1.jpg" alt="Tunnel construction" class="absolute inset-0 w-full h-full object-cover">
+    <div class="hero-overlay"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+      <h1 class="font-heading text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up">
+        <span class="text-white">TUNNEL </span><span class="text-gold italic">ENGINEERING</span>
+      </h1>
+      <nav class="animate-fade-in-up delay-200" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2 text-sm text-white/60">
+          <li><a href="index.html" class="hover:text-gold transition-colors duration-300">Home</a></li>
+          <li class="text-white/40">&gt;</li>
+          <li><a href="index.html#expertise" class="hover:text-gold transition-colors duration-300">Expertise</a></li>
+          <li class="text-white/40">&gt;</li>
+          <li class="text-gold font-medium">Tunnels</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section-padding bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-1 h-10 bg-gold rounded-full"></div>
+            <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy">What We Do</h2>
+          </div>
+          <p class="text-slate-600 leading-relaxed mb-4">
+            Mana Infrastructure has extensive experience in tunnel construction using the New Austrian Tunnelling Method (NATM). We specialize in twin-bore tunnels up to 900 meters, executing complex underground works with precision and safety.
+          </p>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            Our tunnel portfolio includes work on the Polavaram project — one of India's most significant irrigation initiatives — where we handle excavation, shotcrete lining, rock bolting, and waterproofing in challenging geological conditions.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-navy/5 text-navy text-sm font-medium rounded-full">NATM</span>
+            <span class="px-4 py-2 bg-navy/5 text-navy text-sm font-medium rounded-full">Polavaram</span>
+            <span class="px-4 py-2 bg-navy/5 text-navy text-sm font-medium rounded-full">Twin-bore</span>
+            <span class="px-4 py-2 bg-navy/5 text-navy text-sm font-medium rounded-full">Shotcrete</span>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg">
+          <img src="images/tunnels-2.jpg" alt="Tunnel boring operations" class="w-full h-80 object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities -->
+  <section class="section-padding bg-light">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy mb-3">Our Capabilities</h2>
+        <p class="text-slate-600 max-w-2xl mx-auto">Advanced tunnelling expertise with NATM methodology and modern support systems.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-gold">
+          <h3 class="font-heading font-bold text-navy mb-2">NATM Excavation</h3>
+          <p class="text-slate-600 text-sm">Controlled blasting and mechanical excavation following the New Austrian Tunnelling Method.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-gold">
+          <h3 class="font-heading font-bold text-navy mb-2">Shotcrete Lining</h3>
+          <p class="text-slate-600 text-sm">Wet and dry-mix shotcrete application with steel fibre reinforcement for immediate ground support.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-gold">
+          <h3 class="font-heading font-bold text-navy mb-2">Rock Bolting</h3>
+          <p class="text-slate-600 text-sm">Systematic rock bolting patterns with grouted anchors for tunnel stabilization.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-gold">
+          <h3 class="font-heading font-bold text-navy mb-2">Waterproofing</h3>
+          <p class="text-slate-600 text-sm">Comprehensive membrane waterproofing systems for long-term tunnel durability.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-gold">
+          <h3 class="font-heading font-bold text-navy mb-2">Portal Works</h3>
+          <p class="text-slate-600 text-sm">Tunnel portal construction including slope stabilization and retaining structures.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-gold">
+          <h3 class="font-heading font-bold text-navy mb-2">Safety Systems</h3>
+          <p class="text-slate-600 text-sm">Ventilation, lighting, fire suppression, and emergency evacuation infrastructure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section-padding bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy mb-3">Project Gallery</h2>
+        <p class="text-slate-600">Our tunnel construction work showcasing NATM methodology in action.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="rounded-xl overflow-hidden shadow-md group">
+          <img src="images/tunnels-1.jpg" alt="Tunnel project 1" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-md group">
+          <img src="images/tunnels-2.jpg" alt="Tunnel project 2" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-md group">
+          <img src="images/tunnels-3.jpg" alt="Tunnel project 3" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-md group">
+          <img src="images/tunnels-4.jpg" alt="Tunnel project 4" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-navy text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-white mb-4">Interested in Our Tunnel Projects?</h2>
+      <p class="text-white/70 mb-8">Get in touch to learn more about our tunnelling capabilities and NATM expertise.</p>
+      <a href="contact.html" class="inline-block px-8 py-3 bg-gold text-dark font-semibold rounded-lg hover:bg-amber transition-colors duration-300">Contact Us</a>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+  <script src="shared/nav.js"></script>
+  <script src="shared/footer.js"></script>
+</body>
+</html>

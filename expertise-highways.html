@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Highways & Roads - Mana Infrastructure</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1B2A4A',
+            amber: '#D4922E',
+            gold: '#E8A435',
+            dark: '#0F1B2D',
+            light: '#F8FAFC',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="font-body text-slate-800">
+
+  <div id="navbar"></div>
+
+  <!-- Hero -->
+  <section class="relative w-full" style="height: 45vh; min-height: 320px;">
+    <img src="images/highways-1.jpg" alt="Highway construction" class="absolute inset-0 w-full h-full object-cover">
+    <div class="hero-overlay"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+      <h1 class="font-heading text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up">
+        <span class="text-white">HIGHWAYS & </span><span class="text-gold italic">ROADS</span>
+      </h1>
+      <nav class="animate-fade-in-up delay-200" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2 text-sm text-white/60">
+          <li><a href="index.html" class="hover:text-gold transition-colors duration-300">Home</a></li>
+          <li class="text-white/40">&gt;</li>
+          <li><a href="index.html#expertise" class="hover:text-gold transition-colors duration-300">Expertise</a></li>
+          <li class="text-white/40">&gt;</li>
+          <li class="text-gold font-medium">Highways & Roads</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section-padding bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-1 h-10 bg-gold rounded-full"></div>
+            <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy">What We Do</h2>
+          </div>
+          <p class="text-slate-600 leading-relaxed mb-4">
+            Mana Infrastructure specializes in national highway construction including six-lane and four-lane expressways over challenging terrain. Our expertise spans the entire lifecycle — from earthwork and subgrade preparation to bituminous paving, structures, and road furniture.
+          </p>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            We have successfully delivered highway projects under NHAI's Bharatmala Pariyojana program, working across Andhra Pradesh, Telangana, Karnataka, Maharashtra, and Odisha with a reputation for on-time execution and quality workmanship.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-navy/5 text-navy text-sm font-medium rounded-full">NHAI</span>
+            <span class="px-4 py-2 bg-navy/5 text-navy text-sm font-medium rounded-full">Bharatmala</span>
+            <span class="px-4 py-2 bg-navy/5 text-navy text-sm font-medium rounded-full">NH-544G</span>
+            <span class="px-4 py-2 bg-navy/5 text-navy text-sm font-medium rounded-full">NH-130</span>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg">
+          <img src="images/highways-2.jpg" alt="Highway construction in progress" class="w-full h-80 object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities -->
+  <section class="section-padding bg-light">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy mb-3">Our Capabilities</h2>
+        <p class="text-slate-600 max-w-2xl mx-auto">End-to-end highway development with modern equipment and experienced teams.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-gold">
+          <h3 class="font-heading font-bold text-navy mb-2">Earthwork & Grading</h3>
+          <p class="text-slate-600 text-sm">Large-scale earthwork, embankment filling, and subgrade preparation for multi-lane highways.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-gold">
+          <h3 class="font-heading font-bold text-navy mb-2">Bituminous Paving</h3>
+          <p class="text-slate-600 text-sm">Hot-mix asphalt paving with sensor-controlled pavers and quality-controlled mix design.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-gold">
+          <h3 class="font-heading font-bold text-navy mb-2">Rigid Pavement</h3>
+          <p class="text-slate-600 text-sm">Concrete pavement construction with slip-form pavers for expressways and national highways.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-gold">
+          <h3 class="font-heading font-bold text-navy mb-2">Drainage Systems</h3>
+          <p class="text-slate-600 text-sm">Cross-drainage structures, box culverts, and stormwater management systems.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-gold">
+          <h3 class="font-heading font-bold text-navy mb-2">Road Furniture</h3>
+          <p class="text-slate-600 text-sm">Crash barriers, signage, lane marking, and toll plaza infrastructure.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-gold">
+          <h3 class="font-heading font-bold text-navy mb-2">Quality Assurance</h3>
+          <p class="text-slate-600 text-sm">In-house labs for material testing and IRC compliance verification at every stage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section-padding bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy mb-3">Project Gallery</h2>
+        <p class="text-slate-600">A glimpse of our highway and road construction work across India.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="rounded-xl overflow-hidden shadow-md group">
+          <img src="images/highways-1.jpg" alt="Highway project 1" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-md group">
+          <img src="images/highways-2.jpg" alt="Highway project 2" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-md group">
+          <img src="images/highways-3.jpg" alt="Highway project 3" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-md group">
+          <img src="images/highways-4.jpg" alt="Highway project 4" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-navy text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-white mb-4">Interested in Our Highway Projects?</h2>
+      <p class="text-white/70 mb-8">Get in touch to learn more about our highway construction capabilities and ongoing projects.</p>
+      <a href="contact.html" class="inline-block px-8 py-3 bg-gold text-dark font-semibold rounded-lg hover:bg-amber transition-colors duration-300">Contact Us</a>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+  <script src="shared/nav.js"></script>
+  <script src="shared/footer.js"></script>
+</body>
+</html>

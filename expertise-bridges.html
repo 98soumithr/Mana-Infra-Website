@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bridges & Viaducts - Mana Infrastructure</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1B2A4A',
+            amber: '#D4922E',
+            gold: '#E8A435',
+            dark: '#0F1B2D',
+            light: '#F8FAFC',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="font-body text-slate-800">
+
+  <div id="navbar"></div>
+
+  <!-- Hero -->
+  <section class="relative w-full" style="height: 45vh; min-height: 320px;">
+    <img src="images/bridges-1.jpg" alt="Bridge construction" class="absolute inset-0 w-full h-full object-cover">
+    <div class="hero-overlay"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+      <h1 class="font-heading text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up">
+        <span class="text-white">BRIDGES & </span><span class="text-gold italic">VIADUCTS</span>
+      </h1>
+      <nav class="animate-fade-in-up delay-200" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2 text-sm text-white/60">
+          <li><a href="index.html" class="hover:text-gold transition-colors duration-300">Home</a></li>
+          <li class="text-white/40">&gt;</li>
+          <li><a href="index.html#expertise" class="hover:text-gold transition-colors duration-300">Expertise</a></li>
+          <li class="text-white/40">&gt;</li>
+          <li class="text-gold font-medium">Bridges & Viaducts</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section-padding bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-1 h-10 bg-gold rounded-full"></div>
+            <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy">What We Do</h2>
+          </div>
+          <p class="text-slate-600 leading-relaxed mb-4">
+            Mana Infrastructure constructs major and minor bridges, elevated viaducts, and structural works seamlessly integrated into highway and railway infrastructure. Our bridge engineering covers pile foundations, pier construction, and superstructure erection.
+          </p>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            From the OD-08 viaduct on NH-544G to railway bridges for RVNL projects, we deliver structurally sound, aesthetically designed bridge infrastructure built to last generations.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-navy/5 text-navy text-sm font-medium rounded-full">NH-544G</span>
+            <span class="px-4 py-2 bg-navy/5 text-navy text-sm font-medium rounded-full">OD-08 Viaduct</span>
+            <span class="px-4 py-2 bg-navy/5 text-navy text-sm font-medium rounded-full">PSC Girders</span>
+            <span class="px-4 py-2 bg-navy/5 text-navy text-sm font-medium rounded-full">Pile Foundation</span>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg">
+          <img src="images/bridges-2.jpg" alt="Bridge construction in progress" class="w-full h-80 object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities -->
+  <section class="section-padding bg-light">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy mb-3">Our Capabilities</h2>
+        <p class="text-slate-600 max-w-2xl mx-auto">Complete bridge engineering from foundation to deck with modern construction methods.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-gold">
+          <h3 class="font-heading font-bold text-navy mb-2">Pile Foundations</h3>
+          <p class="text-slate-600 text-sm">Bored cast-in-situ piles and driven pile foundations for bridge substructure.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-gold">
+          <h3 class="font-heading font-bold text-navy mb-2">Pier & Abutment</h3>
+          <p class="text-slate-600 text-sm">RCC pier construction, well foundations, and abutment works for all bridge types.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-gold">
+          <h3 class="font-heading font-bold text-navy mb-2">PSC Girders</h3>
+          <p class="text-slate-600 text-sm">Pre-stressed concrete girder casting, transportation, and erection using launching girders.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-gold">
+          <h3 class="font-heading font-bold text-navy mb-2">Elevated Viaducts</h3>
+          <p class="text-slate-600 text-sm">Multi-span viaduct construction for highway flyovers and grade-separated junctions.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-gold">
+          <h3 class="font-heading font-bold text-navy mb-2">Steel Bridges</h3>
+          <p class="text-slate-600 text-sm">Structural steel bridge fabrication and erection for railway and road crossings.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-gold">
+          <h3 class="font-heading font-bold text-navy mb-2">Deck Construction</h3>
+          <p class="text-slate-600 text-sm">Cast-in-place deck slabs, expansion joints, bearings, and wearing course application.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section-padding bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy mb-3">Project Gallery</h2>
+        <p class="text-slate-600">Our bridge and viaduct construction work across India.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="rounded-xl overflow-hidden shadow-md group">
+          <img src="images/bridges-1.jpg" alt="Bridge project 1" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-md group">
+          <img src="images/bridges-2.jpg" alt="Bridge project 2" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-md group">
+          <img src="images/bridges-3.jpg" alt="Bridge project 3" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-md group">
+          <img src="images/bridges-4.jpg" alt="Bridge project 4" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-navy text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-white mb-4">Interested in Our Bridge Projects?</h2>
+      <p class="text-white/70 mb-8">Get in touch to learn more about our bridge and viaduct construction capabilities.</p>
+      <a href="contact.html" class="inline-block px-8 py-3 bg-gold text-dark font-semibold rounded-lg hover:bg-amber transition-colors duration-300">Contact Us</a>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+  <script src="shared/nav.js"></script>
+  <script src="shared/footer.js"></script>
+</body>
+</html>

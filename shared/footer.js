@@ -11,7 +11,14 @@
     { label: "Contact Us", href: "contact.html" },
   ];
 
-  var SECTORS = ["Highways", "Railways", "Irrigation", "Tunnels", "Bridges"];
+  var SECTORS = [
+    { label: "Highways", href: "expertise-highways.html" },
+    { label: "Railways", href: "expertise-railways.html" },
+    { label: "Irrigation", href: "expertise-irrigation.html" },
+    { label: "Tunnels", href: "expertise-tunnels.html" },
+    { label: "Bridges", href: "expertise-bridges.html" },
+    { label: "Urban Infra", href: "expertise-urban.html" },
+  ];
 
   var STATES = ["Andhra Pradesh", "Telangana", "Karnataka", "Maharashtra", "Odisha"];
 
@@ -258,7 +265,7 @@
     ].join(";"));
 
     SECTORS.forEach(function (sector) {
-      var pill = el("span", [
+      var pill = el("a", [
         "display: inline-block",
         "border: 1px solid " + COLORS.gold,
         "color:" + COLORS.gold,
@@ -268,8 +275,10 @@
         "border-radius: 20px",
         "letter-spacing: 0.5px",
         "transition: background 0.25s ease, color 0.25s ease",
-        "cursor: default",
-      ].join(";"), sector);
+        "cursor: pointer",
+        "text-decoration: none",
+      ].join(";"), sector.label);
+      pill.href = sector.href;
 
       pill.addEventListener("mouseenter", function () {
         pill.style.background = COLORS.gold;

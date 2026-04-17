@@ -101,7 +101,7 @@
       "font-style: italic",
       "margin: 0 0 12px 0",
       "letter-spacing: 0.5px",
-    ].join(";"), "Build Together, Grow Together");
+    ].join(";"), "Together We Build, Together We Grow");
     col.appendChild(tagline);
 
     /* Description */
@@ -558,7 +558,7 @@
       "color:" + COLORS.muted,
       "font-size: 13px",
       "margin: 0",
-    ].join(";"), "Build Together, Grow Together | Est. 2012");
+    ].join(";"), "Together We Build, Together We Grow | Est. 2012");
 
     wrapper.appendChild(left);
     wrapper.appendChild(right);

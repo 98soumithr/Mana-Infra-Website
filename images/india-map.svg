@@ -70,7 +70,7 @@
 <text x="250" y="510" class="state-label">AP</text>
 <text x="240" y="435" class="state-label">TG</text>
 <text x="170" y="495" class="state-label">KA</text>
-<text x="190" y="370" class="state-label">MH</text>
+<text x="160" y="425" class="state-label">MH</text>
 <text x="340" y="395" class="state-label">OR</text>
 <text x="306" y="720" class="map-subtitle" style="font-size: 7px; letter-spacing: 3px;">OPERATIONAL PRESENCE</text>
 <text x="306" y="740" class="map-title" style="font-size: 12px;">Mana Infrastructure Pvt. Ltd.</text>

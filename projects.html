@@ -58,52 +58,6 @@
   </section>
 
   <!-- ============================================================
-       PARALLAX ZOOM EFFECT (Desktop)
-       ============================================================ -->
-  <section id="zoom-parallax" class="relative overflow-hidden" style="height: 300vh;">
-    <div class="sticky top-0 flex items-center justify-center overflow-hidden" style="height: 100vh;">
-      <!-- Image 1 (Top) -->
-      <img src="images/op.jpg" alt="Projects hero image top" class="zoom-img absolute inset-0 w-full h-full object-cover" data-scale="4">
-      <!-- Text Section (Middle) -->
-      <div class="zoom-img absolute inset-0 w-full h-full flex items-center justify-center bg-dark" data-scale="4">
-        <div class="text-center px-6">
-          <h2 class="font-heading text-5xl md:text-7xl font-black text-white mb-6">
-            Mana Infra
-          </h2>
-          <p class="font-heading text-2xl md:text-4xl font-bold text-gold">
-            Together We Build, Together We Grow
-          </p>
-        </div>
-      </div>
-      <!-- Image 3 (Bottom) -->
-      <img src="images/bridge.png" alt="Projects hero image bottom" class="zoom-img absolute inset-0 w-full h-full object-cover" data-scale="4">
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PARALLAX ZOOM EFFECT (Mobile)
-       ============================================================ -->
-  <section id="zoom-parallax-mobile" class="hidden sm:block relative overflow-hidden" style="height: 300vh;">
-    <div class="sticky top-0 flex items-center justify-center overflow-hidden" style="height: 100vh;">
-      <!-- Image 1 (Top) -->
-      <img src="images/op.jpg" alt="Projects hero image top" class="zoom-img-m absolute inset-0 w-full h-full object-cover" data-scale="4">
-      <!-- Text Section (Middle) -->
-      <div class="zoom-img-m absolute inset-0 w-full h-full flex items-center justify-center bg-dark" data-scale="4">
-        <div class="text-center px-6">
-          <h2 class="font-heading text-5xl md:text-7xl font-black text-white mb-6">
-            Mana Infra
-          </h2>
-          <p class="font-heading text-2xl md:text-4xl font-bold text-gold">
-            Together We Build, Together We Grow
-          </p>
-        </div>
-      </div>
-      <!-- Image 3 (Bottom) -->
-      <img src="images/bridge.png" alt="Projects hero image bottom" class="zoom-img-m absolute inset-0 w-full h-full object-cover" data-scale="4">
-    </div>
-  </section>
-
-  <!-- ============================================================
        2. FEATURED PROJECTS
        ============================================================ -->
   <section class="bg-white section-padding">
@@ -843,81 +797,6 @@
         });
       }
     });
-  </script>
-
-  <!-- Zoom Parallax Scroll Animation -->
-  <script>
-  (function () {
-    "use strict";
-    var container = document.getElementById("zoom-parallax");
-    if (!container) return;
-
-    var images = container.querySelectorAll(".zoom-img");
-    var ticking = false;
-
-    function updateParallax() {
-      var rect = container.getBoundingClientRect();
-      var containerTop = -rect.top;
-      var containerHeight = container.offsetHeight - window.innerHeight;
-
-      /* scrollYProgress: 0 at top, 1 at bottom */
-      var progress = Math.max(0, Math.min(1, containerTop / containerHeight));
-
-      images.forEach(function (el) {
-        var maxScale = parseFloat(el.getAttribute("data-scale")) || 4;
-        /* scale: 1 at progress=0, maxScale at progress=1 */
-        var scale = 1 + (maxScale - 1) * progress;
-        el.style.transform = "scale(" + scale.toFixed(3) + ")";
-      });
-
-      ticking = false;
-    }
-
-    window.addEventListener("scroll", function () {
-      if (!ticking) {
-        requestAnimationFrame(updateParallax);
-        ticking = true;
-      }
-    }, { passive: true });
-
-    /* Initial call */
-    updateParallax();
-  })();
-  </script>
-
-  <!-- Mobile Zoom Parallax (same mechanism as desktop) -->
-  <script>
-  (function () {
-    "use strict";
-    var container = document.getElementById("zoom-parallax-mobile");
-    if (!container) return;
-
-    var images = container.querySelectorAll(".zoom-img-m");
-    var ticking = false;
-
-    function updateMobileZoom() {
-      var rect = container.getBoundingClientRect();
-      var containerTop = -rect.top;
-      var containerHeight = container.offsetHeight - window.innerHeight;
-      var progress = Math.max(0, Math.min(1, containerTop / containerHeight));
-
-      images.forEach(function (el) {
-        var maxScale = parseFloat(el.getAttribute("data-scale")) || 4;
-        var scale = 1 + (maxScale - 1) * progress;
-        el.style.transform = "scale(" + scale.toFixed(3) + ")";
-      });
-      ticking = false;
-    }
-
-    window.addEventListener("scroll", function () {
-      if (!ticking) {
-        requestAnimationFrame(updateMobileZoom);
-        ticking = true;
-      }
-    }, { passive: true });
-
-    updateMobileZoom();
-  })();
   </script>
 
 </body>

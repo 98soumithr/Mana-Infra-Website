@@ -60,15 +60,13 @@
   <!-- ============================================================
        1.5 TAGLINE SECTION WITH PARALLAX
        ============================================================ -->
-  <section class="relative py-20 md:py-32 bg-white overflow-hidden">
-    <div class="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
-      <span id="tagline-ghost" class="font-heading font-black text-navy select-none" style="font-size: clamp(7rem, 22vw, 18rem); opacity: 0.04; will-change: transform; white-space: nowrap; letter-spacing: -0.02em;">MANA</span>
-    </div>
-    <div class="max-w-6xl mx-auto px-6 text-center" id="tagline-container">
-      <h2 class="font-heading text-5xl md:text-7xl lg:text-8xl font-black leading-tight">
-        <span class="text-navy block" id="tagline-line1" style="will-change: transform;">Together We Build,</span>
-        <span class="text-gold block" id="tagline-line2" style="will-change: transform;">Together We Grow</span>
-      </h2>
+  <section id="tagline-section" style="height: 220vh;">
+    <div class="sticky top-0 bg-dark overflow-hidden flex flex-col items-center justify-center" style="height: 100vh;">
+      <div id="tagline-container" class="text-center px-6">
+        <div id="tagline-line1" class="font-heading font-black text-white whitespace-nowrap" style="font-size: clamp(3rem, 8.5vw, 7.5rem); will-change: transform; letter-spacing: -0.02em;">TOGETHER WE BUILD,</div>
+        <div class="mx-auto my-5 bg-gold rounded-full" style="width: 3rem; height: 3px;"></div>
+        <div id="tagline-line2" class="font-heading font-black text-gold whitespace-nowrap" style="font-size: clamp(3rem, 8.5vw, 7.5rem); will-change: transform; letter-spacing: -0.02em;">TOGETHER WE GROW</div>
+      </div>
     </div>
   </section>
 
@@ -817,58 +815,37 @@
   <!-- Staggered Parallax for Tagline: slide-in entrance + opposite drift + ghost depth layer -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      var section = document.getElementById('tagline-section');
       var line1 = document.getElementById('tagline-line1');
       var line2 = document.getElementById('tagline-line2');
-      var container = document.getElementById('tagline-container');
-      var ghost = document.getElementById('tagline-ghost');
-      if (!line1 || !line2 || !container) return;
+      if (!section || !line1 || !line2) return;
 
       var ticking = false;
 
-      function easeOutCubic(t) {
-        return 1 - Math.pow(1 - t, 3);
-      }
+      function update() {
+        var rect = section.getBoundingClientRect();
+        var scrollable = section.offsetHeight - window.innerHeight;
+        // progress: 0 = section top at viewport top, 1 = section bottom at viewport bottom
+        var progress = Math.max(0, Math.min(1, -rect.top / scrollable));
 
-      function updateParallax() {
-        var rect = container.getBoundingClientRect();
-        var windowHeight = window.innerHeight;
-        var raw = 1 - (rect.top / windowHeight);
+        // Lines travel in opposite directions — centre at progress 0.5
+        var maxOffset = window.innerWidth * 0.38;
+        var offset = (progress - 0.5) * maxOffset * 2;
 
-        // Phase 1: Entrance — slides in from opposite sides as section enters viewport
-        var entranceProgress = Math.max(0, Math.min(1, raw / 0.5));
-        var entranceEased = easeOutCubic(entranceProgress);
-        var maxEntranceOffset = Math.min(window.innerWidth * 0.4, 400);
-        var entranceOffset = maxEntranceOffset * (1 - entranceEased);
-
-        // Phase 2: Stagger drift — lines drift apart in opposite directions while scrolling through
-        var driftProgress = Math.max(0, raw - 0.5);
-        var driftOffset = Math.min(driftProgress * 80, 80);
-
-        // Letter-spacing stretches with drift — cinematic breathing feel
-        var letterSpacing = Math.min(driftProgress * 0.15, 0.08);
-
-        line1.style.transform = 'translateX(' + (-entranceOffset - driftOffset) + 'px)';
-        line1.style.letterSpacing = letterSpacing + 'em';
-
-        line2.style.transform = 'translateX(' + (entranceOffset + driftOffset) + 'px)';
-        line2.style.letterSpacing = letterSpacing + 'em';
-
-        // Ghost text drifts opposite direction — creates depth layer contrast
-        if (ghost) {
-          ghost.style.transform = 'translateX(' + (driftProgress * 50) + 'px)';
-        }
+        line1.style.transform = 'translateX(' + (-offset) + 'px)';
+        line2.style.transform = 'translateX(' + offset + 'px)';
 
         ticking = false;
       }
 
       window.addEventListener('scroll', function () {
         if (!ticking) {
-          window.requestAnimationFrame(updateParallax);
+          window.requestAnimationFrame(update);
           ticking = true;
         }
       }, false);
 
-      updateParallax();
+      update();
     });
   </script>
 

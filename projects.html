@@ -58,14 +58,13 @@
   </section>
 
   <!-- ============================================================
-       1.5 TAGLINE SECTION
+       1.5 TAGLINE SECTION WITH PARALLAX
        ============================================================ -->
-  <section class="py-16 md:py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-        <span class="text-navy">Together We Build,</span>
-        <br/>
-        <span class="text-gold animated-tagline-word inline-block mt-2 md:mt-0 md:ml-2">Together We Grow</span>
+  <section class="py-20 md:py-32 bg-white overflow-hidden" style="perspective: 1000px;">
+    <div class="max-w-6xl mx-auto px-6 text-center" id="tagline-container" style="transform-style: preserve-3d;">
+      <h2 class="font-heading text-5xl md:text-7xl lg:text-8xl font-black leading-tight" id="parallax-text" style="will-change: transform;">
+        <span class="text-navy block">Together We Build,</span>
+        <span class="text-gold block">Together We Grow</span>
       </h2>
     </div>
   </section>
@@ -809,6 +808,48 @@
           el.classList.add('is-visible');
         });
       }
+    });
+  </script>
+
+  <!-- Parallax Effect for Tagline -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var parallaxText = document.getElementById('parallax-text');
+      if (!parallaxText) return;
+
+      var taglineContainer = document.getElementById('tagline-container');
+      var ticking = false;
+      var lastScrollY = 0;
+
+      function updateParallax() {
+        var scrollY = window.scrollY;
+        var elementPosition = taglineContainer.getBoundingClientRect().top + window.scrollY;
+        var elementHeight = taglineContainer.offsetHeight;
+        var windowHeight = window.innerHeight;
+
+        var elementStart = elementPosition - windowHeight;
+        var elementEnd = elementPosition + elementHeight;
+        var isVisible = scrollY >= elementStart && scrollY <= elementEnd;
+
+        if (isVisible) {
+          var progress = (scrollY - elementStart) / (elementEnd - elementStart);
+          var offset = (progress - 0.5) * 30;
+          parallaxText.style.transform = 'translateZ(0) translateY(' + (offset * -1) + 'px)';
+        }
+
+        ticking = false;
+      }
+
+      function onScroll() {
+        lastScrollY = window.scrollY;
+        if (!ticking) {
+          window.requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, false);
+      updateParallax();
     });
   </script>
 

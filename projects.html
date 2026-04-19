@@ -60,11 +60,11 @@
   <!-- ============================================================
        1.5 TAGLINE SECTION WITH PARALLAX
        ============================================================ -->
-  <section class="py-20 md:py-32 bg-white overflow-hidden" style="perspective: 1000px;">
-    <div class="max-w-6xl mx-auto px-6 text-center" id="tagline-container" style="transform-style: preserve-3d;">
-      <h2 class="font-heading text-5xl md:text-7xl lg:text-8xl font-black leading-tight" id="parallax-text" style="will-change: transform;">
-        <span class="text-navy block">Together We Build,</span>
-        <span class="text-gold block">Together We Grow</span>
+  <section class="py-20 md:py-32 bg-white overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 text-center" id="tagline-container">
+      <h2 class="font-heading text-5xl md:text-7xl lg:text-8xl font-black leading-tight">
+        <span class="text-navy block" id="tagline-line1" style="will-change: transform;">Together We Build,</span>
+        <span class="text-gold block" id="tagline-line2" style="will-change: transform;">Together We Grow</span>
       </h2>
     </div>
   </section>
@@ -811,44 +811,44 @@
     });
   </script>
 
-  <!-- Parallax Effect for Tagline -->
+  <!-- Horizontal Slide-In Parallax for Tagline -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      var parallaxText = document.getElementById('parallax-text');
-      if (!parallaxText) return;
+      var line1 = document.getElementById('tagline-line1');
+      var line2 = document.getElementById('tagline-line2');
+      var container = document.getElementById('tagline-container');
+      if (!line1 || !line2 || !container) return;
 
-      var taglineContainer = document.getElementById('tagline-container');
       var ticking = false;
-      var lastScrollY = 0;
+
+      function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+      }
 
       function updateParallax() {
-        var scrollY = window.scrollY;
-        var elementPosition = taglineContainer.getBoundingClientRect().top + window.scrollY;
-        var elementHeight = taglineContainer.offsetHeight;
+        var rect = container.getBoundingClientRect();
         var windowHeight = window.innerHeight;
 
-        var elementStart = elementPosition - windowHeight;
-        var elementEnd = elementPosition + elementHeight;
-        var isVisible = scrollY >= elementStart && scrollY <= elementEnd;
+        var raw = 1 - (rect.top / windowHeight);
+        var progress = Math.max(0, Math.min(1, raw));
+        var eased = easeOutCubic(progress);
 
-        if (isVisible) {
-          var progress = (scrollY - elementStart) / (elementEnd - elementStart);
-          var offset = (progress - 0.5) * 30;
-          parallaxText.style.transform = 'translateZ(0) translateY(' + (offset * -1) + 'px)';
-        }
+        var maxOffset = Math.min(window.innerWidth * 0.4, 400);
+        var offset = maxOffset * (1 - eased);
+
+        line1.style.transform = 'translateX(' + (-offset) + 'px)';
+        line2.style.transform = 'translateX(' + offset + 'px)';
 
         ticking = false;
       }
 
-      function onScroll() {
-        lastScrollY = window.scrollY;
+      window.addEventListener('scroll', function () {
         if (!ticking) {
           window.requestAnimationFrame(updateParallax);
           ticking = true;
         }
-      }
+      }, false);
 
-      window.addEventListener('scroll', onScroll, false);
       updateParallax();
     });
   </script>

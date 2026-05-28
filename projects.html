@@ -10,22 +10,38 @@
       theme: {
         extend: {
           colors: {
-            navy: '#1B2A4A',
-            amber: '#D4922E',
-            gold: '#E8A435',
-            dark: '#0F1B2D',
+            navy: '#112F55',
+            amber: '#EA640D',
+            gold: '#EA640D',
+            dark: '#020202',
             light: '#F8FAFC',
           },
           fontFamily: {
-            heading: ['Poppins', 'sans-serif'],
-            body: ['Inter', 'sans-serif'],
+            heading: ['Death Star', 'sans-serif'],
+            body: ['Poppins', 'sans-serif'],
           }
         }
       }
     }
   </script>
+  <style>
+    @keyframes scroll-continuous {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    .scroll-animate {
+      animation: scroll-continuous 40s linear infinite;
+      display: flex;
+      width: 200%;
+    }
+  </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Death+Star&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
 </head>
 <body class="font-body text-slate-800">
@@ -116,7 +132,7 @@
           <!-- Details -->
           <div class="lg:w-1/2 p-6 md:p-10 flex flex-col justify-center">
             <h3 class="font-heading text-2xl md:text-3xl font-bold text-navy mb-1">Six-Lane Kandili-Tumbigura, NH-130-CD</h3>
-            <p class="text-amber font-semibold text-sm tracking-wide uppercase mb-5">Raipur -- Visakhapatnam Economic Corridor</p>
+            <p class="text-amber font-semibold text-sm tracking-wide uppercase mb-5">Raipur - Visakhapatnam Economic Corridor</p>
             <!-- Details Grid -->
             <div class="grid grid-cols-2 gap-3 mb-6 text-sm">
               <div class="bg-light rounded-lg p-3">
@@ -197,7 +213,7 @@
             <div class="grid grid-cols-2 gap-3 mb-6 text-sm">
               <div class="bg-light rounded-lg p-3">
                 <span class="block text-slate-500 text-xs font-semibold uppercase tracking-wide mb-0.5">Project</span>
-                <span class="text-navy font-semibold">518 KM Greenfield Expressway</span>
+                <span class="text-navy font-semibold">Bharatmala Pariyojana Phase-I, NH 544G</span>
               </div>
               <div class="bg-light rounded-lg p-3">
                 <span class="block text-slate-500 text-xs font-semibold uppercase tracking-wide mb-0.5">Location</span>
@@ -219,7 +235,7 @@
             </div>
             <!-- Description -->
             <p class="text-slate-600 leading-relaxed text-sm mb-5">
-              Six-lane access-controlled greenfield expressway, Kadapa segment NHAI - Bharatmala Phase-II. 20,50,000 Cum excavation &amp; embankment completed in just 6 months (May&ndash;Oct 2025) &mdash; all open earthwork finished ahead of stipulated NHAI timeline. 50 Nos. 36-metre girders erected within 2 months, reflecting exceptional productivity.
+              Six-lane access-controlled greenfield expressway, Kadapa segment NHAI - Bharatmala Phase-I. 20,50,000 Cum excavation &amp; embankment completed in just 6 months (May&ndash;Oct 2025) &mdash; all open earthwork finished ahead of stipulated NHAI timeline. 50 Nos. 36-metre girders erected within 2 months, reflecting exceptional productivity.
             </p>
             <!-- Bullets -->
             <ul class="space-y-2 text-sm text-slate-700">
@@ -229,7 +245,7 @@
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-gold mt-1 flex-shrink-0">&#9670;</span>
-                <span>Tunnel underground excavation (heading) progressing ahead of schedule</span>
+                <span>Tunnel underground excavation progressing ahead of schedule</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-gold mt-1 flex-shrink-0">&#9670;</span>
@@ -273,7 +289,7 @@
             <div class="grid grid-cols-2 gap-3 mb-6 text-sm">
               <div class="bg-light rounded-lg p-3">
                 <span class="block text-slate-500 text-xs font-semibold uppercase tracking-wide mb-0.5">Scope</span>
-                <span class="text-navy font-semibold">900M + 800M Twin Bore</span>
+                <span class="text-navy font-semibold">900M X 2, 800M X 2 twin tunnels</span>
               </div>
               <div class="bg-light rounded-lg p-3">
                 <span class="block text-slate-500 text-xs font-semibold uppercase tracking-wide mb-0.5">Capacity</span>
@@ -285,7 +301,7 @@
               </div>
               <div class="bg-light rounded-lg p-3">
                 <span class="block text-slate-500 text-xs font-semibold uppercase tracking-wide mb-0.5">Status</span>
-                <span class="text-emerald-600 font-bold">Active Pkg 63 Ahead of Target</span>
+                <span class="text-emerald-600 font-bold">Pkg 63 completed ahead of target, Pkg 64 in progress, ahead of schedule</span>
               </div>
             </div>
             <!-- Key Achievement -->
@@ -322,7 +338,7 @@
           <!-- Image -->
           <div class="lg:w-1/2 relative img-zoom">
             <img src="images/project-railways.jpg" alt="Excavation with dump trucks at Yavatmal-Nanded Railway site" class="w-full h-72 lg:h-full object-cover">
-            <span class="absolute top-4 right-4 bg-blue-500 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md">Operational</span>
+            <span class="absolute top-4 right-4 bg-gold text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md">Operational</span>
             <div class="absolute bottom-3 left-3 right-3 flex gap-2 z-10">
               <img src="images/project-railways.jpg" alt="Excavation with dump trucks, Nanded Railway"
                    data-main="images/project-railways.jpg" data-alt="Excavation with dump trucks at Yavatmal-Nanded Railway site"
@@ -335,7 +351,7 @@
           <!-- Details -->
           <div class="lg:w-1/2 p-6 md:p-10 flex flex-col justify-center">
             <h3 class="font-heading text-2xl md:text-3xl font-bold text-navy mb-1">New Broad-Gauge Railway Line, KM 157-169</h3>
-            <p class="text-amber font-semibold text-sm tracking-wide uppercase mb-5">Yavatmal - Nanded Package - 3A RVNL</p>
+            <p class="text-amber font-semibold text-sm tracking-wide uppercase mb-5">Scope</p>
             <!-- Details Grid -->
             <div class="grid grid-cols-2 gap-3 mb-6 text-sm">
               <div class="bg-light rounded-lg p-3">
@@ -389,7 +405,7 @@
     <!-- Crosshatch Pattern -->
     <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: repeating-linear-gradient(22.5deg, transparent, transparent 2px, rgba(75,85,99,0.06) 2px, rgba(75,85,99,0.06) 3px, transparent 3px, transparent 8px), repeating-linear-gradient(67.5deg, transparent, transparent 2px, rgba(107,114,128,0.05) 2px, rgba(107,114,128,0.05) 3px, transparent 3px, transparent 8px), repeating-linear-gradient(112.5deg, transparent, transparent 2px, rgba(55,65,81,0.04) 2px, rgba(55,65,81,0.04) 3px, transparent 3px, transparent 8px), repeating-linear-gradient(157.5deg, transparent, transparent 2px, rgba(31,41,55,0.03) 2px, rgba(31,41,55,0.03) 3px, transparent 3px, transparent 8px);"></div>
     <!-- Soft Yellow Glow -->
-    <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: radial-gradient(circle at center, #FFF991 0%, transparent 70%); opacity: 0.6; mix-blend-mode: multiply;"></div>
+    <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: radial-gradient(circle at center, #EA640D 0%, transparent 70%); opacity: 0.6; mix-blend-mode: multiply;"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
@@ -579,14 +595,23 @@
       </div>
 
       <!-- Project Pills -->
-      <div class="flex flex-wrap justify-center gap-3 md:gap-4">
-        <span class="inline-block border border-amber text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-dark transition-all duration-300">NH 130-CD 100-OD</span>
-        <span class="inline-block border border-amber text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-dark transition-all duration-300">NH-544G Bengaluru-Vijayawada</span>
-        <span class="inline-block border border-amber text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-dark transition-all duration-300">Yavatmal-Nanded Railway</span>
-        <span class="inline-block border border-amber text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-dark transition-all duration-300">Polavaram Tunnel Pkg 63</span>
-        <span class="inline-block border border-amber text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-dark transition-all duration-300">Polavaram Tunnel Pkg 64</span>
-        <span class="inline-block border border-amber text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-dark transition-all duration-300">STP Haveri</span>
-        <span class="inline-block border border-amber text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-dark transition-all duration-300">Musi MLCJ</span>
+      <div class="overflow-hidden px-4">
+        <div class="flex gap-3 md:gap-4 pb-4 scroll-animate">
+          <span class="flex-shrink-0 bg-white text-dark text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-white transition-all duration-300">NH 130-CD 100-OD</span>
+          <span class="flex-shrink-0 bg-white text-dark text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-white transition-all duration-300">NH-544G Bengaluru-Vijayawada</span>
+          <span class="flex-shrink-0 bg-white text-dark text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-white transition-all duration-300">Yavatmal-Nanded Railway</span>
+          <span class="flex-shrink-0 bg-white text-dark text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-white transition-all duration-300">Polavaram Tunnel Pkg 63</span>
+          <span class="flex-shrink-0 bg-white text-dark text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-white transition-all duration-300">Polavaram Tunnel Pkg 64</span>
+          <span class="flex-shrink-0 bg-white text-dark text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-white transition-all duration-300">STP Haveri</span>
+          <span class="flex-shrink-0 bg-white text-dark text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-white transition-all duration-300">Musi MLCJ</span>
+          <span class="flex-shrink-0 bg-white text-dark text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-white transition-all duration-300">NH 130-CD 100-OD</span>
+          <span class="flex-shrink-0 bg-white text-dark text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-white transition-all duration-300">NH-544G Bengaluru-Vijayawada</span>
+          <span class="flex-shrink-0 bg-white text-dark text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-white transition-all duration-300">Yavatmal-Nanded Railway</span>
+          <span class="flex-shrink-0 bg-white text-dark text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-white transition-all duration-300">Polavaram Tunnel Pkg 63</span>
+          <span class="flex-shrink-0 bg-white text-dark text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-white transition-all duration-300">Polavaram Tunnel Pkg 64</span>
+          <span class="flex-shrink-0 bg-white text-dark text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-white transition-all duration-300">STP Haveri</span>
+          <span class="flex-shrink-0 bg-white text-dark text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber hover:text-white transition-all duration-300">Musi MLCJ</span>
+        </div>
       </div>
 
     </div>
@@ -599,7 +624,7 @@
     <!-- Grid + Dots background -->
     <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(to right, rgba(0,0,0,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.06) 1px, transparent 1px), radial-gradient(circle, rgba(51,65,85,0.4) 1px, transparent 1px); background-size: 20px 20px, 20px 20px, 20px 20px;"></div>
     <!-- Yellow glow -->
-    <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(circle at center, #FFF991 0%, transparent 70%); opacity: 0.6; mix-blend-mode: multiply;"></div>
+    <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(circle at center, #EA640D 0%, transparent 70%); opacity: 0.6; mix-blend-mode: multiply;"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
@@ -648,7 +673,7 @@
             <div class="hidden md:flex md:w-1/2 md:justify-end md:pr-8">
               <div class="bg-white rounded-xl shadow-md p-6 border-r-4 border-gold max-w-md">
                 <p class="text-navy font-bold text-base leading-relaxed">
-                  Package 63 (Polavaram Irrigation) &mdash; Asia's Largest Tunnel (19.35m &times; 19.35m) &mdash; CM Appreciation &mdash; 5 Months Early
+                  Package 63 (Polavaram Irrigation) &mdash; Asia's Largest Tunnel (19.35m &times; 19.35m) &mdash; received certification of achievement &mdash; CM Appreciation &mdash; 5 Months Early
                 </p>
               </div>
             </div>
@@ -663,7 +688,7 @@
               <span class="block text-gold text-xs font-bold tracking-wider mb-2">Mar 2025 &ndash; Feb 2026 &middot; Andhra Pradesh</span>
               <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-gold">
                 <p class="text-navy font-bold text-base leading-relaxed">
-                  Package 63 (Polavaram Irrigation) &mdash; Asia's Largest Tunnel (19.35m &times; 19.35m) &mdash; CM Appreciation &mdash; 5 Months Early
+                  Package 63 (Polavaram Irrigation) &mdash; Asia's Largest Tunnel (19.35m &times; 19.35m) &mdash; received certification of achievement &mdash; CM Appreciation &mdash; 5 Months Early
                 </p>
               </div>
             </div>

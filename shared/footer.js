@@ -23,12 +23,12 @@
   var STATES = ["Andhra Pradesh", "Telangana", "Karnataka", "Maharashtra", "Odisha"];
 
   var COLORS = {
-    navy: "#0F1B2D",
-    navyDark: "#0A1322",
-    gold: "#E8A435",
+    navy: "#112F55",
+    navyDark: "#0A0E1A",
+    gold: "#EA640D",
     white: "#FFFFFF",
     muted: "#94A3B8",
-    border: "#1E2D42",
+    border: "#1A3A5C",
   };
 
   /* ── Utility: create an element with inline styles ────────────── */
@@ -65,53 +65,24 @@
       "padding-right: 32px",
     ].join(";"));
 
-    /* Logo text */
+    /* Logo image */
     var logoWrap = el("div", [
       "display: flex",
-      "align-items: baseline",
-      "gap: 6px",
+      "align-items: flex-start",
       "margin-bottom: 12px",
     ].join(";"));
 
-    var mana = el("span", [
-      "color:" + COLORS.gold,
-      "font-weight: 800",
-      "font-size: 28px",
-      "letter-spacing: 2px",
-      "text-transform: uppercase",
-    ].join(";"), "MANA");
+    var logoImg = document.createElement("img");
+    logoImg.src = "footer.jpg";
+    logoImg.alt = "Mana Infrastructure Logo";
+    logoImg.style.cssText = [
+      "height: 300px",
+      "width: auto",
+      "object-fit: contain",
+    ].join(";");
 
-    var infra = el("span", [
-      "color:" + COLORS.white,
-      "font-weight: 700",
-      "font-size: 16px",
-      "letter-spacing: 1.5px",
-      "text-transform: uppercase",
-    ].join(";"), "INFRASTRUCTURE");
-
-    logoWrap.appendChild(mana);
-    logoWrap.appendChild(infra);
+    logoWrap.appendChild(logoImg);
     col.appendChild(logoWrap);
-
-    /* Tagline */
-    var tagline = el("p", [
-      "color:" + COLORS.gold,
-      "font-size: 14px",
-      "font-weight: 600",
-      "font-style: italic",
-      "margin: 0 0 12px 0",
-      "letter-spacing: 0.5px",
-    ].join(";"), "Together We Build, Together We Grow");
-    col.appendChild(tagline);
-
-    /* Description */
-    var desc = el("p", [
-      "color:" + COLORS.muted,
-      "font-size: 14px",
-      "line-height: 1.6",
-      "margin: 0",
-    ].join(";"), "A trusted infrastructure company specializing in highways, railways, irrigation, tunnels, and bridges across India since 2012.");
-    col.appendChild(desc);
 
     return col;
   }
@@ -172,7 +143,7 @@
 
     /* Registered Office */
     var regLabel = el("p", [
-      "color:" + COLORS.white,
+      "color:" + COLORS.navy,
       "font-size: 13px",
       "font-weight: 700",
       "text-transform: uppercase",
@@ -192,7 +163,7 @@
 
     /* Corporate Office */
     var corpLabel = el("p", [
-      "color:" + COLORS.white,
+      "color:" + COLORS.navy,
       "font-size: 13px",
       "font-weight: 700",
       "text-transform: uppercase",
@@ -226,7 +197,7 @@
     /* Email */
     var emailWrap = el("div", "margin: 0 0 16px 0;");
     var emailLabel = el("span", [
-      "color:" + COLORS.white,
+      "color:" + COLORS.navy,
       "font-size: 13px",
       "font-weight: 600",
     ].join(";"), "Email: ");
@@ -249,7 +220,7 @@
 
     /* Sectors */
     var sectorsLabel = el("p", [
-      "color:" + COLORS.white,
+      "color:" + COLORS.navy,
       "font-size: 13px",
       "font-weight: 600",
       "margin: 0 0 8px 0",
@@ -296,7 +267,7 @@
 
     /* States */
     var statesLabel = el("p", [
-      "color:" + COLORS.white,
+      "color:" + COLORS.navy,
       "font-size: 13px",
       "font-weight: 600",
       "margin: 0 0 6px 0",
@@ -305,7 +276,7 @@
     col.appendChild(statesLabel);
 
     var statesText = el("p", [
-      "color:" + COLORS.muted,
+      "color:" + COLORS.gold,
       "font-size: 13px",
       "line-height: 1.6",
       "margin: 0",
@@ -543,7 +514,7 @@
       "padding-top: 20px",
       "display: flex",
       "justify-content: space-between",
-      "align-items: center",
+      "align-items: flex-start",
       "flex-wrap: wrap",
       "gap: 8px",
     ].join(";"));
@@ -554,14 +525,7 @@
       "margin: 0",
     ].join(";"), "\u00A9 2025 Mana Infrastructure Private Limited. All rights reserved.");
 
-    var right = el("p", [
-      "color:" + COLORS.muted,
-      "font-size: 13px",
-      "margin: 0",
-    ].join(";"), "Together We Build, Together We Grow | Est. 2012");
-
     wrapper.appendChild(left);
-    wrapper.appendChild(right);
 
     return wrapper;
   }
@@ -572,10 +536,10 @@
     var footer = document.createElement("footer");
     footer.id = "mana-footer";
     footer.style.cssText = [
-      "background:" + COLORS.navy,
+      "background:" + COLORS.white,
       "font-family: 'Segoe UI', Arial, Helvetica, sans-serif",
       "padding: 60px 0 30px 0",
-      "color:" + COLORS.white,
+      "color:" + COLORS.navy,
     ].join(";");
 
     /* Inner container */

@@ -10,22 +10,23 @@
       theme: {
         extend: {
           colors: {
-            navy: '#1B2A4A',
-            amber: '#D4922E',
-            gold: '#E8A435',
-            dark: '#0F1B2D',
+            navy: '#112F55',
+            amber: '#EA640D',
+            gold: '#EA640D',
+            dark: '#020202',
             light: '#F8FAFC',
           },
           fontFamily: {
-            heading: ['Poppins', 'sans-serif'],
-            body: ['Inter', 'sans-serif'],
+            heading: ['Death Star', 'sans-serif'],
+            body: ['Poppins', 'sans-serif'],
           }
         }
       }
     }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Death+Star&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
 </head>
 <body class="font-body text-slate-800">
@@ -282,12 +283,13 @@
   <script src="shared/footer.js"></script>
 
   <!-- ============================================
-       Form Behavior
+       Form Behavior (Formspree Integration)
        ============================================ -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var form = document.getElementById('contact-form');
       var successBanner = document.getElementById('form-success');
+      var submitBtn = form.querySelector('button[type="submit"]');
 
       if (!form) return;
 
@@ -338,15 +340,42 @@
 
         if (!isValid) return;
 
-        // Show success banner
-        successBanner.classList.remove('hidden');
-        successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        // Disable submit button during submission
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
 
-        // Reset form after 3 seconds
-        setTimeout(function () {
-          form.reset();
-          successBanner.classList.add('hidden');
-        }, 3000);
+        // Prepare form data as URL-encoded string
+        var params = new URLSearchParams();
+        params.append('fullName', document.getElementById('fullName').value);
+        params.append('email', document.getElementById('email').value);
+        params.append('phone', document.getElementById('phone').value);
+        params.append('subject', document.getElementById('subject').value);
+        params.append('message', document.getElementById('message').value);
+
+        // Submit to Google Apps Script
+        fetch('https://script.google.com/macros/s/AKfycbyBGgzOzBibNq2g0DdTYfnQbnlFYBWkj5xnbSZdtpsGrWFUz8Pp3cpmbYqmiIO38bnl/exec', {
+          method: 'POST',
+          body: params
+        })
+        .then(function(response) {
+          // Show success banner (response.ok handles 200-299, accept redirect too)
+          successBanner.classList.remove('hidden');
+          successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+          // Reset form after 3 seconds
+          setTimeout(function () {
+            form.reset();
+            successBanner.classList.add('hidden');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+          }, 3000);
+        })
+        .catch(function(error) {
+          console.error('Error:', error);
+          alert('There was an error sending your message. Please try again.');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+        });
       });
 
       // Remove error state on input

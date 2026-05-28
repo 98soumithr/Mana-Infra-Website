@@ -10,8 +10,8 @@
   ];
 
   var COLORS = {
-    navy: "#0F1B2D",
-    gold: "#E8A435",
+    navy: "#112F55",
+    gold: "#EA640D",
     white: "#FFFFFF",
   };
 
@@ -134,8 +134,8 @@
       "left: 0",
       "width: 100%",
       "z-index: 9999",
-      "background:" + COLORS.navy,
-      "box-shadow: 0 2px 12px rgba(0,0,0,0.35)",
+      "background: #FFFFFF",
+      "box-shadow: 0 2px 12px rgba(0,0,0,0.1)",
       "font-family: 'Segoe UI', Arial, Helvetica, sans-serif",
     ].join(";");
 
@@ -160,56 +160,24 @@
     logo.href = "index.html";
     logo.style.cssText = [
       "display: flex",
-      "align-items: baseline",
-      "gap: 6px",
+      "align-items: center",
+      "gap: 12px",
       "text-decoration: none",
       "flex-shrink: 0",
     ].join(";");
 
-    var logoMana = document.createElement("span");
-    logoMana.textContent = "MANA";
-    logoMana.style.cssText = [
-      "color:" + COLORS.gold,
-      "font-weight: 800",
-      "font-size: 18px",
-      "letter-spacing: 1.5px",
-      "text-transform: uppercase",
+    var logoImg = document.createElement("img");
+    logoImg.src = "logo_final.png";
+    logoImg.alt = "Mana Infrastructure Logo";
+    logoImg.style.cssText = [
+      "height: 50px",
+      "width: auto",
+      "background: #FFFFFF",
+      "padding: 8px 12px",
+      "border-radius: 6px",
     ].join(";");
 
-    var logoInfra = document.createElement("span");
-    logoInfra.textContent = "INFRASTRUCTURE";
-    logoInfra.style.cssText = [
-      "color:" + COLORS.white,
-      "font-weight: 700",
-      "font-size: 18px",
-      "letter-spacing: 1.5px",
-      "text-transform: uppercase",
-    ].join(";");
-
-    var logoPvt = document.createElement("span");
-    logoPvt.textContent = "PVT";
-    logoPvt.style.cssText = [
-      "color:" + COLORS.white,
-      "font-weight: 700",
-      "font-size: 18px",
-      "letter-spacing: 1.5px",
-      "text-transform: uppercase",
-    ].join(";");
-
-    var logoLtd = document.createElement("span");
-    logoLtd.textContent = "LTD";
-    logoLtd.style.cssText = [
-      "color:" + COLORS.white,
-      "font-weight: 700",
-      "font-size: 18px",
-      "letter-spacing: 1.5px",
-      "text-transform: uppercase",
-    ].join(";");
-
-    logo.appendChild(logoMana);
-    logo.appendChild(logoInfra);
-    logo.appendChild(logoPvt);
-    logo.appendChild(logoLtd);
+    logo.appendChild(logoImg);
 
     /* 3D Pill — always showing all links */
     var pill = document.createElement("div");
@@ -396,7 +364,7 @@
     container.appendChild(hamburger);
     nav.appendChild(container);
 
-    return { nav: nav, spacer: spacer, overlay: overlay, drawer: drawer, hamburger: hamburger, pill: pill, logoMana: logoMana, logoInfra: logoInfra, logoPvt: logoPvt, logoLtd: logoLtd };
+    return { nav: nav, spacer: spacer, overlay: overlay, drawer: drawer, hamburger: hamburger, pill: pill };
   }
 
   function applyResponsive(parts) {
@@ -406,10 +374,6 @@
       if (e.matches) {
         parts.pill.style.display = "none";
         parts.hamburger.style.display = "flex";
-        parts.logoMana.style.fontSize = "15px";
-        parts.logoInfra.style.fontSize = "14px";
-        parts.logoPvt.style.fontSize = "14px";
-        parts.logoLtd.style.fontSize = "14px";
       } else {
         parts.pill.style.display = "";
         parts.hamburger.style.display = "none";
@@ -417,10 +381,6 @@
         parts.overlay.style.opacity = "0";
         parts.overlay.style.visibility = "hidden";
         document.body.style.overflow = "";
-        parts.logoMana.style.fontSize = "18px";
-        parts.logoInfra.style.fontSize = "18px";
-        parts.logoPvt.style.fontSize = "18px";
-        parts.logoLtd.style.fontSize = "18px";
       }
     }
 

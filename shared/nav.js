@@ -10,7 +10,7 @@
   ];
 
   var COLORS = {
-    navy: "#112F55",
+    navy: "#163C6A",
     gold: "#EA640D",
     white: "#FFFFFF",
   };

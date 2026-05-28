@@ -5,10 +5,10 @@
 
 /* ----- CSS Variables (Brand Colors) ----- */
 :root {
-  --primary: #112F55;
+  --primary: #163C6A;
   --secondary: #EA640D;
   --accent: #EA640D;
-  --dark: #020202;
+  --dark: #163C6A;
   --light: #F8FAFC;
   --text-dark: #1E293B;
   --text-muted: #64748B;

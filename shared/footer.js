@@ -23,7 +23,7 @@
   var STATES = ["Andhra Pradesh", "Telangana", "Karnataka", "Maharashtra", "Odisha"];
 
   var COLORS = {
-    navy: "#112F55",
+    navy: "#163C6A",
     navyDark: "#0A0E1A",
     gold: "#EA640D",
     white: "#FFFFFF",
@@ -206,8 +206,8 @@
       "text-decoration: none",
       "font-size: 13px",
       "transition: color 0.25s ease",
-    ].join(";"), "info@manainfra.in");
-    emailLink.href = "mailto:info@manainfra.in";
+    ].join(";"), "contact@manainfra.in");
+    emailLink.href = "mailto:contact@manainfra.in";
     emailLink.addEventListener("mouseenter", function () {
       emailLink.style.color = COLORS.white;
     });

@@ -228,7 +228,7 @@
         "display: block",
         "width: 26px",
         "height: 3px",
-        "background:" + COLORS.white,
+        "background:" + COLORS.navy,
         "border-radius: 2px",
         "transition: transform 0.3s ease, opacity 0.3s ease",
       ].join(";");

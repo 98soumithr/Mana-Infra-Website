@@ -88,7 +88,6 @@
     var taglineWrap = el("div", [
       "margin-top: 24px",
       "padding-top: 24px",
-      "border-top: 1px solid " + COLORS.border,
     ].join(";"));
 
     var tagline = el("p", [

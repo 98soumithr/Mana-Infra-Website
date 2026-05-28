@@ -84,6 +84,24 @@
     logoWrap.appendChild(logoImg);
     col.appendChild(logoWrap);
 
+    /* Tagline */
+    var taglineWrap = el("div", [
+      "margin-top: 24px",
+      "padding-top: 24px",
+      "border-top: 1px solid " + COLORS.border,
+    ].join(";"));
+
+    var tagline = el("p", [
+      "font-size: 14px",
+      "font-style: italic",
+      "color: " + COLORS.gold,
+      "font-weight: 600",
+      "margin: 0",
+    ].join(";"), "Build Together, Grow Together");
+
+    taglineWrap.appendChild(tagline);
+    col.appendChild(taglineWrap);
+
     return col;
   }
 

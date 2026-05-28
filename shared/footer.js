@@ -23,7 +23,7 @@
   var STATES = ["Andhra Pradesh", "Telangana", "Karnataka", "Maharashtra", "Odisha"];
 
   var COLORS = {
-    navy: "#163C6A",
+    navy: "#112F55",
     navyDark: "#0A0E1A",
     gold: "#EA640D",
     white: "#FFFFFF",

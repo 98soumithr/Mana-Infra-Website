@@ -10,7 +10,7 @@
   ];
 
   var COLORS = {
-    navy: "#163C6A",
+    navy: "#112F55",
     gold: "#EA640D",
     white: "#FFFFFF",
   };
@@ -105,7 +105,7 @@
       "}",
       ".mana-pill-link.active {",
       "  font-weight: 680;",
-      "  color: #1B2A4A;",
+      "  color: #112F55;",
       "  background: rgba(27,42,74,0.08);",
       "  text-shadow: 0 1px 0 rgba(255,255,255,0.8);",
       "}",

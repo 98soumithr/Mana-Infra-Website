@@ -90,18 +90,18 @@
       "  gap: 1px;",
       "}",
       ".mana-pill-link {",
-      "  font-size: 13.5px;",
-      "  font-weight: 520;",
+      "  font-size: 16.5px;",
+      "  font-weight: 400;",
       "  color: #606060;",
       "  text-decoration: none;",
-      "  letter-spacing: 0.3px;",
-      "  padding: 7px 14px;",
+      "  letter-spacing: 0px;",
+      "  padding: 3px 14px;",
+      "  font-family: 'Death Star', sans-serif;",
       "  white-space: nowrap;",
       "  border-radius: 9999px;",
       "  transition: color 0.2s ease, background 0.2s ease;",
       "  text-shadow: 0 1px 0 rgba(255,255,255,0.7);",
       "  -webkit-font-smoothing: antialiased;",
-      "  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;",
       "}",
       ".mana-pill-link.active {",
       "  font-weight: 680;",
@@ -150,7 +150,7 @@
       "margin: 0 auto",
       "display: flex",
       "align-items: center",
-      "justify-content: space-between",
+      "justify-content: center",
       "padding: 0 24px",
       "height: 72px",
     ].join(";");
@@ -160,40 +160,57 @@
     logo.href = "index.html";
     logo.style.cssText = [
       "display: flex",
-      "flex-direction: column",
-      "align-items: flex-start",
-      "gap: 2px",
+      "flex-direction: row",
+      "align-items: center",
+      "gap: 0px",
       "text-decoration: none",
       "flex-shrink: 0",
+    ].join(";");
+
+    var logoImg = document.createElement("img");
+    logoImg.src = "logo.png";
+    logoImg.alt = "Mana Infrastructure Logo";
+    logoImg.style.cssText = [
+      "height: 220px",
+      "width: auto",
+      "object-fit: cover",
+      "object-position: center 35%",
+      "image-rendering: crisp-edges",
+      "-webkit-optimize-contrast: on",
+      "display: block",
+      "aspect-ratio: 0.47/1",
     ].join(";");
 
     var logoMana = document.createElement("span");
     logoMana.textContent = "MANA";
     logoMana.style.cssText = [
-      "font-size: 18px",
-      "font-weight: 700",
+      "font-size: 26px",
+      "font-weight: 400",
       "color: #112F55",
-      "font-family: Poppins, sans-serif",
-      "letter-spacing: 1px",
+      "font-family: 'Death Star', sans-serif",
+      "letter-spacing: 0.1px",
+      "margin-right: 2px",
     ].join(";");
 
     var logoInfra = document.createElement("span");
     logoInfra.textContent = "INFRASTRUCTURE";
     logoInfra.style.cssText = [
-      "font-size: 10px",
-      "font-weight: 600",
+      "font-size: 26px",
+      "font-weight: 400",
       "color: #EA640D",
-      "font-family: Poppins, sans-serif",
-      "letter-spacing: 1.5px",
+      "font-family: 'Death Star', sans-serif",
+      "letter-spacing: 0.1px",
       "text-transform: uppercase",
     ].join(";");
 
+    logo.appendChild(logoImg);
     logo.appendChild(logoMana);
     logo.appendChild(logoInfra);
 
     /* 3D Pill — always showing all links */
     var pill = document.createElement("div");
     pill.className = "mana-pill";
+    pill.style.marginLeft = "auto";
 
     var layers = ["mana-pill-topEdge", "mana-pill-topHemi", "mana-pill-gloss", "mana-pill-bottomShadow", "mana-pill-edgeDef"];
     layers.forEach(function (cls) {

@@ -84,24 +84,6 @@
     logoWrap.appendChild(logoImg);
     col.appendChild(logoWrap);
 
-    /* Tagline */
-    var taglineWrap = el("div", [
-      "margin-top: 24px",
-      "padding-top: 24px",
-    ].join(";"));
-
-    var tagline = el("p", [
-      "font-size: 16px",
-      "font-style: normal",
-      "color: " + COLORS.gold,
-      "font-weight: 400",
-      "margin: 0",
-      "font-family: 'Death Star', sans-serif",
-      "letter-spacing: 0.5px",
-    ].join(";"), "Build Together, Grow Together");
-
-    taglineWrap.appendChild(tagline);
-    col.appendChild(taglineWrap);
 
     return col;
   }
@@ -224,13 +206,17 @@
       "color:" + COLORS.gold,
       "text-decoration: none",
       "font-size: 13px",
-      "transition: color 0.25s ease",
+      "transition: background 0.25s ease, color 0.25s ease, padding 0.25s ease",
+      "padding: 4px 8px",
+      "border-radius: 4px",
     ].join(";"), "contact@manainfra.in");
     emailLink.href = "mailto:contact@manainfra.in";
     emailLink.addEventListener("mouseenter", function () {
-      emailLink.style.color = COLORS.white;
+      emailLink.style.background = "rgba(234, 100, 13, 0.15)";
+      emailLink.style.color = COLORS.navy;
     });
     emailLink.addEventListener("mouseleave", function () {
+      emailLink.style.background = "transparent";
       emailLink.style.color = COLORS.gold;
     });
     emailWrap.appendChild(emailLabel);
@@ -533,9 +519,9 @@
       "padding-top: 20px",
       "display: flex",
       "justify-content: space-between",
-      "align-items: flex-start",
+      "align-items: center",
       "flex-wrap: wrap",
-      "gap: 8px",
+      "gap: 16px",
     ].join(";"));
 
     var left = el("p", [
@@ -544,7 +530,17 @@
       "margin: 0",
     ].join(";"), "\u00A9 2025 Mana Infrastructure Private Limited. All rights reserved.");
 
+    var right = el("p", [
+      "color:" + COLORS.gold,
+      "font-size: 14px",
+      "margin: 0",
+      "font-weight: 500",
+      "font-family: 'Death Star', sans-serif",
+      "letter-spacing: 0.5px",
+    ].join(";"), "Build Together, Grow Together");
+
     wrapper.appendChild(left);
+    wrapper.appendChild(right);
 
     return wrapper;
   }

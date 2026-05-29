@@ -47,17 +47,47 @@
   <div id="navbar"></div>
 
   <!-- ============================================================
-       1. HERO BANNER
+       1. HERO BANNER WITH OVERLAPPING PROJECT IMAGES
        ============================================================ -->
-  <section class="relative w-full bg-navy" style="min-height: 45vh;">
-    <div class="hero-overlay"></div>
-    <div class="relative z-10 flex flex-col items-center justify-center text-center px-4" style="min-height: 45vh;">
-      <h1 class="font-heading font-extrabold mb-4 animate-fade-in-up inline-block bg-navy rounded-lg px-6 py-3" style="font-size: clamp(3.6rem, 8vw, 4.5rem);">
-        <span class="text-white">OUR </span><span class="text-gold italic">PROJECTS</span>
-      </h1>
-      <p class="text-white/90 max-w-2xl mb-6 animate-fade-in-up delay-200" style="font-size: clamp(1.35rem, 4vw, 1.5rem);">
-        Delivering Excellence Across India's Infrastructure Landscape
-      </p>
+  <section class="relative w-full bg-navy overflow-hidden" style="min-height: 60vh; padding: 3rem 2rem;">
+    <div class="max-w-7xl mx-auto relative">
+      <!-- Text Content (Left) -->
+      <div class="relative z-20 flex flex-col justify-center mb-8 md:mb-0 md:absolute md:left-0 md:top-1/2 md:-translate-y-1/2 md:w-1/2">
+        <h1 class="font-heading font-extrabold mb-4 animate-fade-in-up inline-block" style="font-size: clamp(3.6rem, 8vw, 4.5rem);">
+          <span class="text-white">OUR </span><span class="text-gold italic">PROJECTS</span>
+        </h1>
+        <p class="text-white/90 max-w-xl animate-fade-in-up delay-200" style="font-size: clamp(1.35rem, 4vw, 1.5rem);">
+          Delivering Excellence Across India's Infrastructure Landscape
+        </p>
+      </div>
+
+      <!-- Overlapping Images Container (Right) -->
+      <div class="relative h-96 md:h-96 md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 md:w-1/2">
+        <!-- Image 1 - NH-130 -->
+        <div class="absolute w-48 h-64 md:w-56 md:h-72 rounded-xl overflow-hidden shadow-2xl animate-fade-in-right" style="left: 0%; top: 0%; transform: rotate(-8deg); z-index: 5;">
+          <img src="images/project-nh130.jpg" alt="NH-130-CD Project" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Image 2 - Kadapa -->
+        <div class="absolute w-48 h-64 md:w-56 md:h-72 rounded-xl overflow-hidden shadow-2xl animate-fade-in-right delay-100" style="left: 20%; top: 10%; transform: rotate(5deg); z-index: 6;">
+          <img src="images/project-kadapa.jpg" alt="Kadapa Expressway Project" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Image 3 - Polavaram -->
+        <div class="absolute w-48 h-64 md:w-56 md:h-72 rounded-xl overflow-hidden shadow-2xl animate-fade-in-right delay-200" style="left: 40%; top: 5%; transform: rotate(-6deg); z-index: 7;">
+          <img src="images/project-polavaram.jpg" alt="Polavaram Project" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Image 4 - Railways -->
+        <div class="absolute w-48 h-64 md:w-56 md:h-72 rounded-xl overflow-hidden shadow-2xl animate-fade-in-right delay-300" style="left: 60%; top: 15%; transform: rotate(7deg); z-index: 8;">
+          <img src="images/project-railways.jpg" alt="Railway Project" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Image 5 - Irrigation -->
+        <div class="absolute w-48 h-64 md:w-56 md:h-72 rounded-xl overflow-hidden shadow-2xl animate-fade-in-right delay-400" style="left: 75%; top: 8%; transform: rotate(-5deg); z-index: 9;">
+          <img src="images/project-madanapalli.jpg" alt="Irrigation Project" class="w-full h-full object-cover">
+        </div>
+      </div>
     </div>
   </section>
 

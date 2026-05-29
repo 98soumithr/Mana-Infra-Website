@@ -180,7 +180,7 @@ html {
     rgba(22, 60, 106, 0.7),
     rgba(22, 60, 106, 0.4)
   );
-  z-index: 0;
+  z-index: 5;
   pointer-events: none;
 }
 

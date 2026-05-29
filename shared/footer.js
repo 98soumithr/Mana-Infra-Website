@@ -91,11 +91,13 @@
     ].join(";"));
 
     var tagline = el("p", [
-      "font-size: 14px",
-      "font-style: italic",
+      "font-size: 16px",
+      "font-style: normal",
       "color: " + COLORS.gold,
-      "font-weight: 600",
+      "font-weight: 400",
       "margin: 0",
+      "font-family: 'Death Star', sans-serif",
+      "letter-spacing: 0.5px",
     ].join(";"), "Build Together, Grow Together");
 
     taglineWrap.appendChild(tagline);

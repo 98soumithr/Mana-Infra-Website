@@ -27,15 +27,15 @@
   <link rel="stylesheet" href="css/custom.css">
   <style>
     .state-logo {
-      opacity: 0.3;
+      opacity: 0.8;
       pointer-events: none;
       transition: opacity 0.4s ease;
     }
     .state-logo:hover {
-      opacity: 0.5;
+      opacity: 0.9;
     }
     .state-logo.active {
-      opacity: 0.9;
+      opacity: 1;
     }
     .state-path {
       fill: #FFFFFF !important;
@@ -546,7 +546,7 @@
         var bbox = path.getBBox();
         var cx = bbox.x + bbox.width / 2;
         var cy = bbox.y + bbox.height / 2;
-        var logoSize = 24;
+        var logoSize = 120;
 
         var image = document.createElementNS('http://www.w3.org/2000/svg', 'image');
         image.setAttribute('x', cx - logoSize / 2);

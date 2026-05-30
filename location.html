@@ -149,95 +149,10 @@
       <!-- Map + Legend Layout -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
 
-        <!-- India Map (Interactive SVG) -->
+        <!-- India Map (PNG Image) -->
         <div class="relative animate-fade-in-left">
-          <style>
-            .map-box { width: min(560px, 100%); background: #112F55; border: 1px solid rgba(120, 150, 205, .14); border-radius: 26px; padding: 30px 30px 22px; box-shadow: 0 30px 70px -28px rgba(8, 18, 40, .6), inset 0 1px 0 rgba(255, 255, 255, .04); position: relative; overflow: hidden; }
-            .map-box__head { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 8px; }
-            .map-box__title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: .18em; text-transform: uppercase; color: #cdd9ef; margin: 0; text-align: center; }
-            .map-wrap { position: relative; width: 100%; overflow: hidden; }
-            #india { width: 100%; height: auto; display: block; max-width: 100%; }
-            .state { fill: #ffffff; stroke: #e8631a; stroke-width: .6; stroke-dasharray: 1.6 1.9; stroke-linejoin: round; transition: fill .25s ease; }
-            .map-box__foot { text-align: center; margin-top: 14px; color: #8aa0c8; font-size: 11.5px; letter-spacing: .05em; }
-            .map-box__foot b { color: #dbe5f6; font-weight: 600; }
-          </style>
-          <div class="map-box">
-            <div class="map-box__head">
-              <p class="map-box__title">Operational Presence</p>
-            </div>
-            <div class="map-wrap">
-              <svg id="india" viewBox="-114 -50.4 611.9 695.7" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of India highlighting operational states"></svg>
-            </div>
-            <div class="map-box__foot"><b>Mana Infrastructure Pvt. Ltd.</b></div>
-          </div>
+          <img src="images/map.png" alt="India Operational Presence Map" class="w-full h-auto rounded-xl shadow-lg">
         </div>
-        <script>
-          // Inject SVG content and logos
-          (function(){
-            const LOGO = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAAJ1BMVEVMaXERL1URL1URL1XqZA0RL1XqZA3qZA0ZMVK8WRwdMlERL1XqZA1OjoAKAAAAC3RSTlMAoNAQoGBAgKZM3KRVUV4AAAAJcEhZcwAAAxMAAAMTAT1mg8cAAAGYSURBVHic7dlJbsMwDEBRJ+ks3/+8RVsEniRnIRZFxffWBEH8LScAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH7N5fJg8+36aCKNSynnLW7XRxOZWp23+Gql1rfvVmctflqptbRqt7i3Umtp1WqxtEpfa9Wq3mLdKnmtTatai22r1LV2rY4t9q0S1zq02rc4tkpbq9Jq26LWqpS3Pzz5z1RbrWvVW5XylC5Vq9VSq9WqzOlqNVvdazVblTlbrZNW5Xk6bVXmZLV6Wn3FylSrq9XHnKpWV6vr+5ypVl+r28ucqFZnq+keK0Ot3lZLrPFrdbdaxRq9Vn+rdayxawW02sQauVZEq22scWuFtNrFGrVWTKt9rDFrBbU6xBqxVlSrY6zxaoW1qsQarVZcq1qssWoFtqrGGqlWZKt6rHFqhbZqxBqlVmyrVqwxagW3asYaoVZ0q3as/18rvNX02oyV7/sKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBgmqZPy3lZb4T0zMAAAAAASUVORK5CYII=";
-            const svg = document.getElementById('india');
-            const SVGNS = 'http://www.w3.org/2000/svg';
-            fetch('images/india-map.svg').then(r => r.text()).then(html => {
-              const parser = new DOMParser();
-              const svgDoc = parser.parseFromString(html, 'image/svg+xml');
-              const paths = svgDoc.querySelectorAll('path[id]');
-              paths.forEach(path => {
-                const clone = path.cloneNode(true);
-                clone.setAttribute('class', 'state');
-                svg.appendChild(clone);
-              });
-              placeLogos();
-            });
-            function placeLogos(){
-              const ACTIVE = ["MH","TG","AP","KA","OR"];
-              const NAMES = {"MH":"Maharashtra","TG":"Telangana","AP":"Andhra Pradesh","KA":"Karnataka","OR":"Odisha"};
-              function interiorPoint(p, b){
-                const N = 34;
-                const pt = svg.createSVGPoint();
-                const dx = b.width/(N-1), dy = b.height/(N-1);
-                const grid = [];
-                for(let i=0;i<N;i++){ grid[i]=[]; for(let j=0;j<N;j++){
-                  pt.x = b.x + i*dx; pt.y = b.y + j*dy;
-                  grid[i][j] = p.isPointInFill(pt);
-                }}
-                let best=null, bestD=-1;
-                for(let i=0;i<N;i++) for(let j=0;j<N;j++){
-                  if(!grid[i][j]) continue;
-                  let d = Math.min(i, j, N-1-i, N-1-j);
-                  d = d*d;
-                  for(let a=0;a<N && d>0;a++) for(let c=0;c<N;c++){
-                    if(grid[a][c]) continue;
-                    const dd = (a-i)*(a-i)+(c-j)*(c-j);
-                    if(dd<d) d=dd;
-                  }
-                  if(d>bestD){ bestD=d; best={x:b.x+i*dx, y:b.y+j*dy}; }
-                }
-                return best || {x:b.x+b.width/2, y:b.y+b.height/2};
-              }
-              ACTIVE.forEach(code=>{
-                const p = document.getElementById(code);
-                if(!p) return;
-                const b = p.getBBox();
-                const ctr = interiorPoint(p, b);
-                const cx = ctr.x, cy = ctr.y;
-                const g = document.createElementNS(SVGNS,'g');
-                g.setAttribute('class','badge');
-                g.setAttribute('transform','translate('+cx+','+cy+')');
-                const img = document.createElementNS(SVGNS,'image');
-                const s = Math.max(68, Math.min(86, Math.min(b.width,b.height)*1.76));
-                img.setAttributeNS('http://www.w3.org/1999/xlink','href',LOGO);
-                img.setAttribute('href',LOGO);
-                img.setAttribute('x', -s/2);
-                img.setAttribute('y', -s/2);
-                img.setAttribute('width', s);
-                img.setAttribute('height', s);
-                img.setAttribute('preserveAspectRatio','xMidYMid meet');
-                g.appendChild(img);
-                svg.appendChild(g);
-              });
-            }
-          })();
-        </script>
 
         <!-- State Info Panel (right column) -->
         <div class="relative animate-fade-in-right">

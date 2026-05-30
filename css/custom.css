@@ -827,6 +827,24 @@ section.relative > img[src*="images/"] {
    21. Interactive India Map (Location Page)
    ============================================ */
 
+/* State path styling */
+.state-path {
+  fill: #ffffff;
+  stroke: #EA640D;
+  stroke-width: 0.6;
+  stroke-dasharray: 1.6 1.9;
+  cursor: pointer;
+  transition: fill 0.25s ease;
+}
+
+.state-path:hover {
+  fill: #EA640D;
+}
+
+.state-path.active {
+  fill: #EA640D;
+}
+
 /* Map container */
 #india-map-container {
   border: 1px solid rgba(42, 74, 112, 0.3);

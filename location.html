@@ -520,6 +520,7 @@
             return;
           }
           svg.querySelectorAll('text').forEach(function (t) { t.remove(); });
+          svg.querySelectorAll('rect').forEach(function (r) { r.remove(); });
           svg.querySelectorAll('path[id]').forEach(function (p) {
             p.removeAttribute('fill');
             p.setAttribute('class', 'state-path');

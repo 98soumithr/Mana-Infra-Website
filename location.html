@@ -26,22 +26,15 @@
   </script>
   <link rel="stylesheet" href="css/custom.css">
   <style>
-    .state-mana-text {
-      font-family: 'Death Star', sans-serif;
-      font-size: 12px;
-      font-weight: bold;
-      text-anchor: middle;
-      dominant-baseline: middle;
-      fill: #112F55;
+    .state-logo {
       opacity: 0.3;
       pointer-events: none;
-      transition: opacity 0.4s ease, fill 0.4s ease;
+      transition: opacity 0.4s ease;
     }
-    .state-mana-text:hover {
+    .state-logo:hover {
       opacity: 0.5;
     }
-    .state-mana-text.active {
-      fill: #EA640D;
+    .state-logo.active {
       opacity: 0.9;
     }
     .state-path {
@@ -544,7 +537,7 @@
         });
     }
 
-    /* ── Add MANA Text to States ── */
+    /* ── Add Logo to States ── */
     function addManaTexts(svg) {
       OPERATIONAL.forEach(function (id) {
         var path = svg.querySelector('#' + id);
@@ -553,15 +546,19 @@
         var bbox = path.getBBox();
         var cx = bbox.x + bbox.width / 2;
         var cy = bbox.y + bbox.height / 2;
+        var logoSize = 24;
 
-        var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        text.setAttribute('x', cx);
-        text.setAttribute('y', cy);
-        text.setAttribute('class', 'state-mana-text');
-        text.setAttribute('data-state', id);
-        text.textContent = 'MANA';
+        var image = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+        image.setAttribute('x', cx - logoSize / 2);
+        image.setAttribute('y', cy - logoSize / 2);
+        image.setAttribute('width', logoSize);
+        image.setAttribute('height', logoSize);
+        image.setAttribute('href', 'images/logo.png');
+        image.setAttribute('class', 'state-logo');
+        image.setAttribute('data-state', id);
+        image.setAttribute('preserveAspectRatio', 'xMidYMid meet');
 
-        svg.appendChild(text);
+        svg.appendChild(image);
       });
     }
 
@@ -614,17 +611,17 @@
     /* ── Active State on Map ── */
     function setActive(svg, id) {
       svg.querySelectorAll('.state-highlight').forEach(function (p) { p.classList.remove('active'); });
-      svg.querySelectorAll('.state-mana-text').forEach(function (text) { text.classList.remove('active'); });
+      svg.querySelectorAll('.state-logo').forEach(function (logo) { logo.classList.remove('active'); });
       var el = svg.querySelector('#' + id);
       if (el) el.classList.add('active');
-      var manaText = svg.querySelector('.state-mana-text[data-state="' + id + '"]');
-      if (manaText) manaText.classList.add('active');
+      var logo = svg.querySelector('.state-logo[data-state="' + id + '"]');
+      if (logo) logo.classList.add('active');
     }
     function clearActive() {
       var c = document.getElementById('india-map-svg');
       if (c) {
         c.querySelectorAll('.state-highlight').forEach(function (p) { p.classList.remove('active'); });
-        c.querySelectorAll('.state-mana-text').forEach(function (text) { text.classList.remove('active'); });
+        c.querySelectorAll('.state-logo').forEach(function (logo) { logo.classList.remove('active'); });
       }
     }
 

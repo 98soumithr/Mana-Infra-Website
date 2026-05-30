@@ -177,9 +177,13 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
 
         <!-- India Map (Interactive SVG) -->
-        <div class="relative animate-fade-in-left" style="margin: 0; padding: 0;">
-          <div style="height: 30px; background-color: #0F1C2F; margin: 0; padding: 0;"></div>
-          <svg id="india-map-svg" class="w-full h-auto rounded-xl shadow-lg m-0 p-0" viewBox="0 0 612 730" preserveAspectRatio="xMidYMid meet" style="display: block; margin: 0; padding: 0;"></svg>
+        <div class="relative animate-fade-in-left" style="margin: 0; padding: 0; display: flex;">
+          <div style="width: 30px; background-color: #0F1C2F; margin: 0; padding: 0;"></div>
+          <div style="flex: 1; margin: 0; padding: 0;">
+            <div style="height: 30px; background-color: #0F1C2F; margin: 0; padding: 0;"></div>
+            <svg id="india-map-svg" class="w-full h-auto rounded-xl shadow-lg m-0 p-0" viewBox="0 0 612 730" preserveAspectRatio="xMidYMid meet" style="display: block; margin: 0; padding: 0;"></svg>
+          </div>
+          <div style="width: 30px; background-color: #0F1C2F; margin: 0; padding: 0;"></div>
         </div>
 
         <!-- State Info Panel (right column) -->

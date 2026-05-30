@@ -25,6 +25,27 @@
     }
   </script>
   <link rel="stylesheet" href="css/custom.css">
+  <style>
+    .state-mana-text {
+      font-family: 'Death Star', sans-serif;
+      font-size: 28px;
+      font-weight: bold;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      fill: #112F55;
+      opacity: 0.35;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .state-mana-text:hover {
+      opacity: 0.75;
+    }
+    .state-mana-text.active {
+      opacity: 1;
+      fill: #EA640D;
+      transform: scale(1.3);
+    }
+  </style>
 </head>
 <body class="font-body text-slate-800 text-justify">
 
@@ -547,6 +568,27 @@
         });
     }
 
+    /* ── Add MANA Text to States ── */
+    function addManaTexts(svg) {
+      OPERATIONAL.forEach(function (id) {
+        var path = svg.querySelector('#' + id);
+        if (!path) return;
+
+        var bbox = path.getBBox();
+        var cx = bbox.x + bbox.width / 2;
+        var cy = bbox.y + bbox.height / 2;
+
+        var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('x', cx);
+        text.setAttribute('y', cy);
+        text.setAttribute('class', 'state-mana-text');
+        text.setAttribute('data-state', id);
+        text.textContent = 'MANA';
+
+        svg.appendChild(text);
+      });
+    }
+
     /* ── Map Interactions ── */
     function initInteractions(svg) {
       var paths = svg.querySelectorAll('path[id]');
@@ -570,6 +612,8 @@
           });
         }
       });
+
+      addManaTexts(svg);
     }
 
     /* ── Legend Card Hover Sync ── */
@@ -594,12 +638,18 @@
     /* ── Active State on Map ── */
     function setActive(svg, id) {
       svg.querySelectorAll('.state-highlight').forEach(function (p) { p.classList.remove('active'); });
+      svg.querySelectorAll('.state-mana-text').forEach(function (text) { text.classList.remove('active'); });
       var el = svg.querySelector('#' + id);
       if (el) el.classList.add('active');
+      var manaText = svg.querySelector('.state-mana-text[data-state="' + id + '"]');
+      if (manaText) manaText.classList.add('active');
     }
     function clearActive() {
       var c = document.getElementById('india-map-svg');
-      if (c) c.querySelectorAll('.state-highlight').forEach(function (p) { p.classList.remove('active'); });
+      if (c) {
+        c.querySelectorAll('.state-highlight').forEach(function (p) { p.classList.remove('active'); });
+        c.querySelectorAll('.state-mana-text').forEach(function (text) { text.classList.remove('active'); });
+      }
     }
 
     /* ── Open Detail Panel ── */

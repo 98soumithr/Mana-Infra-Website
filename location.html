@@ -157,21 +157,22 @@
               const parser = new DOMParser();
               const svgDoc = parser.parseFromString(html, 'image/svg+xml');
               const svg = document.getElementById('india-map-svg');
-              const STATES = ['ap', 'tg', 'ka', 'mh', 'or'];
-              STATES.forEach(code => {
-                const path = svgDoc.getElementById(code);
-                if (path) {
-                  const clone = path.cloneNode(true);
-                  clone.setAttribute('class', 'state-path');
-                  clone.setAttribute('id', code);
-                  svg.appendChild(clone);
-                }
+              const INTERACTIVE_STATES = ['ap', 'tg', 'ka', 'mh', 'or'];
+
+              // Clone ALL state paths from the source SVG
+              const allPaths = svgDoc.querySelectorAll('path[id]');
+              allPaths.forEach(path => {
+                const clone = path.cloneNode(true);
+                clone.setAttribute('class', 'state-path');
+                svg.appendChild(clone);
               });
+
+              // Attach event listeners only to the 5 interactive states
               attachStateEventListeners();
             });
             function attachStateEventListeners() {
-              const STATES = ['ap', 'tg', 'ka', 'mh', 'or'];
-              STATES.forEach(code => {
+              const INTERACTIVE_STATES = ['ap', 'tg', 'ka', 'mh', 'or'];
+              INTERACTIVE_STATES.forEach(code => {
                 const path = document.getElementById(code);
                 if (!path) return;
                 path.addEventListener('mouseenter', () => {
@@ -185,7 +186,7 @@
                 path.addEventListener('click', () => {
                   openPanel(code);
                   setActive(code);
-                  STATES.forEach(s => {
+                  INTERACTIVE_STATES.forEach(s => {
                     const p = document.getElementById(s);
                     if (p) p.classList.toggle('active', s === code);
                   });

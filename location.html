@@ -45,11 +45,15 @@
       transition: fill 0.25s ease;
       pointer-events: auto;
     }
-    .state-path:hover {
-      fill: #FFFFFF !important;
+    .state-path:hover,
+    .state-path.hover {
+      stroke: #E8A435 !important;
+      stroke-width: 2 !important;
     }
     .state-path.active {
       fill: #FFFFFF !important;
+      stroke: #E8A435 !important;
+      stroke-width: 2 !important;
     }
   </style>
 </head>
@@ -580,8 +584,14 @@
           path.setAttribute('tabindex', '0');
           path.setAttribute('aria-label', 'View projects in ' + MANA_PROJECTS[id].name);
 
-          path.addEventListener('mouseenter', function () { highlightCard(id); });
-          path.addEventListener('mouseleave', function () { unhighlightCard(id); });
+          path.addEventListener('mouseenter', function () {
+            path.classList.add('hover');
+            highlightCard(id);
+          });
+          path.addEventListener('mouseleave', function () {
+            path.classList.remove('hover');
+            unhighlightCard(id);
+          });
           path.addEventListener('click', function () { openPanel(id); setActive(svg, id); });
           path.addEventListener('keydown', function (e) {
             if (e.key === 'Enter' || e.key === ' ') {

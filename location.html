@@ -28,22 +28,37 @@
   <style>
     .state-mana-text {
       font-family: 'Death Star', sans-serif;
-      font-size: 28px;
+      font-size: 24px;
       font-weight: bold;
       text-anchor: middle;
       dominant-baseline: middle;
       fill: #112F55;
-      opacity: 0.35;
+      opacity: 0.3;
       pointer-events: none;
-      transition: opacity 0.3s ease, transform 0.3s ease;
+      transition: opacity 0.4s ease, fill 0.4s ease;
     }
     .state-mana-text:hover {
-      opacity: 0.75;
+      opacity: 0.5;
     }
     .state-mana-text.active {
-      opacity: 1;
       fill: #EA640D;
-      transform: scale(1.3);
+      opacity: 0.9;
+    }
+    .state-path {
+      fill: #FFFFFF;
+      stroke: #112F55;
+      stroke-width: 1.2;
+      cursor: pointer;
+      transition: fill 0.25s ease, stroke 0.25s ease, stroke-width 0.25s ease;
+      pointer-events: auto;
+    }
+    .state-path:hover {
+      stroke: #EA640D;
+      stroke-width: 1.5;
+    }
+    .state-path.active {
+      stroke: #EA640D;
+      stroke-width: 1.5;
     }
   </style>
 </head>
@@ -555,6 +570,7 @@
             console.error('SVG element not found after insertion');
             return;
           }
+          svg.querySelectorAll('text').forEach(function (t) { t.remove(); });
           svg.style.width = '100%';
           svg.style.height = 'auto';
           svg.setAttribute('role', 'img');

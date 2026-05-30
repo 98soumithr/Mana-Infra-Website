@@ -539,7 +539,11 @@
 
     /* ── Add Logo to States ── */
     function addManaTexts(svg) {
-      var positionOffsets = { ap: -30, mh: -25, ka: -20 };
+      var positionOffsets = {
+        ap: { x: -40, y: 25 },
+        mh: { x: -25, y: 0 },
+        ka: { x: -20, y: 0 }
+      };
       OPERATIONAL.forEach(function (id) {
         var path = svg.querySelector('#' + id);
         if (!path) return;
@@ -548,11 +552,11 @@
         var cx = bbox.x + bbox.width / 2;
         var cy = bbox.y + bbox.height / 2;
         var logoSize = 120;
-        var xOffset = positionOffsets[id] || 0;
+        var offset = positionOffsets[id] || { x: 0, y: 0 };
 
         var image = document.createElementNS('http://www.w3.org/2000/svg', 'image');
-        image.setAttribute('x', cx - logoSize / 2 + xOffset);
-        image.setAttribute('y', cy - logoSize / 2);
+        image.setAttribute('x', cx - logoSize / 2 + offset.x);
+        image.setAttribute('y', cy - logoSize / 2 + offset.y);
         image.setAttribute('width', logoSize);
         image.setAttribute('height', logoSize);
         image.setAttribute('href', 'images/logo.png');

@@ -36,7 +36,7 @@
        ============================================ -->
   <section class="relative w-full" style="height: 45vh; min-height: 320px;">
     <img src="images/expertise-bg.jpg" alt="Aerial view of Polavaram dam barrage with spillway gates" class="absolute inset-0 w-full h-full object-cover">
-    <div class="hero-overlay"></div>
+    <div class="absolute inset-0 bg-dark/85" style="z-index: 5;"></div>
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
       <h1 class="font-heading text-5xl md:text-6xl font-bold mb-3 animate-fade-in-up">
         <span class="text-white">OUR </span><span class="text-gold italic">LOCATIONS</span>
@@ -53,7 +53,7 @@
 
       <!-- Section Header -->
       <div class="text-center mb-12 animate-fade-in-up">
-        <span class="text-gold uppercase tracking-widest text-sm font-semibold">OUR OFFICES</span>
+        <span class="text-gold uppercase tracking-widest text-base font-semibold">OUR OFFICES</span>
         <div class="flex items-center justify-center gap-4 mt-3">
           <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy">Where We Operate From</h2>
           <div class="morph-loader hidden sm:block" style="flex-shrink: 0;">
@@ -88,7 +88,7 @@
           <!-- Map -->
           <div class="rounded-lg overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.8!2d79.42!3d13.63!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDM3JzQ4LjAiTiA3OcKwMjUnMTIuMCJF!5e0!3m2!1sen!2sin!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.823!2d79.4251!3d13.6369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4d6f8c8c8c8c8d%3A0x1a2b3c4d5e6f7g8h!2sD.No.%2019-3-145%2FA%2C%20Postal%20Colony%2C%20Tirupati%2C%20Andhra%20Pradesh%20517501!5e0!3m2!1sen!2sin!4v1715404800"
               width="100%"
               style="border:0;"
               allowfullscreen=""
@@ -118,7 +118,7 @@
           <!-- Map -->
           <div class="rounded-lg overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.5!2d78.2066803!3d17.4243108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbedeb3a639cb9%3A0xa42612db198c8ad9!2sSubishi%20Town%20Center%20Commercial!5e0!3m2!1sen!2sin!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.512!2d78.2067!3d17.4243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbedeb3a639cb9%3A0xa42612db198c8ad9!2sSubishi%20Town%20Center%2C%20Mokila%20Village%2C%20Shankarpally%2C%20Hyderabad%2C%20Telangana%20501203!5e0!3m2!1sen!2sin!4v1715404800"
               width="100%"
               style="border:0;"
               allowfullscreen=""
@@ -151,11 +151,93 @@
 
         <!-- India Map (Interactive SVG) -->
         <div class="relative animate-fade-in-left">
-          <div id="india-map-container" class="w-full max-w-md mx-auto lg:mx-0 rounded-2xl shadow-2xl overflow-hidden p-4" style="background: linear-gradient(135deg, #0F1B2D 0%, #162642 100%);">
-            <div id="india-map-svg" class="w-full"></div>
-            <p class="text-center text-white/40 text-xs mt-3 font-medium tracking-wide">Click a highlighted state to view projects</p>
+          <style>
+            .map-box { width: min(560px, 100%); background: #112F55; border: 1px solid rgba(120, 150, 205, .14); border-radius: 26px; padding: 30px 30px 22px; box-shadow: 0 30px 70px -28px rgba(8, 18, 40, .6), inset 0 1px 0 rgba(255, 255, 255, .04); position: relative; }
+            .map-box__head { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 8px; }
+            .map-box__title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: .18em; text-transform: uppercase; color: #cdd9ef; margin: 0; text-align: center; }
+            .map-wrap { position: relative; width: 100%; }
+            #india { width: 100%; height: auto; display: block; overflow: visible; }
+            .state { fill: #ffffff; stroke: #e8631a; stroke-width: .6; stroke-dasharray: 1.6 1.9; stroke-linejoin: round; transition: fill .25s ease; }
+            .map-box__foot { text-align: center; margin-top: 14px; color: #8aa0c8; font-size: 11.5px; letter-spacing: .05em; }
+            .map-box__foot b { color: #dbe5f6; font-weight: 600; }
+          </style>
+          <div class="map-box">
+            <div class="map-box__head">
+              <p class="map-box__title">Operational Presence</p>
+            </div>
+            <div class="map-wrap">
+              <svg id="india" viewBox="-114 -50.4 611.9 695.7" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of India highlighting operational states"></svg>
+            </div>
+            <div class="map-box__foot"><b>Mana Infrastructure Pvt. Ltd.</b></div>
           </div>
         </div>
+        <script>
+          // Inject SVG content and logos
+          (function(){
+            const LOGO = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAAJ1BMVEVMaXERL1URL1URL1XqZA0RL1XqZA3qZA0ZMVK8WRwdMlERL1XqZA1OjoAKAAAAC3RSTlMAoNAQoGBAgKZM3KRVUV4AAAAJcEhZcwAAAxMAAAMTAT1mg8cAAAGYSURBVHic7dlJbsMwDEBRJ+ks3/+8RVsEniRnIRZFxffWBEH8LScAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH7N5fJg8+36aCKNSynnLW7XRxOZWp23+Gql1rfvVmctflqptbRqt7i3Umtp1WqxtEpfa9Wq3mLdKnmtTatai22r1LV2rY4t9q0S1zq02rc4tkpbq9Jq26LWqpS3Pzz5z1RbrWvVW5XylC5Vq9VSq9WqzOlqNVvdazVblTlbrZNW5Xk6bVXmZLV6Wn3FylSrq9XHnKpWV6vr+5ypVl+r28ucqFZnq+keK0Ot3lZLrPFrdbdaxRq9Vn+rdayxawW02sQauVZEq22scWuFtNrFGrVWTKt9rDFrBbU6xBqxVlSrY6zxaoW1qsQarVZcq1qssWoFtqrGGqlWZKt6rHFqhbZqxBqlVmyrVqwxagW3asYaoVZ0q3as/18rvNX02oyV7/sKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBgmqZPy3lZb4T0zMAAAAAASUVORK5CYII=";
+            const svg = document.getElementById('india');
+            const SVGNS = 'http://www.w3.org/2000/svg';
+            fetch('images/india-map.svg').then(r => r.text()).then(html => {
+              const parser = new DOMParser();
+              const svgDoc = parser.parseFromString(html, 'image/svg+xml');
+              const paths = svgDoc.querySelectorAll('path[id]');
+              paths.forEach(path => {
+                const clone = path.cloneNode(true);
+                clone.setAttribute('class', 'state');
+                svg.appendChild(clone);
+              });
+              placeLogos();
+            });
+            function placeLogos(){
+              const ACTIVE = ["MH","TG","AP","KA","OR"];
+              const NAMES = {"MH":"Maharashtra","TG":"Telangana","AP":"Andhra Pradesh","KA":"Karnataka","OR":"Odisha"};
+              function interiorPoint(p, b){
+                const N = 34;
+                const pt = svg.createSVGPoint();
+                const dx = b.width/(N-1), dy = b.height/(N-1);
+                const grid = [];
+                for(let i=0;i<N;i++){ grid[i]=[]; for(let j=0;j<N;j++){
+                  pt.x = b.x + i*dx; pt.y = b.y + j*dy;
+                  grid[i][j] = p.isPointInFill(pt);
+                }}
+                let best=null, bestD=-1;
+                for(let i=0;i<N;i++) for(let j=0;j<N;j++){
+                  if(!grid[i][j]) continue;
+                  let d = Math.min(i, j, N-1-i, N-1-j);
+                  d = d*d;
+                  for(let a=0;a<N && d>0;a++) for(let c=0;c<N;c++){
+                    if(grid[a][c]) continue;
+                    const dd = (a-i)*(a-i)+(c-j)*(c-j);
+                    if(dd<d) d=dd;
+                  }
+                  if(d>bestD){ bestD=d; best={x:b.x+i*dx, y:b.y+j*dy}; }
+                }
+                return best || {x:b.x+b.width/2, y:b.y+b.height/2};
+              }
+              ACTIVE.forEach(code=>{
+                const p = document.getElementById(code);
+                if(!p) return;
+                const b = p.getBBox();
+                const ctr = interiorPoint(p, b);
+                const cx = ctr.x, cy = ctr.y;
+                const g = document.createElementNS(SVGNS,'g');
+                g.setAttribute('class','badge');
+                g.setAttribute('transform','translate('+cx+','+cy+')');
+                const img = document.createElementNS(SVGNS,'image');
+                const s = Math.max(68, Math.min(86, Math.min(b.width,b.height)*1.76));
+                img.setAttributeNS('http://www.w3.org/1999/xlink','href',LOGO);
+                img.setAttribute('href',LOGO);
+                img.setAttribute('x', -s/2);
+                img.setAttribute('y', -s/2);
+                img.setAttribute('width', s);
+                img.setAttribute('height', s);
+                img.setAttribute('preserveAspectRatio','xMidYMid meet');
+                g.appendChild(img);
+                svg.appendChild(g);
+              });
+            }
+          })();
+        </script>
 
         <!-- State Info Panel (right column) -->
         <div class="relative animate-fade-in-right">
@@ -479,18 +561,32 @@
     /* ── Load SVG Map ── */
     function loadMap() {
       fetch('images/india-map.svg')
-        .then(function (r) { return r.text(); })
+        .then(function (r) {
+          if (!r.ok) throw new Error('Failed to fetch SVG: ' + r.status);
+          return r.text();
+        })
         .then(function (svgText) {
           var container = document.getElementById('india-map-svg');
-          if (!container) return;
+          if (!container) {
+            console.error('Map container not found');
+            return;
+          }
           container.innerHTML = svgText;
           var svg = container.querySelector('svg');
-          if (!svg) return;
+          if (!svg) {
+            console.error('SVG element not found after insertion');
+            return;
+          }
           svg.style.width = '100%';
           svg.style.height = 'auto';
           svg.setAttribute('role', 'img');
           svg.setAttribute('aria-label', 'Interactive India map showing Mana Infrastructure operational states');
           initInteractions(svg);
+        })
+        .catch(function (err) {
+          console.error('Error loading India map:', err);
+          var container = document.getElementById('india-map-svg');
+          if (container) container.innerHTML = '<p style="color:#999; padding:20px; text-align:center;">Map could not load</p>';
         });
     }
 

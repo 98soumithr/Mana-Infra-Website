@@ -5,3 +5,6 @@ node_modules/
 pdf_pages/
 extracted_images/
 .claude/
+
+# Local debug screen recordings (not part of the site)
+output_video/

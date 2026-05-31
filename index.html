@@ -30,7 +30,7 @@
       }
     }
   </script>
-  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/custom.css?v=20260531c">
 </head>
 <body class="font-body text-slate-800 text-justify">
 
@@ -165,139 +165,142 @@
           a proven equipment fleet, and experienced site teams to every project domain.
         </p>
       </div>
-      <!-- Cards Stack - Horizontal Accordion -->
-      <div id="expertiseCards" class="flex gap-4 pb-4 overflow-x-auto" style="flex-wrap: nowrap; min-width: 0; padding: 0 24px;">
+      <!-- Expanding Accordion — Core Sectors (one active at a time, row stays 100% wide) -->
+      <div id="expertiseCards">
 
         <!-- Card 1: Highways & Roads -->
-        <a href="expertise-highways.html" class="expertise-card expanded relative rounded-lg overflow-hidden shadow-lg card-gold-border animate-fade-in-up flex-shrink-0" style="height: 400px;">
-          <div class="absolute inset-0" style="background-image: url('images/highways-1.jpg'); background-size: cover; background-position: center;"></div>
-          <div class="absolute left-0 top-0 h-full flex items-center pl-6 z-10">
-            <h3 class="font-heading font-bold text-white text-2xl" style="writing-mode: vertical-rl; transform: rotate(180deg);">
-              HIGHWAYS &amp; ROADS
-            </h3>
+        <a href="expertise-highways.html" class="expertise-card active animate-fade-in-up">
+          <div class="project-post-thumbnail">
+            <img src="images/highways-1.jpg" alt="Highways & Roads — six-lane and four-lane expressway construction" loading="lazy">
           </div>
-          <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-8">
-            <p class="text-sm leading-relaxed mb-6 max-w-xs">
-              National highway construction including six-lane and four-lane expressways over challenging terrain.
-            </p>
-            <span class="text-gold text-sm font-semibold">Explore Projects →</span>
+          <div class="project-content">
+            <div class="project-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              <span>Connecting regions through expressways built to last</span>
+            </div>
+            <h3 class="project-title"><span class="project-title-text">Highways &amp; Roads</span></h3>
+            <div class="project-button-wrap">
+              <span class="project-button">
+                <span class="project-button-text">Explore Projects</span>
+                <span class="project-button-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </span>
+              </span>
+            </div>
           </div>
         </a>
 
         <!-- Card 2: Tunnels -->
-        <a href="expertise-tunnels.html" class="expertise-card relative rounded-lg overflow-hidden shadow-lg card-gold-border animate-fade-in-up delay-100 flex-shrink-0" style="height: 400px;">
-          <div class="absolute inset-0" style="background-image: url('images/tunnels-1.jpg'); background-size: cover; background-position: center;"></div>
-          <div class="absolute left-0 top-0 h-full flex items-center pl-6 z-10">
-            <h3 class="font-heading font-bold text-white text-2xl" style="writing-mode: vertical-rl; transform: rotate(180deg);">
-              TUNNELS
-            </h3>
+        <a href="expertise-tunnels.html" class="expertise-card animate-fade-in-up delay-100">
+          <div class="project-post-thumbnail">
+            <img src="images/tunnels-1.jpg" alt="Tunnels — twin-bore NATM tunnelling" loading="lazy">
           </div>
-          <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-8">
-            <p class="text-sm leading-relaxed mb-6 max-w-xs">
-              Twin-bore tunnels up to 900M using NATM methodology and shotcrete support.
-            </p>
-            <span class="text-gold text-sm font-semibold">Explore Projects →</span>
+          <div class="project-content">
+            <div class="project-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              <span>A trusted partner in the nation's key tunnel projects</span>
+            </div>
+            <h3 class="project-title"><span class="project-title-text">Tunnels</span></h3>
+            <div class="project-button-wrap">
+              <span class="project-button">
+                <span class="project-button-text">Explore Projects</span>
+                <span class="project-button-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </span>
+              </span>
+            </div>
           </div>
         </a>
 
         <!-- Card 3: Irrigation & Barrages -->
-        <a href="expertise-irrigation.html" class="expertise-card relative rounded-lg overflow-hidden shadow-lg card-gold-border animate-fade-in-up delay-200 flex-shrink-0" style="height: 400px;">
-          <div class="absolute inset-0" style="background-image: url('images/irrigation-1.jpg'); background-size: cover; background-position: center;"></div>
-          <div class="absolute left-0 top-0 h-full flex items-center pl-6 z-10">
-            <h3 class="font-heading font-bold text-white text-2xl" style="writing-mode: vertical-rl; transform: rotate(180deg);">
-              IRRIGATION &amp; BARRAGES
-            </h3>
+        <a href="expertise-irrigation.html" class="expertise-card animate-fade-in-up delay-200">
+          <div class="project-post-thumbnail">
+            <img src="images/irrigation-1.jpg" alt="Irrigation & Barrages — reservoirs, canals and major irrigation works" loading="lazy">
           </div>
-          <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-8">
-            <p class="text-sm leading-relaxed mb-6 max-w-xs">
-              Construction of barrages, reservoirs, deep-cut canals, flood bank formation, and major irrigation packages.
-            </p>
-            <span class="text-gold text-sm font-semibold">Explore Projects →</span>
+          <div class="project-content">
+            <div class="project-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              <span>Transforming agricultural ecosystems across states</span>
+            </div>
+            <h3 class="project-title"><span class="project-title-text">Irrigation &amp; Barrages</span></h3>
+            <div class="project-button-wrap">
+              <span class="project-button">
+                <span class="project-button-text">Explore Projects</span>
+                <span class="project-button-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </span>
+              </span>
+            </div>
           </div>
         </a>
 
         <!-- Card 4: Railways -->
-        <a href="expertise-railways.html" class="expertise-card relative rounded-lg overflow-hidden shadow-lg card-gold-border animate-fade-in-up delay-300 flex-shrink-0" style="height: 400px;">
-          <div class="absolute inset-0" style="background-image: url('images/railways-1.jpg'); background-size: cover; background-position: center;"></div>
-          <div class="absolute left-0 top-0 h-full flex items-center pl-6 z-10">
-            <h3 class="font-heading font-bold text-white text-2xl" style="writing-mode: vertical-rl; transform: rotate(180deg);">
-              RAILWAYS
-            </h3>
+        <a href="expertise-railways.html" class="expertise-card animate-fade-in-up delay-300">
+          <div class="project-post-thumbnail">
+            <img src="images/railways-1.jpg" alt="Railways — new gauge line construction for RVNL" loading="lazy">
           </div>
-          <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-8">
-            <p class="text-sm leading-relaxed mb-6 max-w-xs">
-              New gauge line construction for RVNL including major bridges, RUBs, ROBs, station buildings, HI platforms, and COPs.
-            </p>
-            <span class="text-gold text-sm font-semibold">Explore Projects →</span>
+          <div class="project-content">
+            <div class="project-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              <span>Supporting the backbone of India's transit networks</span>
+            </div>
+            <h3 class="project-title"><span class="project-title-text">Railways</span></h3>
+            <div class="project-button-wrap">
+              <span class="project-button">
+                <span class="project-button-text">Explore Projects</span>
+                <span class="project-button-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </span>
+              </span>
+            </div>
           </div>
         </a>
 
         <!-- Card 5: Bridges & Viaducts -->
-        <a href="expertise-bridges.html" class="expertise-card relative rounded-lg overflow-hidden shadow-lg card-gold-border animate-fade-in-up delay-400 flex-shrink-0" style="height: 400px;">
-          <div class="absolute inset-0" style="background-image: url('images/bridges-1.jpg'); background-size: cover; background-position: center;"></div>
-          <div class="absolute left-0 top-0 h-full flex items-center pl-6 z-10">
-            <h3 class="font-heading font-bold text-white text-2xl" style="writing-mode: vertical-rl; transform: rotate(180deg);">
-              BRIDGES &amp; VIADUCTS
-            </h3>
+        <a href="expertise-bridges.html" class="expertise-card animate-fade-in-up delay-400">
+          <div class="project-post-thumbnail">
+            <img src="images/bridges-1.jpg" alt="Bridges & Viaducts — major bridges and elevated viaducts" loading="lazy">
           </div>
-          <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-8">
-            <p class="text-sm leading-relaxed mb-6 max-w-xs">
-              Major and minor bridges, elevated viaducts, and structural works seamlessly integrated into highway and railway infrastructure.
-            </p>
-            <span class="text-gold text-sm font-semibold">Explore Projects →</span>
+          <div class="project-content">
+            <div class="project-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              <span>Engineering crossings that carry the nation forward</span>
+            </div>
+            <h3 class="project-title"><span class="project-title-text">Bridges &amp; Viaducts</span></h3>
+            <div class="project-button-wrap">
+              <span class="project-button">
+                <span class="project-button-text">Explore Projects</span>
+                <span class="project-button-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </span>
+              </span>
+            </div>
           </div>
         </a>
 
         <!-- Card 6: Urban Infrastructure -->
-        <a href="expertise-urban.html" class="expertise-card relative rounded-lg overflow-hidden shadow-lg card-gold-border animate-fade-in-up delay-500 flex-shrink-0" style="height: 400px;">
-          <div class="absolute inset-0" style="background-image: url('images/urban-1.jpg'); background-size: cover; background-position: center;"></div>
-          <div class="absolute left-0 top-0 h-full flex items-center pl-6 z-10">
-            <h3 class="font-heading font-bold text-white text-2xl" style="writing-mode: vertical-rl; transform: rotate(180deg);">
-              URBAN INFRASTRUCTURE
-            </h3>
+        <a href="expertise-urban.html" class="expertise-card animate-fade-in-up delay-500">
+          <div class="project-post-thumbnail">
+            <img src="images/urban-1.jpg" alt="Urban Infrastructure — water supply, STPs and CC roads" loading="lazy">
           </div>
-          <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-8">
-            <p class="text-sm leading-relaxed mb-6 max-w-xs">
-              Sewage treatment plants, water supply systems, CC road construction, and water pipeline installation.
-            </p>
-            <span class="text-gold text-sm font-semibold">Explore Projects →</span>
+          <div class="project-content">
+            <div class="project-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              <span>Building dependable, sustainable urban utilities</span>
+            </div>
+            <h3 class="project-title"><span class="project-title-text">Urban Infrastructure</span></h3>
+            <div class="project-button-wrap">
+              <span class="project-button">
+                <span class="project-button-text">Explore Projects</span>
+                <span class="project-button-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </span>
+              </span>
+            </div>
           </div>
         </a>
 
       </div>
-
-      <!-- Accordion State Management Script -->
-      <script>
-        const expertiseCards = document.querySelectorAll('.expertise-card');
-        const expertiseContainer = document.getElementById('expertiseCards');
-
-        // Initialize: expand first card on load
-        expertiseCards[0].classList.add('expanded');
-
-        // Add hover listeners to all cards
-        expertiseCards.forEach(card => {
-          card.addEventListener('mouseenter', function() {
-            expertiseCards.forEach(c => {
-              c.classList.remove('expanded');
-            });
-            this.classList.add('expanded');
-          });
-        });
-
-        // Reset to first card when mouse leaves container
-        expertiseContainer.addEventListener('mouseleave', function() {
-          expertiseCards.forEach(c => {
-            c.classList.remove('expanded');
-          });
-          expertiseCards[0].classList.add('expanded');
-        });
-      </script>
     </div>
   </section>
 
@@ -524,34 +527,35 @@
       counterObserver.observe(statsSection);
     }
 
-    /* ── Expertise Cards Expansion ────────────────────────────────── */
-    var expertiseCards = document.querySelectorAll('.expertise-card');
+    /* ── Expertise Cards Expansion (one active; last hover stays open) ── */
+    var expertiseCards = Array.prototype.slice.call(
+      document.querySelectorAll('.expertise-card'));
+    var activeExpertise = -1;
 
-    expertiseCards.forEach(function(card) {
+    function activateExpertiseCard(index) {
+      if (index < 0 || index === activeExpertise) return;
+      activeExpertise = index;
+      expertiseCards.forEach(function(card, cardIndex) {
+        card.classList.toggle('active', cardIndex === index);
+      });
+    }
+
+    if (expertiseCards.length) {
+      activateExpertiseCard(0);
+    }
+
+    expertiseCards.forEach(function(card, index) {
       card.addEventListener('mouseenter', function() {
-        // Remove expanded from all cards
-        expertiseCards.forEach(function(c) {
-          c.classList.remove('expanded');
-        });
-        // Add expanded to hovered card
-        this.classList.add('expanded');
+        activateExpertiseCard(index);
+      });
+      card.addEventListener('focus', function() {
+        activateExpertiseCard(index);
       });
     });
 
-    // Prevent collapse when leaving card
-    var container = document.getElementById('expertiseCards');
-    if (container) {
-      container.addEventListener('mouseleave', function() {
-        // Keep the first card expanded as default
-        expertiseCards.forEach(function(c, index) {
-          if (index === 0) {
-            c.classList.add('expanded');
-          } else {
-            c.classList.remove('expanded');
-          }
-        });
-      });
-    }
+    // EXPERTISE-BUILD marker — confirms which version is actually loaded.
+    console.log('%cEXPERTISE-BUILD 2026-05-31h (CSS grid)',
+                'background:#EA640D;color:#fff;padding:2px 6px;border-radius:3px');
   })();
   </script>
 

@@ -826,59 +826,263 @@ section.relative > img[src*="images/"] {
 /* ============================================
    20.7. Expertise Cards Expansion (Horizontal Accordion)
    ============================================ */
+/* ============================================
+   Core Expertise — Expanding Accordion
+   (mirrors Spaciaz project-style-5: row is always
+   100% wide; the active card refuses to shrink so the
+   others give up space in place — nothing slides off.)
+   ============================================ */
+
+/* Container: stacked on mobile, single row on desktop */
+#expertiseCards {
+  --expertise-gap: 16px;
+  --expertise-active-width: 100%;
+  --expertise-collapsed-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--expertise-gap);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  /* CSS Grid instead of flex: grid-template-columns with fr units ALWAYS fills
+     the row exactly (no gap, ever) and animates smoothly when it changes — and
+     unlike flex grow/shrink, every column is treated identically, so there is
+     no last-card stall/delay. :has() picks which column is the wide one based
+     on which card has .active. The whole resize is one clean, fast transition. */
+  #expertiseCards {
+    --expertise-gap: 12px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 3.2fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: stretch;
+    gap: var(--expertise-gap);
+    overflow: visible;
+    transition: grid-template-columns 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  #expertiseCards:has(.expertise-card:nth-child(1).active) { grid-template-columns: 3.2fr 1fr 1fr 1fr 1fr 1fr; }
+  #expertiseCards:has(.expertise-card:nth-child(2).active) { grid-template-columns: 1fr 3.2fr 1fr 1fr 1fr 1fr; }
+  #expertiseCards:has(.expertise-card:nth-child(3).active) { grid-template-columns: 1fr 1fr 3.2fr 1fr 1fr 1fr; }
+  #expertiseCards:has(.expertise-card:nth-child(4).active) { grid-template-columns: 1fr 1fr 1fr 3.2fr 1fr 1fr; }
+  #expertiseCards:has(.expertise-card:nth-child(5).active) { grid-template-columns: 1fr 1fr 1fr 1fr 3.2fr 1fr; }
+  #expertiseCards:has(.expertise-card:nth-child(6).active) { grid-template-columns: 1fr 1fr 1fr 1fr 1fr 3.2fr; }
+}
+
+/* Card shell */
 .expertise-card {
+  position: relative;
+  display: block;
+  height: 420px;
+  border-radius: 18px;
+  overflow: hidden;
   cursor: pointer;
-  transition: flex 0.5s ease;
-  flex: 0 0 120px;
+  box-shadow: 0 14px 34px rgba(17, 47, 85, 0.16);
 }
 
-/* Background image div - slightly darkened/muted in collapsed state */
-.expertise-card > div:first-child {
-  background-size: 130%;
-  background-position: center;
-  transition: background-size 0.5s ease, filter 0.5s ease;
-  filter: brightness(0.65) saturate(0.75);
+@media (min-width: 768px) {
+  .expertise-card {
+    height: clamp(560px, 40vw, 600px);
+    /* Width comes entirely from the grid column — the card just fills it.
+       Nothing to transition on the card itself; the column resize handles it. */
+    min-width: 0;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .expertise-card.active {
+    box-shadow: 0 18px 38px rgba(17, 47, 85, 0.2);
+  }
 }
 
-/* Text label (vertical text) - always visible */
-.expertise-card > div:nth-child(2) {
-  transition: opacity 0.5s ease;
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 20;
+/* Background image + dark legibility wash */
+.expertise-card .project-post-thumbnail {
+  position: absolute;
+  inset: 0;
+  margin: 0;
 }
-
-/* Gradient overlay - hidden in collapsed state */
-.expertise-card > div:nth-child(3) {
-  transition: opacity 0.5s ease;
-  opacity: 0;
+.expertise-card .project-post-thumbnail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+.expertise-card .project-post-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.expertise-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(to top,
+              rgba(0, 0, 0, 0.72) 0%,
+              rgba(0, 0, 0, 0.38) 30%,
+              rgba(0, 0, 0, 0) 62%);
   pointer-events: none;
 }
 
-/* Content (description, CTA) - hidden in collapsed state, positioned to avoid overlap */
-.expertise-card > div:nth-child(4) {
-  transition: opacity 0.5s ease;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 15;
+.expertise-card .project-content {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 34px 28px;
+  color: #fff;
+  overflow: hidden;
 }
 
-/* Expanded state - show full brightness image and all overlays */
-.expertise-card.expanded {
-  flex: 0 0 320px;
+/* Tagline (location line) */
+.expertise-card .project-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-bottom: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.expertise-card .project-location svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #EA640D;
 }
 
-.expertise-card.expanded > div:first-child {
-  background-size: cover;
-  background-position: center;
-  filter: brightness(1) contrast(1);
+/* Title — vertical when collapsed, horizontal when active */
+.expertise-card .project-title {
+  margin: 0;
+  max-width: 100%;
+}
+.expertise-card .project-title-text {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 2.6vmax, 36px);
+  line-height: 1.12;
+  color: #fff;
+  white-space: nowrap;
 }
 
-.expertise-card.expanded > div:nth-child(2),
-.expertise-card.expanded > div:nth-child(3),
-.expertise-card.expanded > div:nth-child(4) {
-  opacity: 1;
-  pointer-events: auto;
+/* Explore button (white pill + gold icon circle) */
+.expertise-card .project-button-wrap {
+  margin-top: 24px;
+}
+.expertise-card .project-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 6px 6px 22px;
+  border-radius: 30px;
+  background: #fff;
+  color: #112F55;
+  font-weight: 700;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.expertise-card .project-button-text {
+  font-family: 'Poppins', sans-serif;
+}
+.expertise-card .project-button-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #EA640D;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.expertise-card .project-button-icon svg {
+  width: 16px;
+  height: 16px;
+}
+.expertise-card .project-button:hover {
+  background: #EA640D;
+  color: #fff;
+}
+.expertise-card .project-button:hover .project-button-icon {
+  background: #fff;
+  color: #EA640D;
+}
+
+/* Collapsed vs active reveal — desktop only */
+@media (min-width: 768px) {
+  .expertise-card .project-title-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    transform-origin: center;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .expertise-card.active .project-title-text {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+
+  .expertise-card .project-content {
+    align-items: center;
+    padding: 34px 12px;
+    transition: padding 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .expertise-card.active .project-content {
+    align-items: flex-start;
+    padding: 42px 36px;
+  }
+
+  .expertise-card .project-location {
+    opacity: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    border-bottom: 0;
+    overflow: hidden;
+    transform: translateY(14px);
+    transition:
+      opacity 0.26s ease,
+      max-height 0.26s ease,
+      margin 0.26s ease,
+      padding 0.26s ease,
+      transform 0.26s ease;
+  }
+  .expertise-card.active .project-location {
+    opacity: 1;
+    max-height: 90px;
+    margin-bottom: 14px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    transform: translateY(0);
+  }
+
+  .expertise-card .project-button-wrap {
+    max-height: 0;
+    transform: translateY(60px);
+    overflow: hidden;
+    transition:
+      max-height 0.28s ease,
+      margin-top 0.28s ease,
+      transform 0.28s ease;
+    margin-top: 0;
+  }
+  .expertise-card.active .project-button-wrap {
+    max-height: 90px;
+    margin-top: 24px;
+    transform: translateY(0);
+  }
+
+  .expertise-card.active .project-content {
+    max-width: 460px;
+  }
 }
 
 

@@ -69,6 +69,7 @@
     var logoWrap = el("div", [
       "display: flex",
       "align-items: flex-start",
+      "justify-content: flex-start",
       "margin-bottom: 12px",
     ].join(";"));
 
@@ -79,6 +80,7 @@
       "height: 300px",
       "width: auto",
       "object-fit: contain",
+      "max-width: 100%",
     ].join(";");
 
     logoWrap.appendChild(logoImg);
@@ -608,6 +610,16 @@
           cols[i].style.flex = "1 1 100%";
         }
 
+        /* Mobile: reduce logo size and center it */
+        var logoImg = footer.querySelector("#mana-footer img");
+        if (logoImg) {
+          logoImg.style.height = "150px";
+        }
+        var logoWrap = footer.querySelector("#mana-footer > div > div > div > div");
+        if (logoWrap) {
+          logoWrap.style.justifyContent = "center";
+        }
+
         /* Stack bottom bar */
         var bottomBar = footer.querySelector("#mana-footer > div > div:last-child");
         if (bottomBar && bottomBar.style.borderTop) {
@@ -621,6 +633,16 @@
         /* Desktop: side by side */
         row.style.flexDirection = "row";
         row.style.gap = "40px";
+
+        /* Desktop: restore logo size */
+        var logoImg = footer.querySelector("#mana-footer img");
+        if (logoImg) {
+          logoImg.style.height = "300px";
+        }
+        var logoWrap = footer.querySelector("#mana-footer > div > div > div > div");
+        if (logoWrap) {
+          logoWrap.style.justifyContent = "flex-start";
+        }
 
         var cols = row.children;
         if (cols[0]) {

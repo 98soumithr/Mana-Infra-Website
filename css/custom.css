@@ -833,7 +833,9 @@ section.relative > img[src*="images/"] {
 }
 
 .expertise-card > div:first-child {
-  transition: opacity 0.5s ease;
+  background-size: cover;
+  background-position: center;
+  transition: background-size 0.5s ease, background-position 0.5s ease;
 }
 
 .expertise-card > div:nth-child(3),
@@ -841,9 +843,10 @@ section.relative > img[src*="images/"] {
   transition: opacity 0.5s ease;
 }
 
-/* Collapsed state (default) */
+/* Collapsed state (default) - image is zoomed/cropped */
 .expertise-card > div:first-child {
-  opacity: 0.4;
+  background-size: 130%;
+  background-position: center;
 }
 
 .expertise-card > div:nth-child(3),
@@ -852,13 +855,14 @@ section.relative > img[src*="images/"] {
   pointer-events: none;
 }
 
-/* Expanded state */
+/* Expanded state - image shows full and text is visible */
 .expertise-card.expanded {
   flex: 0 0 500px;
 }
 
 .expertise-card.expanded > div:first-child {
-  opacity: 1;
+  background-size: cover;
+  background-position: center;
 }
 
 .expertise-card.expanded > div:nth-child(3),

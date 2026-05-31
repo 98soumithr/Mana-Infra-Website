@@ -610,10 +610,10 @@
           cols[i].style.flex = "1 1 100%";
         }
 
-        /* Mobile: reduce logo size and center it */
+        /* Mobile: adjust logo size and center it */
         var logoImg = footer.querySelector("#mana-footer img");
         if (logoImg) {
-          logoImg.style.height = "150px";
+          logoImg.style.height = "220px";
         }
         var logoWrap = footer.querySelector("#mana-footer > div > div > div > div");
         if (logoWrap) {

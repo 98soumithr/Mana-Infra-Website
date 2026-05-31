@@ -4,7 +4,7 @@
   var NAV_LINKS = [
     { label: "Home", href: "index.html" },
     { label: "About Us", href: "about.html" },
-    { label: "Location", href: "location.html" },
+    { label: "Verticals", href: "location.html" },
     { label: "Projects", href: "projects.html" },
     { label: "Contact Us", href: "contact.html" },
   ];

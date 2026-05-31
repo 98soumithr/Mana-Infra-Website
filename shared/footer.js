@@ -613,7 +613,7 @@
         /* Mobile: adjust logo size and center it */
         var logoImg = footer.querySelector("#mana-footer img");
         if (logoImg) {
-          logoImg.style.height = "300px";
+          logoImg.style.height = "450px";
         }
         var logoWrap = footer.querySelector("#mana-footer > div > div > div > div");
         if (logoWrap) {

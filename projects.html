@@ -797,32 +797,6 @@
           this.classList.remove('border-white/50');
         });
       });
-
-      /* Auto-slideshow: cycle every 3.5s per gallery with cross-fade transition */
-      document.querySelectorAll('.img-zoom').forEach(function (container) {
-        var thumbs = container.querySelectorAll('.project-thumb');
-        if (thumbs.length < 2) return;
-        var mainImg = container.querySelector('img:first-child');
-        mainImg.style.transition = 'opacity 0.4s ease';
-        var current = 0;
-
-        setInterval(function () {
-          current = (current + 1) % thumbs.length;
-          var thumb = thumbs[current];
-          mainImg.style.opacity = '0.3';
-          setTimeout(function () {
-            mainImg.src = thumb.getAttribute('data-main');
-            mainImg.alt = thumb.getAttribute('data-alt');
-            mainImg.style.opacity = '1';
-          }, 200);
-          thumbs.forEach(function (t) {
-            t.classList.remove('border-gold');
-            t.classList.add('border-white/50');
-          });
-          thumb.classList.add('border-gold');
-          thumb.classList.remove('border-white/50');
-        }, 3500);
-      });
     });
   </script>
 

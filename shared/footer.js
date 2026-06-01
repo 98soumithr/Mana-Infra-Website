@@ -70,8 +70,7 @@
       "display: flex",
       "align-items: flex-start",
       "justify-content: flex-start",
-      "margin-left: -28px",
-      "margin-top: -26px",
+      "transform: translate(-28px, -26px)",
       "margin-bottom: 12px",
     ].join(";"));
 

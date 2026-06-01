@@ -240,6 +240,10 @@ section.relative > img[src*="images/"] {
   transform: scale(1.05);
 }
 
+.img-zoom.no-zoom-effect:hover img {
+  transform: scale(1);
+}
+
 /* ============================================
    7. Gold Underline (expands from left on hover)
    ============================================ */

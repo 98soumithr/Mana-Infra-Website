@@ -234,8 +234,8 @@
       <div class="mb-20 animate-fade-in-up">
         <div class="bg-white rounded-2xl shadow-lg overflow-hidden lg:flex">
           <!-- Image -->
-          <div class="lg:w-1/2 relative">
-            <img src="images/project-polavaram.jpg" alt="Massive tunnel interior with construction vehicles, Polavaram" class="w-full h-72 lg:h-full object-contain bg-gray-100">
+          <div class="lg:w-1/2 relative img-zoom">
+            <img src="images/project-polavaram.jpg" alt="Massive tunnel interior with construction vehicles, Polavaram" class="w-full h-72 lg:h-full object-cover">
             <span class="absolute top-4 left-4 bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md">Active</span>
             <div class="absolute bottom-3 left-3 right-3 flex gap-2 z-10">
               <img src="images/project-polavaram.jpg" alt="Tunnel interior, Polavaram"
@@ -252,6 +252,7 @@
                    class="project-thumb w-16 h-12 object-cover rounded border-2 border-white/50 hover:border-gold cursor-pointer transition-all duration-200 shadow-md">
               <img src="images/twin-tunnels-1.jpg" alt="Twin tunnels aerial view"
                    data-main="images/twin-tunnels-1.jpg" data-alt="Twin tunnels Pkg-63 & Pkg-64 aerial view"
+                   data-no-zoom="true"
                    class="project-thumb w-16 h-12 object-cover rounded border-2 border-white/50 hover:border-gold cursor-pointer transition-all duration-200 shadow-md">
             </div>
           </div>
@@ -776,10 +777,16 @@
           var mainImg = container.querySelector('img:first-child');
           mainImg.style.opacity = '0';
           var self = this;
+          var isNoZoom = self.getAttribute('data-no-zoom') === 'true';
           setTimeout(function () {
             mainImg.src = self.getAttribute('data-main');
             mainImg.alt = self.getAttribute('data-alt');
             mainImg.style.opacity = '1';
+            if (isNoZoom) {
+              container.classList.add('no-zoom-effect');
+            } else {
+              container.classList.remove('no-zoom-effect');
+            }
           }, 250);
           container.querySelectorAll('.project-thumb').forEach(function (t) {
             t.classList.remove('border-gold');

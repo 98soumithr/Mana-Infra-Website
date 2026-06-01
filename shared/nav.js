@@ -151,7 +151,7 @@
     logoImg.src = "logo.png";
     logoImg.alt = "Mana Infrastructure Logo";
     logoImg.style.cssText = [
-      "height: 220px",
+      "height: 300px",
       "width: auto",
       "object-fit: cover",
       "object-position: center 35%",

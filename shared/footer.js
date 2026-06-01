@@ -73,8 +73,7 @@
       "display: flex",
       "align-items: flex-start",
       "justify-content: flex-start",
-      "transform: translate(-28px, -26px)",
-      "margin-bottom: 12px",
+      "margin: 0 0 12px -28px",
     ].join(";"));
 
     var logoImg = document.createElement("img");

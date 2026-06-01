@@ -770,25 +770,25 @@
   <!-- Gallery Auto-Slideshow + Click -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      /* Click to swap with slide transition */
+      /* Click to swap with cross-fade transition */
       document.querySelectorAll('.project-thumb').forEach(function (thumb) {
         thumb.addEventListener('click', function () {
           var container = this.closest('.img-zoom');
           var mainImg = container.querySelector('img:first-child');
-          mainImg.style.transition = 'transform 0.5s ease';
-          mainImg.style.transform = 'translateX(-100%)';
+          mainImg.style.transition = 'opacity 0.4s ease';
+          mainImg.style.opacity = '0.3';
           var self = this;
           var isNoZoom = self.getAttribute('data-no-zoom') === 'true';
           setTimeout(function () {
             mainImg.src = self.getAttribute('data-main');
             mainImg.alt = self.getAttribute('data-alt');
-            mainImg.style.transform = 'translateX(0)';
+            mainImg.style.opacity = '1';
             if (isNoZoom) {
               container.classList.add('no-zoom-effect');
             } else {
               container.classList.remove('no-zoom-effect');
             }
-          }, 250);
+          }, 200);
           container.querySelectorAll('.project-thumb').forEach(function (t) {
             t.classList.remove('border-gold');
             t.classList.add('border-white/50');
@@ -798,23 +798,23 @@
         });
       });
 
-      /* Auto-slideshow: cycle every 3.5s per gallery with slide transition */
+      /* Auto-slideshow: cycle every 3.5s per gallery with cross-fade transition */
       document.querySelectorAll('.img-zoom').forEach(function (container) {
         var thumbs = container.querySelectorAll('.project-thumb');
         if (thumbs.length < 2) return;
         var mainImg = container.querySelector('img:first-child');
-        mainImg.style.transition = 'transform 0.5s ease';
+        mainImg.style.transition = 'opacity 0.4s ease';
         var current = 0;
 
         setInterval(function () {
           current = (current + 1) % thumbs.length;
           var thumb = thumbs[current];
-          mainImg.style.transform = 'translateX(-100%)';
+          mainImg.style.opacity = '0.3';
           setTimeout(function () {
             mainImg.src = thumb.getAttribute('data-main');
             mainImg.alt = thumb.getAttribute('data-alt');
-            mainImg.style.transform = 'translateX(0)';
-          }, 250);
+            mainImg.style.opacity = '1';
+          }, 200);
           thumbs.forEach(function (t) {
             t.classList.remove('border-gold');
             t.classList.add('border-white/50');

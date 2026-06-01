@@ -77,7 +77,7 @@
     logoImg.src = "footer.jpg";
     logoImg.alt = "Mana Infrastructure Logo";
     logoImg.style.cssText = [
-      "height: 400px",
+      "height: 600px",
       "width: auto",
       "object-fit: contain",
       "max-width: 100%",

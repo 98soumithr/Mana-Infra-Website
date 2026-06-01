@@ -103,6 +103,7 @@
     var col = el("div", [
       "flex: 0 0 auto",
       "min-width: 160px",
+      "padding-top: 20px",
     ].join(";"));
 
     col.appendChild(sectionHeading("Quick Links"));
@@ -147,6 +148,7 @@
     var col = el("div", [
       "flex: 1",
       "min-width: 240px",
+      "padding-top: 20px",
     ].join(";"));
 
     col.appendChild(sectionHeading("Our Offices"));
@@ -200,6 +202,7 @@
     var col = el("div", [
       "flex: 1",
       "min-width: 240px",
+      "padding-top: 20px",
     ].join(";"));
 
     col.appendChild(sectionHeading("Contact & Sectors"));

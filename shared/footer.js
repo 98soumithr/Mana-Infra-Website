@@ -63,6 +63,9 @@
       "flex: 1",
       "min-width: 240px",
       "padding-right: 32px",
+      "align-items: flex-start",
+      "display: flex",
+      "flex-direction: column",
     ].join(";"));
 
     /* Logo image */

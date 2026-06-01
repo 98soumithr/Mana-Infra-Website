@@ -275,91 +275,109 @@
 
         <!-- India Map (Interactive SVG) -->
         <div class="relative animate-fade-in-left">
-          <div class="rounded-xl overflow-hidden shadow-lg" style="background-color: #112F55; padding: 20px; aspect-ratio: 4/5;">
-            <svg id="india-map-svg" class="w-full h-full" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid meet">
+          <div class="rounded-xl overflow-hidden shadow-lg" style="background-color: #112F55; padding: 30px; aspect-ratio: 3/4;">
+            <svg id="india-map-svg" class="w-full h-full" viewBox="0 0 850 950" preserveAspectRatio="xMidYMid meet">
               <defs>
-                <pattern id="stripe-blue-orange" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
-                  <rect x="0" y="0" width="4" height="8" fill="#112F55"/>
-                  <rect x="4" y="0" width="4" height="8" fill="#EA640D"/>
+                <pattern id="stripe-blue-orange" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                  <rect x="0" y="0" width="5" height="10" fill="#112F55"/>
+                  <rect x="5" y="0" width="5" height="10" fill="#EA640D"/>
                 </pattern>
               </defs>
 
-              <!-- Background -->
-              <rect width="800" height="1000" fill="#112F55"/>
+              <!-- Northern States -->
+              <!-- Jammu & Kashmir (Grey) -->
+              <path d="M 250 50 L 320 45 L 330 130 L 260 135 Z" fill="#CBD5E1" stroke="white" stroke-width="1"/>
 
               <!-- Himachal Pradesh (Grey) -->
-              <path d="M 320 120 L 360 100 L 380 140 L 340 160 Z" fill="#A0AEC0" stroke="white" stroke-width="0.5"/>
+              <path d="M 280 130 L 340 120 L 360 200 L 300 210 Z" fill="#CBD5E1" stroke="white" stroke-width="1"/>
 
               <!-- Punjab (Grey) -->
-              <path d="M 240 150 L 310 140 L 320 200 L 260 210 Z" fill="#A0AEC0" stroke="white" stroke-width="0.5"/>
+              <path d="M 220 200 L 280 195 L 300 260 L 240 270 Z" fill="#CBD5E1" stroke="white" stroke-width="1"/>
 
               <!-- Haryana (Grey) -->
-              <path d="M 310 200 L 380 190 L 390 250 L 320 260 Z" fill="#A0AEC0" stroke="white" stroke-width="0.5"/>
+              <path d="M 280 270 L 340 265 L 360 330 L 300 335 Z" fill="#CBD5E1" stroke="white" stroke-width="1"/>
+
+              <!-- Uttarakhand (Grey) -->
+              <path d="M 340 200 L 400 190 L 420 280 L 360 290 Z" fill="#CBD5E1" stroke="white" stroke-width="1"/>
 
               <!-- Uttar Pradesh (Grey) -->
-              <path d="M 320 260 L 420 240 L 450 350 L 340 380 Z" fill="#A0AEC0" stroke="white" stroke-width="0.5"/>
+              <path d="M 300 330 L 420 310 L 480 430 L 350 450 Z" fill="#CBD5E1" stroke="white" stroke-width="1"/>
 
               <!-- Rajasthan (Grey) -->
-              <path d="M 210 240 L 310 200 L 340 380 L 220 360 Z" fill="#A0AEC0" stroke="white" stroke-width="0.5"/>
+              <path d="M 180 300 L 280 270 L 340 450 L 220 480 Z" fill="#CBD5E1" stroke="white" stroke-width="1"/>
 
+              <!-- Eastern States -->
               <!-- Bihar (Grey) -->
-              <path d="M 420 280 L 480 270 L 490 340 L 430 350 Z" fill="#A0AEC0" stroke="white" stroke-width="0.5"/>
+              <path d="M 420 350 L 480 340 L 510 420 L 450 430 Z" fill="#CBD5E1" stroke="white" stroke-width="1"/>
 
               <!-- Jharkhand (Grey) -->
-              <path d="M 420 340 L 480 330 L 500 420 L 430 430 Z" fill="#A0AEC0" stroke="white" stroke-width="0.5"/>
+              <path d="M 420 420 L 480 410 L 520 520 L 450 530 Z" fill="#CBD5E1" stroke="white" stroke-width="1"/>
 
               <!-- West Bengal (Grey) -->
-              <path d="M 480 310 L 540 300 L 560 400 L 500 410 Z" fill="#A0AEC0" stroke="white" stroke-width="0.5"/>
+              <path d="M 480 340 L 550 330 L 590 450 L 520 460 Z" fill="#CBD5E1" stroke="white" stroke-width="1"/>
 
               <!-- Assam (Grey) -->
-              <path d="M 540 200 L 600 190 L 620 260 L 560 270 Z" fill="#A0AEC0" stroke="white" stroke-width="0.5"/>
+              <path d="M 550 280 L 650 270 L 680 360 L 590 370 Z" fill="#CBD5E1" stroke="white" stroke-width="1"/>
 
               <!-- Meghalaya (Grey) -->
-              <path d="M 540 280 L 580 270 L 590 320 L 550 330 Z" fill="#A0AEC0" stroke="white" stroke-width="0.5"/>
+              <path d="M 550 360 L 600 355 L 620 410 L 570 415 Z" fill="#CBD5E1" stroke="white" stroke-width="1"/>
 
-              <!-- Tripura (Grey) -->
-              <path d="M 580 330 L 620 320 L 630 380 L 590 390 Z" fill="#A0AEC0" stroke="white" stroke-width="0.5"/>
+              <!-- Manipur, Mizoram, Nagaland, Tripura (Grey) -->
+              <path d="M 600 410 L 700 400 L 720 520 L 620 530 Z" fill="#CBD5E1" stroke="white" stroke-width="1"/>
 
-              <!-- Mizoram (Grey) -->
-              <path d="M 600 380 L 640 370 L 650 450 L 610 460 Z" fill="#A0AEC0" stroke="white" stroke-width="0.5"/>
-
-              <!-- Odisha (with zigzag pattern) -->
-              <path d="M 520 380 L 570 370 L 590 480 L 540 490 Z" fill="url(#stripe-blue-orange)" stroke="white" stroke-width="0.5"/>
-
-              <!-- Telangana (with zigzag pattern) -->
-              <path d="M 410 420 L 470 410 L 490 520 L 430 530 Z" fill="url(#stripe-blue-orange)" stroke="white" stroke-width="0.5"/>
-
-              <!-- Andhra Pradesh (with zigzag pattern) -->
-              <path d="M 470 420 L 540 410 L 560 550 L 490 560 Z" fill="url(#stripe-blue-orange)" stroke="white" stroke-width="0.5"/>
-
-              <!-- Karnataka (with zigzag pattern) -->
-              <path d="M 390 560 L 460 550 L 480 700 L 410 710 Z" fill="url(#stripe-blue-orange)" stroke="white" stroke-width="0.5"/>
-
-              <!-- Maharashtra (with zigzag pattern) -->
-              <path d="M 340 480 L 410 470 L 430 650 L 360 660 Z" fill="url(#stripe-blue-orange)" stroke="white" stroke-width="0.5"/>
-
+              <!-- Central & Western States -->
               <!-- Gujarat (Grey) -->
-              <path d="M 280 380 L 360 370 L 370 520 L 290 530 Z" fill="#A0AEC0" stroke="white" stroke-width="0.5"/>
+              <path d="M 150 450 L 240 420 L 290 600 L 180 620 Z" fill="#CBD5E1" stroke="white" stroke-width="1"/>
 
+              <!-- Madhya Pradesh (Grey) -->
+              <path d="M 280 450 L 400 430 L 450 600 L 320 620 Z" fill="#CBD5E1" stroke="white" stroke-width="1"/>
+
+              <!-- Chhattisgarh (Grey) -->
+              <path d="M 400 520 L 480 500 L 520 650 L 430 670 Z" fill="#CBD5E1" stroke="white" stroke-width="1"/>
+
+              <!-- Maharashtra (Operational - Striped) -->
+              <path d="M 220 620 L 320 600 L 380 800 L 280 820 Z" fill="url(#stripe-blue-orange)" stroke="white" stroke-width="1"/>
+
+              <!-- Telangana (Operational - Striped) -->
+              <path d="M 350 620 L 420 610 L 480 750 L 400 760 Z" fill="url(#stripe-blue-orange)" stroke="white" stroke-width="1"/>
+
+              <!-- Andhra Pradesh (Operational - Striped) -->
+              <path d="M 420 620 L 520 610 L 580 800 L 480 810 Z" fill="url(#stripe-blue-orange)" stroke="white" stroke-width="1"/>
+
+              <!-- Odisha (Operational - Striped) -->
+              <path d="M 480 520 L 570 510 L 600 700 L 510 710 Z" fill="url(#stripe-blue-orange)" stroke="white" stroke-width="1"/>
+
+              <!-- Karnataka (Operational - Striped) -->
+              <path d="M 320 800 L 420 790 L 480 900 L 380 910 Z" fill="url(#stripe-blue-orange)" stroke="white" stroke-width="1"/>
+
+              <!-- Southern States -->
               <!-- Goa (Grey) -->
-              <path d="M 350 650 L 390 645 L 400 700 L 360 705 Z" fill="#A0AEC0" stroke="white" stroke-width="0.5"/>
+              <path d="M 280 820 L 320 815 L 340 880 L 300 885 Z" fill="#CBD5E1" stroke="white" stroke-width="1"/>
 
               <!-- Kerala (Grey) -->
-              <path d="M 400 780 L 440 775 L 450 900 L 410 905 Z" fill="#A0AEC0" stroke="white" stroke-width="0.5"/>
+              <path d="M 330 880 L 380 875 L 410 950 L 360 950 Z" fill="#CBD5E1" stroke="white" stroke-width="1"/>
 
               <!-- Tamil Nadu (Grey) -->
-              <path d="M 480 700 L 540 690 L 560 850 L 500 860 Z" fill="#A0AEC0" stroke="white" stroke-width="0.5"/>
+              <path d="M 480 900 L 570 890 L 600 950 L 510 950 Z" fill="#CBD5E1" stroke="white" stroke-width="1"/>
 
-              <!-- Telangana and AP border emphasis -->
-              <path d="M 470 410 L 520 400" stroke="white" stroke-width="1" fill="none"/>
+              <!-- Telangana label -->
+              <text x="400" y="690" font-family="Poppins, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" opacity="0.8">TG</text>
+              <!-- Andhra Pradesh label -->
+              <text x="510" y="710" font-family="Poppins, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" opacity="0.8">AP</text>
+              <!-- Karnataka label -->
+              <text x="400" y="860" font-family="Poppins, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" opacity="0.8">KA</text>
+              <!-- Maharashtra label -->
+              <text x="300" y="710" font-family="Poppins, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" opacity="0.8">MH</text>
+              <!-- Odisha label -->
+              <text x="540" y="610" font-family="Poppins, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" opacity="0.8">OR</text>
 
               <!-- Legend -->
-              <g transform="translate(50, 850)">
-                <text x="0" y="20" font-family="Poppins, sans-serif" font-size="14" font-weight="bold" fill="white">Legend:</text>
-                <rect x="0" y="30" width="20" height="20" fill="url(#stripe-blue-orange)" stroke="white" stroke-width="1"/>
-                <text x="30" y="45" font-family="Inter, sans-serif" font-size="12" fill="white">Operational States</text>
-                <rect x="200" y="30" width="20" height="20" fill="#A0AEC0" stroke="white" stroke-width="1"/>
-                <text x="230" y="45" font-family="Inter, sans-serif" font-size="12" fill="white">Other States</text>
+              <g transform="translate(50, 880)">
+                <text x="0" y="0" font-family="Poppins, sans-serif" font-size="13" font-weight="bold" fill="white">Legend:</text>
+                <rect x="0" y="10" width="15" height="15" fill="url(#stripe-blue-orange)" stroke="white" stroke-width="0.5"/>
+                <text x="22" y="22" font-family="Inter, sans-serif" font-size="11" fill="white">Operational States</text>
+                <rect x="200" y="10" width="15" height="15" fill="#CBD5E1" stroke="white" stroke-width="0.5"/>
+                <text x="222" y="22" font-family="Inter, sans-serif" font-size="11" fill="white">Other States</text>
               </g>
             </svg>
           </div>

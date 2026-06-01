@@ -74,8 +74,7 @@
       "align-items: flex-start",
       "justify-content: flex-start",
       "margin: 0 0 12px -28px",
-      "margin-top: 0",
-      "padding-top: 0",
+      "align-self: flex-start",
     ].join(";"));
 
     var logoImg = document.createElement("img");

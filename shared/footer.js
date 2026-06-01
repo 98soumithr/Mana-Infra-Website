@@ -572,7 +572,7 @@
       "display: flex",
       "flex-wrap: wrap",
       "gap: 40px",
-      "margin-top: 15px",
+      "margin-top: 45px",
     ].join(";"));
 
     row.appendChild(buildCompanyInfo());

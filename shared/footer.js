@@ -556,7 +556,7 @@
     footer.style.cssText = [
       "background:" + COLORS.white,
       "font-family: 'Segoe UI', Arial, Helvetica, sans-serif",
-      "padding: 60px 0 30px 0",
+      "padding: 90px 0 30px 0",
       "color:" + COLORS.navy,
     ].join(";");
 
@@ -572,7 +572,6 @@
       "display: flex",
       "flex-wrap: wrap",
       "gap: 40px",
-      "margin-top: 45px",
     ].join(";"));
 
     row.appendChild(buildCompanyInfo());

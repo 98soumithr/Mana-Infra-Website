@@ -74,6 +74,8 @@
       "align-items: flex-start",
       "justify-content: flex-start",
       "margin: 0 0 12px -28px",
+      "margin-top: 0",
+      "padding-top: 0",
     ].join(";"));
 
     var logoImg = document.createElement("img");
@@ -84,6 +86,9 @@
       "width: auto",
       "object-fit: contain",
       "max-width: 100%",
+      "margin: 0",
+      "padding: 0",
+      "display: block",
     ].join(";");
 
     logoWrap.appendChild(logoImg);

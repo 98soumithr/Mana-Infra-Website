@@ -1,0 +1,1186 @@
+/* ============================================
+   Mana Infrastructure - Custom CSS
+   Supplements Tailwind CSS
+   ============================================ */
+
+/* ----- Local Font Faces ----- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+@font-face {
+  font-family: 'Death Star';
+  src: url('../fonts/death-star.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* ----- CSS Variables (Brand Colors) ----- */
+:root {
+  --primary: #163C6A;
+  --secondary: #EA640D;
+  --accent: #EA640D;
+  --dark: #163C6A;
+  --light: #F8FAFC;
+  --text-dark: #1E293B;
+  --text-muted: #64748B;
+}
+
+/* ----- Body Text Styling ----- */
+body {
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+/* ----- Smooth Scroll ----- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ----- Custom Scrollbar ----- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--dark);
+}
+
+/* ============================================
+   1. Scroll Animations
+   ============================================ */
+
+/* Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animation classes — start hidden, animate when .is-visible is added via JS */
+.animate-fade-in-up,
+.animate-fade-in-left,
+.animate-fade-in-right,
+.animate-scale-in {
+  opacity: 0;
+}
+
+.animate-fade-in-up.is-visible {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in-left.is-visible {
+  animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+.animate-fade-in-right.is-visible {
+  animation: fadeInRight 0.6s ease-out forwards;
+}
+
+.animate-scale-in.is-visible {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* Staggered delay utilities */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* ============================================
+   2. Counter Animation
+   ============================================ */
+.counter-value {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  min-width: 2ch;
+}
+
+/* ============================================
+   3. Hero Overlay Gradient
+   ============================================ */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(22, 60, 106, 0.4),
+    rgba(22, 60, 106, 0.2)
+  );
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Hero background image — above overlay */
+section.relative > img[src*="images/"] {
+  z-index: 1 !important;
+}
+
+/* ============================================
+   4. Card Hover Effects
+   ============================================ */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 24px 48px rgba(15, 27, 45, 0.2);
+  border-left-color: #EA640D;
+  background-color: #FFFAF0;
+}
+
+.card-gold-border {
+  border-left: 3px solid var(--accent);
+  transition: box-shadow 0.3s ease;
+}
+
+.card-gold-border:hover {
+  box-shadow: -6px 0 20px rgba(234, 100, 13, 0.25), 0 10px 30px rgba(234, 100, 13, 0.15);
+}
+
+/* ============================================
+   5. Section Dividers and Spacing
+   ============================================ */
+.section-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* ============================================
+   6. Image Hover Zoom
+   ============================================ */
+.img-zoom {
+  overflow: hidden;
+}
+
+.img-zoom img {
+  transition: transform 0.4s ease;
+}
+
+.img-zoom:hover img {
+  transform: scale(1.05);
+}
+
+.img-zoom.no-zoom-effect:hover img {
+  transform: scale(1);
+}
+
+/* ============================================
+   7. Gold Underline (expands from left on hover)
+   ============================================ */
+.gold-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.gold-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.gold-underline:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   8. Pulse Animation (CTA buttons)
+   ============================================ */
+@keyframes pulseGold {
+  0% {
+    box-shadow: 0 0 0 0 rgba(234, 100, 13, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(234, 100, 13, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(234, 100, 13, 0);
+  }
+}
+
+.pulse-gold {
+  animation: pulseGold 2s ease-in-out infinite;
+}
+
+/* ============================================
+   9. Auto-scrolling Marquee (Stats Logos)
+   ============================================ */
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marqueeScroll 25s linear infinite;
+  width: max-content;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ============================================
+   10. Aurora Background (Why Choose Us)
+   ============================================ */
+@keyframes aurora {
+  from { background-position: 50% 50%, 50% 50%; }
+  to   { background-position: 350% 50%, 350% 50%; }
+}
+
+.aurora-layer {
+  --blue-500: #3b82f6;
+  --indigo-300: #a5b4fc;
+  --blue-300: #93c5fd;
+  --violet-200: #ddd6fe;
+  --blue-400: #60a5fa;
+  --aurora-white: #fff;
+  --aurora-transparent: transparent;
+
+  --white-gradient: repeating-linear-gradient(100deg, var(--aurora-white) 0%, var(--aurora-white) 7%, var(--aurora-transparent) 10%, var(--aurora-transparent) 12%, var(--aurora-white) 16%);
+  --aurora-gradient: repeating-linear-gradient(100deg, var(--blue-500) 10%, var(--indigo-300) 15%, var(--blue-300) 20%, var(--violet-200) 25%, var(--blue-400) 30%);
+
+  position: absolute;
+  inset: -10px;
+  background-image: var(--white-gradient), var(--aurora-gradient);
+  background-size: 300% 200%;
+  background-position: 50% 50%;
+  filter: blur(10px) invert(1);
+  pointer-events: none;
+  opacity: 0.50;
+  will-change: transform;
+  -webkit-mask-image: radial-gradient(ellipse at 100% 0%, black 10%, transparent 70%);
+  mask-image: radial-gradient(ellipse at 100% 0%, black 10%, transparent 70%);
+}
+
+.aurora-layer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--white-gradient), var(--aurora-gradient);
+  background-size: 200% 100%;
+  animation: aurora 60s linear infinite;
+  background-attachment: fixed;
+  mix-blend-mode: difference;
+}
+
+/* ============================================
+   11. Floating Paths Animation (Vision Section)
+   ============================================ */
+@keyframes floatingPath {
+  0% {
+    stroke-dashoffset: 0;
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    stroke-dashoffset: 2000;
+    opacity: 0.3;
+  }
+}
+
+.floating-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+}
+
+.fp-1 { animation: floatingPath 20s linear infinite; }
+.fp-2 { animation: floatingPath 21s linear infinite; animation-delay: 0.5s; }
+.fp-3 { animation: floatingPath 22s linear infinite; animation-delay: 1s; }
+.fp-4 { animation: floatingPath 23s linear infinite; animation-delay: 1.5s; }
+.fp-5 { animation: floatingPath 24s linear infinite; animation-delay: 2s; }
+.fp-6 { animation: floatingPath 25s linear infinite; animation-delay: 2.5s; }
+.fp-7 { animation: floatingPath 26s linear infinite; animation-delay: 3s; }
+.fp-8 { animation: floatingPath 27s linear infinite; animation-delay: 3.5s; }
+.fp-9 { animation: floatingPath 28s linear infinite; animation-delay: 4s; }
+.fp-10 { animation: floatingPath 29s linear infinite; animation-delay: 4.5s; }
+.fp-11 { animation: floatingPath 30s linear infinite; animation-delay: 5s; }
+.fp-12 { animation: floatingPath 31s linear infinite; animation-delay: 5.5s; }
+
+/* ============================================
+   12. MANA Footer Text Hover Effect
+   ============================================ */
+@keyframes manaStrokeDraw {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.mana-stroke-text {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: manaStrokeDraw 4s ease-in-out forwards;
+}
+
+/* ============================================
+   13. Zoom Parallax (Projects Page)
+   ============================================ */
+.zoom-img {
+  will-change: transform;
+}
+
+.zoom-img img {
+  backface-visibility: hidden;
+}
+
+/* ============================================
+   14. Active Projects Loader Animation
+   ============================================ */
+.active-loader {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active-loader .loaders,
+.active-loader .loadersB {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active-loader .loader {
+  position: absolute;
+  width: 0.7em;
+  height: 8em;
+  border-radius: 50px;
+  background: rgba(234, 100, 13, 0.15);
+}
+
+.active-loader .loader::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.7em;
+  height: 3em;
+  background: rgba(234, 100, 13, 0.15);
+  border-radius: 50px;
+  border: 1px solid rgba(234, 100, 13, 0.2);
+  box-shadow:
+    inset 3px 3px 10px rgba(234, 100, 13, 0.1),
+    inset -3px -3px 10px rgba(234, 100, 13, 0.05);
+  mask-image: linear-gradient(to bottom, black calc(100% - 30px), transparent 100%);
+}
+
+.active-loader .loader::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0.7em;
+  height: 2.8em;
+  background: rgba(234, 100, 13, 0.15);
+  border-radius: 50px;
+  border: 1px solid rgba(234, 100, 13, 0.2);
+  box-shadow:
+    inset 3px 3px 10px rgba(234, 100, 13, 0.1),
+    inset -3px -3px 10px rgba(234, 100, 13, 0.05);
+  mask-image: linear-gradient(to top, black calc(100% - 30px), transparent 100%);
+}
+
+.active-loader .loaderA {
+  position: absolute;
+  width: 0.7em;
+  height: 8em;
+  border-radius: 50px;
+  background: transparent;
+}
+
+.active-loader .ball0,
+.active-loader .ball1,
+.active-loader .ball2,
+.active-loader .ball3,
+.active-loader .ball4,
+.active-loader .ball5,
+.active-loader .ball6,
+.active-loader .ball7,
+.active-loader .ball8 {
+  width: 0.7em;
+  height: 0.7em;
+  box-shadow:
+    rgba(234, 100, 13, 0.3) 0px -6px 6px 0px inset,
+    rgba(234, 100, 13, 0.25) 0px -10px 10px 0px inset,
+    rgba(234, 100, 13, 0.15) 0px -25px 12px 0px inset,
+    rgba(234, 100, 13, 0.08) 0px 2px 1px,
+    rgba(234, 100, 13, 0.1) 0px 4px 2px,
+    rgba(234, 100, 13, 0.1) 0px 8px 4px;
+  border-radius: 50%;
+  background-color: #EA640D;
+  animation: activeMove 3.63s ease-in-out infinite;
+}
+
+.active-loader .loader:nth-child(2) { transform: rotate(20deg); }
+.active-loader .loader:nth-child(3) { transform: rotate(40deg); }
+.active-loader .loader:nth-child(4) { transform: rotate(60deg); }
+.active-loader .loader:nth-child(5) { transform: rotate(80deg); }
+.active-loader .loader:nth-child(6) { transform: rotate(100deg); }
+.active-loader .loader:nth-child(7) { transform: rotate(120deg); }
+.active-loader .loader:nth-child(8) { transform: rotate(140deg); }
+.active-loader .loader:nth-child(9) { transform: rotate(160deg); }
+
+.active-loader .loaderA:nth-child(2) { transform: rotate(20deg); }
+.active-loader .loaderA:nth-child(3) { transform: rotate(40deg); }
+.active-loader .loaderA:nth-child(4) { transform: rotate(60deg); }
+.active-loader .loaderA:nth-child(5) { transform: rotate(80deg); }
+.active-loader .loaderA:nth-child(6) { transform: rotate(100deg); }
+.active-loader .loaderA:nth-child(7) { transform: rotate(120deg); }
+.active-loader .loaderA:nth-child(8) { transform: rotate(140deg); }
+.active-loader .loaderA:nth-child(9) { transform: rotate(160deg); }
+
+.active-loader .ball1 { animation-delay: 0.2s; }
+.active-loader .ball2 { animation-delay: 0.4s; }
+.active-loader .ball3 { animation-delay: 0.6s; }
+.active-loader .ball4 { animation-delay: 0.8s; }
+.active-loader .ball5 { animation-delay: 1s; }
+.active-loader .ball6 { animation-delay: 1.2s; }
+.active-loader .ball7 { animation-delay: 1.4s; }
+.active-loader .ball8 { animation-delay: 1.6s; }
+
+@keyframes activeMove {
+  0%   { transform: translateY(0em); }
+  50%  { transform: translateY(7.3em); }
+  100% { transform: translateY(0em); }
+}
+
+/* ============================================
+   15. Square Loading Spinner
+   ============================================ */
+.loadingspinner {
+  --square: 26px;
+  --offset: 30px;
+  --duration: 2.4s;
+  --delay: 0.2s;
+  --timing-function: ease-in-out;
+  --in-duration: 0.4s;
+  --in-delay: 0.1s;
+  --in-timing-function: ease-out;
+  width: calc(3 * var(--offset) + var(--square));
+  height: calc(2 * var(--offset) + var(--square));
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.loadingspinner div {
+  display: inline-block;
+  background: #EA640D;
+  border: none;
+  border-radius: 2px;
+  width: var(--square);
+  height: var(--square);
+  position: absolute;
+  padding: 0;
+  margin: 0;
+}
+
+.loadingspinner #square1 {
+  left: calc(0 * var(--offset));
+  top: calc(0 * var(--offset));
+  animation: square1 var(--duration) var(--delay) var(--timing-function) infinite,
+             squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
+}
+.loadingspinner #square2 {
+  left: calc(0 * var(--offset));
+  top: calc(1 * var(--offset));
+  animation: square2 var(--duration) var(--delay) var(--timing-function) infinite,
+             squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
+}
+.loadingspinner #square3 {
+  left: calc(1 * var(--offset));
+  top: calc(1 * var(--offset));
+  animation: square3 var(--duration) var(--delay) var(--timing-function) infinite,
+             squarefadein var(--in-duration) calc(2 * var(--in-delay)) var(--in-timing-function) both;
+}
+.loadingspinner #square4 {
+  left: calc(2 * var(--offset));
+  top: calc(1 * var(--offset));
+  animation: square4 var(--duration) var(--delay) var(--timing-function) infinite,
+             squarefadein var(--in-duration) calc(3 * var(--in-delay)) var(--in-timing-function) both;
+}
+.loadingspinner #square5 {
+  left: calc(3 * var(--offset));
+  top: calc(1 * var(--offset));
+  animation: square5 var(--duration) var(--delay) var(--timing-function) infinite,
+             squarefadein var(--in-duration) calc(4 * var(--in-delay)) var(--in-timing-function) both;
+}
+
+@keyframes square1 {
+  0%     { left: calc(0 * var(--offset)); top: calc(0 * var(--offset)); }
+  8.333% { left: calc(0 * var(--offset)); top: calc(1 * var(--offset)); }
+  100%   { left: calc(0 * var(--offset)); top: calc(1 * var(--offset)); }
+}
+@keyframes square2 {
+  0%     { left: calc(0 * var(--offset)); top: calc(1 * var(--offset)); }
+  8.333% { left: calc(0 * var(--offset)); top: calc(2 * var(--offset)); }
+  16.67% { left: calc(1 * var(--offset)); top: calc(2 * var(--offset)); }
+  25.00% { left: calc(1 * var(--offset)); top: calc(1 * var(--offset)); }
+  83.33% { left: calc(1 * var(--offset)); top: calc(1 * var(--offset)); }
+  91.67% { left: calc(1 * var(--offset)); top: calc(0 * var(--offset)); }
+  100%   { left: calc(0 * var(--offset)); top: calc(0 * var(--offset)); }
+}
+@keyframes square3 {
+  0%,100% { left: calc(1 * var(--offset)); top: calc(1 * var(--offset)); }
+  16.67%  { left: calc(1 * var(--offset)); top: calc(1 * var(--offset)); }
+  25.00%  { left: calc(1 * var(--offset)); top: calc(0 * var(--offset)); }
+  33.33%  { left: calc(2 * var(--offset)); top: calc(0 * var(--offset)); }
+  41.67%  { left: calc(2 * var(--offset)); top: calc(1 * var(--offset)); }
+  66.67%  { left: calc(2 * var(--offset)); top: calc(1 * var(--offset)); }
+  75.00%  { left: calc(2 * var(--offset)); top: calc(2 * var(--offset)); }
+  83.33%  { left: calc(1 * var(--offset)); top: calc(2 * var(--offset)); }
+  91.67%  { left: calc(1 * var(--offset)); top: calc(1 * var(--offset)); }
+}
+@keyframes square4 {
+  0%     { left: calc(2 * var(--offset)); top: calc(1 * var(--offset)); }
+  33.33% { left: calc(2 * var(--offset)); top: calc(1 * var(--offset)); }
+  41.67% { left: calc(2 * var(--offset)); top: calc(2 * var(--offset)); }
+  50.00% { left: calc(3 * var(--offset)); top: calc(2 * var(--offset)); }
+  58.33% { left: calc(3 * var(--offset)); top: calc(1 * var(--offset)); }
+  100%   { left: calc(3 * var(--offset)); top: calc(1 * var(--offset)); }
+}
+@keyframes square5 {
+  0%     { left: calc(3 * var(--offset)); top: calc(1 * var(--offset)); }
+  50.00% { left: calc(3 * var(--offset)); top: calc(1 * var(--offset)); }
+  58.33% { left: calc(3 * var(--offset)); top: calc(0 * var(--offset)); }
+  66.67% { left: calc(2 * var(--offset)); top: calc(0 * var(--offset)); }
+  75.00% { left: calc(2 * var(--offset)); top: calc(1 * var(--offset)); }
+  100%   { left: calc(2 * var(--offset)); top: calc(1 * var(--offset)); }
+}
+@keyframes squarefadein {
+  0%   { transform: scale(0.75); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ============================================
+   16. MANA Scan Text Animation
+   ============================================ */
+.mana-scan-text {
+  max-width: fit-content;
+  color: #EA640D;
+  font-size: 28px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  font-style: italic;
+  font-weight: 600;
+}
+.mana-scan-text span {
+  animation: manaScanCut 2s infinite;
+}
+.mana-scan-text::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 6px;
+  border-radius: 4px;
+  background-color: rgba(234, 100, 13, 0.5);
+  top: 0;
+  filter: blur(10px);
+  animation: manaScanLine 2s infinite;
+  left: 0;
+  z-index: 0;
+}
+.mana-scan-text::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 5px;
+  border-radius: 4px;
+  background-color: #EA640D;
+  top: 0;
+  animation: manaScanLine 2s infinite;
+  left: 0;
+  z-index: 1;
+  filter: opacity(0.9);
+}
+@keyframes manaScanLine {
+  0%  { top: 0; }
+  25% { top: 30px; }
+  50% { top: 0; }
+  75% { top: 30px; }
+}
+@keyframes manaScanCut {
+  0%  { clip-path: inset(0 0 0 0); }
+  25% { clip-path: inset(100% 0 0 0); }
+  50% { clip-path: inset(0 0 100% 0); }
+  75% { clip-path: inset(0 0 0 0); }
+}
+
+/* ============================================
+   17. Morph SVG Loader (Location Page)
+   ============================================ */
+.morph-loader {
+  --main-color: #EA640D;
+  transform: scale(0.5);
+  z-index: 999;
+}
+.morph-loader svg {
+  width: 100px;
+  height: 100px;
+}
+.morph-loader svg path:first-child {
+  will-change: d;
+  fill: var(--main-color);
+  animation: morph 2s ease-in-out infinite;
+}
+.morph-loader svg path:not(:first-child) {
+  fill: none;
+  stroke: var(--main-color);
+  stroke-width: 0;
+}
+.morph-loader svg path:nth-child(2) {
+  animation: wave 2s linear infinite;
+  animation-delay: 1.7s;
+}
+.morph-loader svg path:nth-child(3) {
+  animation: wave 2s linear infinite;
+  animation-delay: 0.3s;
+}
+.morph-loader svg path:nth-child(4) {
+  animation: wave 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes wave {
+  0% { stroke-width: 0; transform: scale(1) translateX(0px) translateY(0px); opacity: 0; }
+  10% { stroke-width: 5; transform: scale(1.05) translateX(-2.25px) translateY(-2.25px); opacity: 0.3; }
+  30% { stroke-width: 10; transform: scale(1.1) translateX(-4.5px) translateY(-4.5px); opacity: 0; }
+  100% { stroke-width: 0; transform: scale(1) translateX(0px) translateY(0px); opacity: 0; }
+}
+@keyframes morph {
+  0% { d: path("M10,20 C10,17.24 11.12,14.74 12.93,12.93 L12.93,12.93 C14.74,11.12 17.24,10 20,10 L80,10 C82.76,10 85.26,11.12 87.07,12.93 L87.07,12.93 C88.88,14.74 90,17.24 90,20 L90,80 C90,82.76 88.88,85.26 87.07,87.07 L87.07,87.07 C85.26,88.88 82.76,90 80,90 L20,90 C17.24,90 14.74,88.88 12.93,87.07 L12.93,87.07 C11.12,85.26 10,82.76 10,80Z M68,50 C68,45.02 65.98,40.52 62.72,37.27 L62.72,37.27 C59.47,34.01 54.97,32 50,32 L50,32 C45.02,32 40.52,34.01 37.27,37.27 L37.27,37.27 C34.01,40.52 32,45.02 32,50 L32,50 C32,54.97 34.01,59.47 37.27,62.72 L37.27,62.72 C40.52,65.98 45.02,68 50,68 L50,68 C54.97,68 59.47,65.98 62.72,62.72 L62.72,62.72 C65.98,59.47 68,54.97 68,50Z"); }
+  10% { d: path("M10,20 C10,17.24 11.12,14.74 12.93,12.93 L12.93,12.93 C14.74,11.12 17.24,10 20,10 L80,10 C82.76,10 85.26,11.12 87.07,12.93 L87.07,12.93 C88.88,14.74 90,17.24 90,20 L90,80 C90,82.76 88.88,85.26 87.07,87.07 L87.07,87.07 C85.26,88.88 82.76,90 80,90 L20,90 C17.24,90 14.74,88.88 12.93,87.07 L12.93,87.07 C11.12,85.26 10,82.76 10,80Z M68,50 C68,45.02 65.98,40.52 62.72,37.27 L62.72,37.27 C59.47,34.01 54.97,32 50,32 L50,32 C45.02,32 40.52,34.01 37.27,37.27 L37.27,37.27 C34.01,40.52 32,45.02 32,50 L32,50 C32,54.97 34.01,59.47 37.27,62.72 L37.27,62.72 C40.52,65.98 45.02,68 50,68 L50,68 C54.97,68 59.47,65.98 62.72,62.72 L62.72,62.72 C65.98,59.47 68,54.97 68,50Z"); }
+  33% { d: path("M10,37.57 C10,34.92 11.05,32.37 12.92,30.5 L30.5,12.92 C32.37,11.05 34.92,10 37.57,10 L62.42,10 C65.07,10 67.62,11.05 69.49,12.92 L87.07,30.5 C88.94,32.37 90,34.92 90,37.57 L90,62.42 C90,65.07 88.94,67.62 87.07,69.49 L69.49,87.07 C67.62,88.94 65.07,90 62.42,90 L37.57,90 C34.92,90 32.37,88.94 30.5,87.07 L12.92,69.49 C11.05,67.62 10,65.07 10,62.42Z M68,50 C68,49.12 67.66,48.24 66.99,47.57 L52.42,33 C51.75,32.33 50.87,32 50,32 L50,32 C49.12,32 48.24,32.33 47.57,33 L33,47.57 C32.33,48.24 32,49.12 32,50 L32,50 C32,50.87 32.33,51.75 33,52.42 L47.57,66.99 C48.24,67.66 49.12,68 50,68 L50,68 C50.87,68 51.75,67.66 52.42,66.99 L66.99,52.42 C67.66,51.75 68,50.87 68,50Z"); }
+  43% { d: path("M10,37.57 C10,34.92 11.05,32.37 12.92,30.5 L30.5,12.92 C32.37,11.05 34.92,10 37.57,10 L62.42,10 C65.07,10 67.62,11.05 69.49,12.92 L87.07,30.5 C88.94,32.37 90,34.92 90,37.57 L90,62.42 C90,65.07 88.94,67.62 87.07,69.49 L69.49,87.07 C67.62,88.94 65.07,90 62.42,90 L37.57,90 C34.92,90 32.37,88.94 30.5,87.07 L12.92,69.49 C11.05,67.62 10,65.07 10,62.42Z M68,50 C68,49.12 67.66,48.24 66.99,47.57 L52.42,33 C51.75,32.33 50.87,32 50,32 L50,32 C49.12,32 48.24,32.33 47.57,33 L33,47.57 C32.33,48.24 32,49.12 32,50 L32,50 C32,50.87 32.33,51.75 33,52.42 L47.57,66.99 C48.24,67.66 49.12,68 50,68 L50,68 C50.87,68 51.75,67.66 52.42,66.99 L66.99,52.42 C67.66,51.75 68,50.87 68,50Z"); }
+  66% { d: path("M10,50 C10,38.95 14.48,28.95 21.72,21.72 L21.72,21.72 C28.95,14.48 38.95,10 50,10 L50,10 C61.05,10 71.05,14.48 78.28,21.72 L78.28,21.72 C85.52,28.95 90,38.95 90,50 L90,50 C90,61.05 85.52,71.05 78.28,78.28 L78.28,78.28 C71.05,85.52 61.05,90 50,90 L50,90 C38.95,90 28.95,85.52 21.72,78.28 L21.72,78.28 C14.48,71.05 10,61.05 10,50Z M63.72,39.7 C63.72,38.75 63.34,37.9 62.71,37.28 L62.71,37.28 C62.09,36.65 61.24,36.27 60.29,36.27 L39.7,36.27 C38.75,36.27 37.9,36.65 37.28,37.28 L37.28,37.28 C36.65,37.9 36.27,38.75 36.27,39.7 L36.27,60.29 C36.27,61.24 36.65,62.09 37.28,62.71 L37.28,62.71 C37.9,63.34 38.75,63.72 39.7,63.72 L60.29,63.72 C61.24,63.72 62.09,63.34 62.71,62.71 L62.71,62.71 C63.34,62.09 63.72,61.24 63.72,60.29Z"); }
+  76% { d: path("M10,50 C10,38.95 14.48,28.95 21.72,21.72 L21.72,21.72 C28.95,14.48 38.95,10 50,10 L50,10 C61.05,10 71.05,14.48 78.28,21.72 L78.28,21.72 C85.52,28.95 90,38.95 90,50 L90,50 C90,61.05 85.52,71.05 78.28,78.28 L78.28,78.28 C71.05,85.52 61.05,90 50,90 L50,90 C38.95,90 28.95,85.52 21.72,78.28 L21.72,78.28 C14.48,71.05 10,61.05 10,50Z M63.72,39.7 C63.72,38.75 63.34,37.9 62.71,37.28 L62.71,37.28 C62.09,36.65 61.24,36.27 60.29,36.27 L39.7,36.27 C38.75,36.27 37.9,36.65 37.28,37.28 L37.28,37.28 C36.65,37.9 36.27,38.75 36.27,39.7 L36.27,60.29 C36.27,61.24 36.65,62.09 37.28,62.71 L37.28,62.71 C37.9,63.34 38.75,63.72 39.7,63.72 L60.29,63.72 C61.24,63.72 62.09,63.34 62.71,62.71 L62.71,62.71 C63.34,62.09 63.72,61.24 63.72,60.29Z"); }
+  100% { d: path("M10,20 C10,17.24 11.12,14.74 12.93,12.93 L12.93,12.93 C14.74,11.12 17.24,10 20,10 L80,10 C82.76,10 85.26,11.12 87.07,12.93 L87.07,12.93 C88.88,14.74 90,17.24 90,20 L90,80 C90,82.76 88.88,85.26 87.07,87.07 L87.07,87.07 C85.26,88.88 82.76,90 80,90 L20,90 C17.24,90 14.74,88.88 12.93,87.07 L12.93,87.07 C11.12,85.26 10,82.76 10,80Z M68,50 C68,45.02 65.98,40.52 62.72,37.27 L62.72,37.27 C59.47,34.01 54.97,32 50,32 L50,32 C45.02,32 40.52,34.01 37.27,37.27 L37.27,37.27 C34.01,40.52 32,45.02 32,50 L32,50 C32,54.97 34.01,59.47 37.27,62.72 L37.27,62.72 C40.52,65.98 45.02,68 50,68 L50,68 C54.97,68 59.47,65.98 62.72,62.72 L62.72,62.72 C65.98,59.47 68,54.97 68,50Z"); }
+}
+
+/* ============================================
+   18. Matrix Loader (Featured Projects)
+   ============================================ */
+.matrix-loader {
+  width: 45px;
+  height: 40px;
+  background: linear-gradient(#0000 calc(1*100%/6), #EA640D 0 calc(3*100%/6), #0000 0),
+              linear-gradient(#0000 calc(2*100%/6), #EA640D 0 calc(4*100%/6), #0000 0),
+              linear-gradient(#0000 calc(3*100%/6), #EA640D 0 calc(5*100%/6), #0000 0);
+  background-size: 10px 400%;
+  background-repeat: no-repeat;
+  animation: matrix 1s infinite linear;
+}
+
+@keyframes matrix {
+  0%   { background-position: 0% 100%, 50% 100%, 100% 100%; }
+  100% { background-position: 0% 0%, 50% 0%, 100% 0%; }
+}
+
+/* ============================================
+   19. Mobile Zoom Parallax
+   ============================================ */
+.zoom-img-m {
+  will-change: transform;
+}
+
+.zoom-img-m img {
+  backface-visibility: hidden;
+}
+
+/* ============================================
+   20. Mobile Responsiveness Fixes
+   ============================================ */
+
+/* Smaller section padding on small screens */
+@media (max-width: 640px) {
+  .section-padding {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* Hide decorative loaders on very small screens to prevent layout issues */
+@media (max-width: 480px) {
+  .loadingspinner {
+    display: none !important;
+  }
+  .rolling-rock-loader {
+    display: none !important;
+  }
+  .mana-scan-text {
+    display: none !important;
+  }
+  .matrix-loader {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   20.5. Animated Text Tagline
+   ============================================ */
+@keyframes slideInGold {
+  0% {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animated-tagline-word {
+  animation: slideInGold 1.2s ease-out infinite;
+  animation-delay: 0.3s;
+}
+
+/* ============================================
+   20.7. Expertise Cards Expansion (Horizontal Accordion)
+   ============================================ */
+/* ============================================
+   Core Expertise — Expanding Accordion
+   (mirrors Spaciaz project-style-5: row is always
+   100% wide; the active card refuses to shrink so the
+   others give up space in place — nothing slides off.)
+   ============================================ */
+
+/* Container: stacked on mobile, single row on desktop */
+#expertiseCards {
+  --expertise-gap: 16px;
+  --expertise-active-width: 100%;
+  --expertise-collapsed-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--expertise-gap);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  /* CSS Grid instead of flex: grid-template-columns with fr units ALWAYS fills
+     the row exactly (no gap, ever) and animates smoothly when it changes — and
+     unlike flex grow/shrink, every column is treated identically, so there is
+     no last-card stall/delay. :has() picks which column is the wide one based
+     on which card has .active. The whole resize is one clean, fast transition. */
+  #expertiseCards {
+    --expertise-gap: 12px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 3.2fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: stretch;
+    gap: var(--expertise-gap);
+    overflow: visible;
+    transition: grid-template-columns 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  #expertiseCards:has(.expertise-card:nth-child(1).active) { grid-template-columns: 3.2fr 1fr 1fr 1fr 1fr 1fr; }
+  #expertiseCards:has(.expertise-card:nth-child(2).active) { grid-template-columns: 1fr 3.2fr 1fr 1fr 1fr 1fr; }
+  #expertiseCards:has(.expertise-card:nth-child(3).active) { grid-template-columns: 1fr 1fr 3.2fr 1fr 1fr 1fr; }
+  #expertiseCards:has(.expertise-card:nth-child(4).active) { grid-template-columns: 1fr 1fr 1fr 3.2fr 1fr 1fr; }
+  #expertiseCards:has(.expertise-card:nth-child(5).active) { grid-template-columns: 1fr 1fr 1fr 1fr 3.2fr 1fr; }
+  #expertiseCards:has(.expertise-card:nth-child(6).active) { grid-template-columns: 1fr 1fr 1fr 1fr 1fr 3.2fr; }
+}
+
+/* Card shell */
+.expertise-card {
+  position: relative;
+  display: block;
+  height: 420px;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 14px 34px rgba(17, 47, 85, 0.16);
+}
+
+@media (min-width: 768px) {
+  .expertise-card {
+    height: clamp(560px, 40vw, 600px);
+    /* Width comes entirely from the grid column — the card just fills it.
+       Nothing to transition on the card itself; the column resize handles it. */
+    min-width: 0;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .expertise-card.active {
+    box-shadow: 0 18px 38px rgba(17, 47, 85, 0.2);
+  }
+}
+
+/* Background image + dark legibility wash */
+.expertise-card .project-post-thumbnail {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+}
+.expertise-card .project-post-thumbnail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+.expertise-card .project-post-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.expertise-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(to top,
+              rgba(0, 0, 0, 0.72) 0%,
+              rgba(0, 0, 0, 0.38) 30%,
+              rgba(0, 0, 0, 0) 62%);
+  pointer-events: none;
+}
+
+.expertise-card .project-content {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 34px 28px;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Tagline (location line) */
+.expertise-card .project-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-bottom: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.expertise-card .project-location svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #EA640D;
+}
+
+/* Title — vertical when collapsed, horizontal when active */
+.expertise-card .project-title {
+  margin: 0;
+  max-width: 100%;
+}
+.expertise-card .project-title-text {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 2.6vmax, 36px);
+  line-height: 1.12;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* Explore button (white pill + gold icon circle) */
+.expertise-card .project-button-wrap {
+  margin-top: 24px;
+}
+.expertise-card .project-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 6px 6px 22px;
+  border-radius: 30px;
+  background: #fff;
+  color: #112F55;
+  font-weight: 700;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.expertise-card .project-button-text {
+  font-family: 'Poppins', sans-serif;
+}
+.expertise-card .project-button-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #EA640D;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.expertise-card .project-button-icon svg {
+  width: 16px;
+  height: 16px;
+}
+.expertise-card .project-button:hover {
+  background: #EA640D;
+  color: #fff;
+}
+.expertise-card .project-button:hover .project-button-icon {
+  background: #fff;
+  color: #EA640D;
+}
+
+/* Collapsed vs active reveal — desktop only */
+@media (min-width: 768px) {
+  .expertise-card .project-title-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    transform-origin: center;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .expertise-card.active .project-title-text {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+
+  .expertise-card .project-content {
+    align-items: center;
+    padding: 34px 12px;
+    transition: padding 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .expertise-card.active .project-content {
+    align-items: flex-start;
+    padding: 42px 36px;
+  }
+
+  .expertise-card .project-location {
+    opacity: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    border-bottom: 0;
+    overflow: hidden;
+    transform: translateY(14px);
+    transition:
+      opacity 0.26s ease,
+      max-height 0.26s ease,
+      margin 0.26s ease,
+      padding 0.26s ease,
+      transform 0.26s ease;
+  }
+  .expertise-card.active .project-location {
+    opacity: 1;
+    max-height: 90px;
+    margin-bottom: 14px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    transform: translateY(0);
+  }
+
+  .expertise-card .project-button-wrap {
+    max-height: 0;
+    transform: translateY(60px);
+    overflow: hidden;
+    transition:
+      max-height 0.28s ease,
+      margin-top 0.28s ease,
+      transform 0.28s ease;
+    margin-top: 0;
+  }
+  .expertise-card.active .project-button-wrap {
+    max-height: 90px;
+    margin-top: 24px;
+    transform: translateY(0);
+  }
+
+  .expertise-card.active .project-content {
+    max-width: 460px;
+  }
+}
+
+
+/* ============================================
+   21. Interactive India Map (Location Page)
+   ============================================ */
+
+/* State path styling */
+.state-path {
+  fill: #ffffff;
+  stroke: #EA640D;
+  stroke-width: 0.6;
+  stroke-dasharray: 1.6 1.9;
+  cursor: pointer;
+  transition: fill 0.25s ease;
+}
+
+.state-path:hover {
+  fill: #EA640D;
+}
+
+.state-path.active {
+  fill: #EA640D;
+}
+
+/* Map container */
+#india-map-container {
+  border: 1px solid rgba(42, 74, 112, 0.3);
+}
+
+/* State legend cards — clickable */
+.state-card {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-width 0.15s ease;
+}
+.state-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(234, 100, 13, 0.15);
+}
+
+/* Detail panel project cards */
+#panel-projects > div {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+#panel-projects > div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile bottom sheet (< 1024px) */
+@media (max-width: 1023px) {
+  #state-detail-panel:not(.hidden) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9998;
+    background: white;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.2);
+    max-height: 75vh;
+    overflow-y: auto;
+    padding: 24px;
+    transform: translateY(0) !important;
+  }
+}
+
+/* Reduce animation motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-fade-in-left,
+  .animate-fade-in-right,
+  .animate-scale-in {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+  .loadingspinner div,
+  .active-loader .ball0,
+  .active-loader .ball1,
+  .active-loader .ball2,
+  .active-loader .ball3,
+  .active-loader .ball4,
+  .active-loader .ball5,
+  .active-loader .ball6,
+  .active-loader .ball7,
+  .active-loader .ball8,
+  .mana-scan-text span,
+  .mana-scan-text::before,
+  .mana-scan-text::after,
+  .rolling-rock-loader::after,
+  .aurora-layer::after,
+  .matrix-loader {
+    animation: none !important;
+  }
+}

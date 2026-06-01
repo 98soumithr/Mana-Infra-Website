@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mana Infrastructure - Together We Build, Together We Grow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#112F55',
+            amber: '#EA640D',
+            gold: '#EA640D',
+            dark: '#112F55',
+            light: '#F8FAFC',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Roboto', 'sans-serif'],
+          },
+          fontSize: {
+            base: ['16px', '24px'],
+          }
+        }
+      },
+      corePlugins: {
+        fontFamily: true
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/custom.css?v=20260531c">
+</head>
+<body class="font-body text-slate-800 text-justify">
+
+  <!-- ===== NAVBAR ===== -->
+  <div id="navbar"></div>
+
+  <!-- ===== 1. HERO SECTION ===== -->
+  <section id="hero" class="relative w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img src="images/hero-highway.jpg" alt="Six-lane elevated highway curving through mountains, NH-130-CD Odisha" class="w-full h-full object-cover object-center">
+    </div>
+    <!-- Overlay -->
+    <div class="hero-overlay"></div>
+    <!-- Content -->
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <!-- Main Heading -->
+      <h1 class="animate-fade-in-up delay-100 mb-2">
+        <span class="block text-6xl md:text-7xl lg:text-8xl font-black text-gold leading-tight" style="font-family: 'Death Star', sans-serif;">MANA</span>
+        <span class="block text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-1">INFRA</span>
+      </h1>
+      <!-- Tagline -->
+      <p class="animate-fade-in-up delay-200 text-xl md:text-2xl mt-6 mb-4">
+        <span class="text-white font-medium">BUILD TOGETHER,</span>
+        <span class="text-gold italic font-semibold"> GROW TOGETHER</span>
+      </p>
+      <!-- CTA Button -->
+      <div class="animate-fade-in-up delay-400 mb-6">
+        <a href="projects.html"
+           class="inline-block bg-gold text-dark px-8 py-3 rounded font-semibold text-base
+                  hover:bg-amber transition-colors duration-300 pulse-gold">
+          Explore Our Projects
+        </a>
+      </div>
+      <!-- Since badge -->
+      <p class="animate-fade-in-up delay-500 text-sm tracking-wide">
+        <span class="inline-block border border-gold/40 rounded-full px-4 py-1 text-gold font-semibold">Since 2012</span>
+      </p>
+    </div>
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+      <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== 2. STATS COUNTER BAR (Auto-scrolling Carousel) ===== -->
+  <section id="stats" class="bg-navy py-10 md:py-14">
+    <div class="relative overflow-hidden mx-auto" style="max-width: 1200px;">
+      <!-- Fade edges -->
+      <div class="absolute inset-y-0 left-0 w-16 md:w-28 z-10" style="background: linear-gradient(to right, #112F55, transparent);"></div>
+      <div class="absolute inset-y-0 right-0 w-16 md:w-28 z-10" style="background: linear-gradient(to left, #112F55, transparent);"></div>
+      <!-- Scrolling track -->
+      <div class="marquee-track flex items-center gap-10 md:gap-14 py-2">
+        <!-- Set 1 -->
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-5xl md:text-6xl text-gold mb-1">400+ Cr</p>
+          <p class="text-white/70 text-sm md:text-base">Annual Turnover</p>
+        </div>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-5xl md:text-6xl text-gold mb-1">1,500+ Cr</p>
+          <p class="text-white/70 text-sm md:text-base">Current Book Order</p>
+        </div>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-5xl md:text-6xl text-gold mb-1">14+</p>
+          <p class="text-white/70 text-sm md:text-base">Years in Infrastructure</p>
+        </div>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-5xl md:text-6xl text-gold mb-1">500+</p>
+          <p class="text-white/70 text-sm md:text-base">Machines &amp; Equipment</p>
+        </div>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-5xl md:text-6xl text-gold mb-1">1,000+</p>
+          <p class="text-white/70 text-sm md:text-base">Skilled Workforce</p>
+        </div>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-5xl md:text-6xl text-gold mb-1">5</p>
+          <p class="text-white/70 text-sm md:text-base">States of Operation</p>
+        </div>
+        <!-- Set 2 (duplicate for seamless loop) -->
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-5xl md:text-6xl text-gold mb-1">400+ Cr</p>
+          <p class="text-white/70 text-sm md:text-base">Annual Turnover</p>
+        </div>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-5xl md:text-6xl text-gold mb-1">1,500+ Cr</p>
+          <p class="text-white/70 text-sm md:text-base">Current Book Order</p>
+        </div>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-5xl md:text-6xl text-gold mb-1">14+</p>
+          <p class="text-white/70 text-sm md:text-base">Years in Infrastructure</p>
+        </div>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-5xl md:text-6xl text-gold mb-1">500+</p>
+          <p class="text-white/70 text-sm md:text-base">Machines &amp; Equipment</p>
+        </div>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-5xl md:text-6xl text-gold mb-1">1,000+</p>
+          <p class="text-white/70 text-sm md:text-base">Skilled Workforce</p>
+        </div>
+        <div class="flex-shrink-0 text-center px-4 min-w-[140px]">
+          <p class="font-heading font-bold text-5xl md:text-6xl text-gold mb-1">5</p>
+          <p class="text-white/70 text-sm md:text-base">States of Operation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. CORE EXPERTISE ===== -->
+  <section id="expertise" class="section-padding bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Heading -->
+      <div class="text-center mb-14 animate-fade-in-up">
+        <div class="flex items-center justify-center gap-4 mb-4">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold">
+            <span class="inline-block px-4 py-2 bg-navy/5 rounded-full">
+              <span class="text-navy">VERTICALS</span>
+            </span>
+          </h2>
+        </div>
+        <p class="text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          Mana Infrastructure operates across six major engineering verticals bringing deep technical capability,
+          a proven equipment fleet, and experienced site teams to every project domain.
+        </p>
+      </div>
+      <!-- Expanding Accordion — Core Sectors (one active at a time, row stays 100% wide) -->
+      <div id="expertiseCards">
+
+        <!-- Card 1: Highways & Roads -->
+        <a href="expertise-highways.html" class="expertise-card active animate-fade-in-up">
+          <div class="project-post-thumbnail">
+            <img src="images/highways-1.jpg" alt="Highways & Roads — six-lane and four-lane expressway construction" loading="lazy">
+          </div>
+          <div class="project-content">
+            <div class="project-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              <span>Connecting regions through expressways built to last</span>
+            </div>
+            <h3 class="project-title"><span class="project-title-text">Highways &amp; Roads</span></h3>
+            <div class="project-button-wrap">
+              <span class="project-button">
+                <span class="project-button-text">Explore Projects</span>
+                <span class="project-button-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 2: Tunnels -->
+        <a href="expertise-tunnels.html" class="expertise-card animate-fade-in-up delay-100">
+          <div class="project-post-thumbnail">
+            <img src="images/tunnels-1.jpg" alt="Tunnels — twin-bore NATM tunnelling" loading="lazy">
+          </div>
+          <div class="project-content">
+            <div class="project-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              <span>A trusted partner in the nation's key tunnel projects</span>
+            </div>
+            <h3 class="project-title"><span class="project-title-text">Tunnels</span></h3>
+            <div class="project-button-wrap">
+              <span class="project-button">
+                <span class="project-button-text">Explore Projects</span>
+                <span class="project-button-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 3: Irrigation & Barrages -->
+        <a href="expertise-irrigation.html" class="expertise-card animate-fade-in-up delay-200">
+          <div class="project-post-thumbnail">
+            <img src="images/irrigation-1.jpg" alt="Irrigation & Barrages — reservoirs, canals and major irrigation works" loading="lazy">
+          </div>
+          <div class="project-content">
+            <div class="project-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              <span>Transforming agricultural ecosystems across states</span>
+            </div>
+            <h3 class="project-title"><span class="project-title-text">Irrigation &amp; Barrages</span></h3>
+            <div class="project-button-wrap">
+              <span class="project-button">
+                <span class="project-button-text">Explore Projects</span>
+                <span class="project-button-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 4: Railways -->
+        <a href="expertise-railways.html" class="expertise-card animate-fade-in-up delay-300">
+          <div class="project-post-thumbnail">
+            <img src="images/railways-1.jpg" alt="Railways — new gauge line construction for RVNL" loading="lazy">
+          </div>
+          <div class="project-content">
+            <div class="project-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              <span>Supporting the backbone of India's transit networks</span>
+            </div>
+            <h3 class="project-title"><span class="project-title-text">Railways</span></h3>
+            <div class="project-button-wrap">
+              <span class="project-button">
+                <span class="project-button-text">Explore Projects</span>
+                <span class="project-button-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 5: Bridges & Viaducts -->
+        <a href="expertise-bridges.html" class="expertise-card animate-fade-in-up delay-400">
+          <div class="project-post-thumbnail">
+            <img src="images/bridges-1.jpg" alt="Bridges & Viaducts — major bridges and elevated viaducts" loading="lazy">
+          </div>
+          <div class="project-content">
+            <div class="project-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              <span>Engineering crossings that carry the nation forward</span>
+            </div>
+            <h3 class="project-title"><span class="project-title-text">Bridges &amp; Viaducts</span></h3>
+            <div class="project-button-wrap">
+              <span class="project-button">
+                <span class="project-button-text">Explore Projects</span>
+                <span class="project-button-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 6: Urban Infrastructure -->
+        <a href="expertise-urban.html" class="expertise-card animate-fade-in-up delay-500">
+          <div class="project-post-thumbnail">
+            <img src="images/urban-1.jpg" alt="Urban Infrastructure — water supply, STPs and CC roads" loading="lazy">
+          </div>
+          <div class="project-content">
+            <div class="project-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              <span>Building dependable, sustainable urban utilities</span>
+            </div>
+            <h3 class="project-title"><span class="project-title-text">Urban Infrastructure</span></h3>
+            <div class="project-button-wrap">
+              <span class="project-button">
+                <span class="project-button-text">Explore Projects</span>
+                <span class="project-button-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. FEATURED PROJECTS PREVIEW ===== -->
+  <section id="projects" class="section-padding bg-light">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Heading -->
+      <div class="text-center mb-14 animate-fade-in-up">
+        <div class="flex items-center justify-center gap-4 mb-4">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold">
+            <span class="inline-block px-4 py-2 bg-navy/5 rounded-full">
+              <span class="text-navy">OPERATIONAL </span><span class="text-gold italic">PROJECTS</span>
+            </span>
+          </h2>
+          <div class="matrix-loader hidden sm:block" style="flex-shrink: 0;"></div>
+        </div>
+        <p class="text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          Delivering large-scale infrastructure across India with precision, speed, and unwavering quality.
+        </p>
+      </div>
+      <!-- Project Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Project 1 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fade-in-up">
+          <div class="img-zoom h-52 relative">
+            <img src="images/project-nh130.jpg" alt="Six-Lane Kandili-Tumbigura NH-130-CD" class="w-full h-full object-cover">
+            <span class="absolute top-3 right-3 bg-emerald-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+              Active - Ahead of Schedule
+            </span>
+          </div>
+          <div class="p-6">
+            <p class="text-xs text-slate-500 uppercase tracking-wider mb-1 flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              Odisha
+            </p>
+            <h3 class="font-heading font-bold text-navy text-base mb-2 leading-snug">Six-Lane Kandili-Tumbigura, NH-130-CD</h3>
+            <div class="flex items-center gap-2 mt-3 pt-3 border-t border-slate-100">
+              <span class="text-gold font-bold text-sm">10,74,460 Cum</span>
+              <span class="text-slate-400 text-xs">Excavation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fade-in-up delay-100">
+          <div class="img-zoom h-52 relative">
+            <img src="images/project-polavaram.jpg" alt="Twin Tunnels - Polavaram" class="w-full h-full object-cover">
+            <span class="absolute top-3 right-3 bg-emerald-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+              Active
+            </span>
+          </div>
+          <div class="p-6">
+            <p class="text-xs text-slate-500 uppercase tracking-wider mb-1 flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              Andhra Pradesh
+            </p>
+            <h3 class="font-heading font-bold text-navy text-base mb-2 leading-snug">Twin Tunnels &mdash; Polavaram</h3>
+            <div class="flex items-center gap-2 mt-3 pt-3 border-t border-slate-100">
+              <span class="text-gold font-bold text-sm">19.35m x 19.35m</span>
+              <span class="text-slate-400 text-xs">Asia's Largest</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fade-in-up delay-200">
+          <div class="img-zoom h-52 relative">
+            <img src="images/project-kadapa.jpg" alt="Bengaluru-Vijayawada Expressway" class="w-full h-full object-cover">
+            <span class="absolute top-3 right-3 bg-emerald-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+              Active
+            </span>
+          </div>
+          <div class="p-6">
+            <p class="text-xs text-slate-500 uppercase tracking-wider mb-1 flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              Kadapa, AP
+            </p>
+            <h3 class="font-heading font-bold text-navy text-base mb-2 leading-snug">Bengaluru-Vijayawada Expressway</h3>
+            <div class="flex items-center gap-2 mt-3 pt-3 border-t border-slate-100">
+              <span class="text-gold font-bold text-sm">20,50,000 Cum</span>
+              <span class="text-slate-400 text-xs">in 6 Months</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- View All Link -->
+      <div class="text-center mt-12 animate-fade-in-up">
+        <a href="projects.html"
+           class="inline-flex items-center gap-2 bg-navy text-white px-8 py-3 rounded font-semibold
+                  hover:bg-dark transition-colors duration-300 group">
+          View All Projects
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== 6. CTA BANNER ===== -->
+  <section id="cta" class="relative py-20 md:py-28 overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img src="images/machinery-bg.jpg" alt="Excavator loading dump truck at railway construction site" class="w-full h-full object-cover object-center">
+    </div>
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-dark/85"></div>
+    <!-- Content -->
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 animate-fade-in-up">
+        Let's Build India's Future Together
+      </h2>
+      <p class="text-slate-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto animate-fade-in-up delay-100">
+        Partner with a trusted infrastructure company with 14+ years of experience across highways, railways, tunnels, and more.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-200">
+        <a href="contact.html"
+           class="inline-block bg-gold text-dark px-8 py-3.5 rounded font-semibold text-base
+                  hover:bg-amber transition-colors duration-300 pulse-gold">
+          Contact Us
+        </a>
+        <a href="projects.html"
+           class="inline-block border-2 border-white text-white px-8 py-3.5 rounded font-semibold text-base
+                  hover:bg-white/10 transition-colors duration-300">
+          View Projects
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <div id="footer"></div>
+
+  <!-- ===== SHARED SCRIPTS ===== -->
+  <script src="shared/nav.js"></script>
+  <script src="shared/footer.js"></script>
+
+  <!-- ===== SCROLL ANIMATIONS & COUNTER JS ===== -->
+  <script>
+  (function () {
+    "use strict";
+
+    /* ── Scroll Animation Observer ──────────────────────────────── */
+    var animationClasses = [
+      "animate-fade-in-up",
+      "animate-fade-in-left",
+      "animate-fade-in-right",
+      "animate-scale-in"
+    ];
+
+    var selector = animationClasses.map(function (c) { return "." + c; }).join(", ");
+
+    var scrollObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          scrollObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: "0px 0px -40px 0px"
+    });
+
+    document.querySelectorAll(selector).forEach(function (el) {
+      scrollObserver.observe(el);
+    });
+
+    /* ── Counter Animation ──────────────────────────────────────── */
+    var countersAnimated = false;
+
+    function animateCounters() {
+      if (countersAnimated) return;
+      countersAnimated = true;
+
+      var counters = document.querySelectorAll(".counter-value[data-target]");
+
+      counters.forEach(function (counter) {
+        var target = parseInt(counter.getAttribute("data-target"), 10);
+        var duration = 2000; // 2 seconds
+        var startTime = null;
+
+        // Easing function: ease-out cubic
+        function easeOutCubic(t) {
+          return 1 - Math.pow(1 - t, 3);
+        }
+
+        function updateCounter(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var elapsed = timestamp - startTime;
+          var progress = Math.min(elapsed / duration, 1);
+          var easedProgress = easeOutCubic(progress);
+          var current = Math.floor(easedProgress * target);
+
+          counter.textContent = current.toLocaleString("en-IN");
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = target.toLocaleString("en-IN");
+          }
+        }
+
+        requestAnimationFrame(updateCounter);
+      });
+    }
+
+    var statsSection = document.getElementById("stats");
+    if (statsSection) {
+      var counterObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCounters();
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.3
+      });
+
+      counterObserver.observe(statsSection);
+    }
+
+    /* ── Expertise Cards Expansion (one active; last hover stays open) ── */
+    var expertiseCards = Array.prototype.slice.call(
+      document.querySelectorAll('.expertise-card'));
+    var activeExpertise = -1;
+
+    function activateExpertiseCard(index) {
+      if (index < 0 || index === activeExpertise) return;
+      activeExpertise = index;
+      expertiseCards.forEach(function(card, cardIndex) {
+        card.classList.toggle('active', cardIndex === index);
+      });
+    }
+
+    if (expertiseCards.length) {
+      activateExpertiseCard(0);
+    }
+
+    expertiseCards.forEach(function(card, index) {
+      card.addEventListener('mouseenter', function() {
+        activateExpertiseCard(index);
+      });
+      card.addEventListener('focus', function() {
+        activateExpertiseCard(index);
+      });
+    });
+
+    // EXPERTISE-BUILD marker — confirms which version is actually loaded.
+    console.log('%cEXPERTISE-BUILD 2026-05-31h (CSS grid)',
+                'background:#EA640D;color:#fff;padding:2px 6px;border-radius:3px');
+  })();
+  </script>
+
+
+</body>
+</html>

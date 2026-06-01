@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urban Infrastructure - Mana Infrastructure</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#112F55',
+            amber: '#EA640D',
+            gold: '#EA640D',
+            dark: '#112F55',
+            light: '#F8FAFC',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="font-body text-slate-800 text-justify">
+
+  <div id="navbar"></div>
+
+  <!-- Hero -->
+  <section class="relative w-full" style="height: 45vh; min-height: 320px;">
+    <img src="images/urban-1.jpg" alt="Urban infrastructure construction" class="absolute inset-0 w-full h-full object-cover">
+    <div class="hero-overlay"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+      <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl font-black mb-4 animate-fade-in-up" style="text-shadow: 2px 4px 12px rgba(0,0,0,0.5);">
+        <span class="text-white">URBAN INFRA</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section-padding bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-1 h-10 bg-gold rounded-full"></div>
+            <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy">What We Do</h2>
+          </div>
+          <p class="text-slate-600 leading-relaxed mb-4">
+            Mana Infrastructure delivers essential urban infrastructure including sewage treatment plants (STPs), water supply systems, CC road construction, and water pipeline installation. We build the backbone of modern cities and towns.
+          </p>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            Our urban projects focus on sustainable development — from treated water reuse systems to efficient pipeline networks — ensuring communities have access to clean water and proper sanitation infrastructure.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-navy/5 text-navy text-sm font-medium rounded-full">STP</span>
+            <span class="px-4 py-2 bg-navy/5 text-navy text-sm font-medium rounded-full">Water Supply</span>
+            <span class="px-4 py-2 bg-navy/5 text-navy text-sm font-medium rounded-full">CC Roads</span>
+            <span class="px-4 py-2 bg-navy/5 text-navy text-sm font-medium rounded-full">Pipelines</span>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg">
+          <img src="images/urban-2.jpg" alt="Urban infrastructure project" class="w-full h-80 object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities -->
+  <section class="section-padding bg-navy">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="font-heading text-2xl md:text-3xl font-bold text-white mb-3">Our Capabilities</h2>
+        <p class="text-white/70 max-w-2xl mx-auto">Comprehensive urban development from water treatment to road infrastructure.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-xl border-b-4 border-gold text-navy cursor-pointer hover:shadow-lg transition-shadow duration-300">
+          <h3 class="font-heading font-bold text-gold mb-2">Sewage Treatment</h3>
+          <p class="text-slate-600 text-sm">Design and construction of STPs with advanced treatment processes for water reclamation.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border-b-4 border-gold text-navy cursor-pointer hover:shadow-lg transition-shadow duration-300">
+          <h3 class="font-heading font-bold text-gold mb-2">Water Supply</h3>
+          <p class="text-slate-600 text-sm">Comprehensive water supply systems including treatment plants, storage, and distribution networks.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border-b-4 border-gold text-navy cursor-pointer hover:shadow-lg transition-shadow duration-300">
+          <h3 class="font-heading font-bold text-gold mb-2">Pipeline Networks</h3>
+          <p class="text-slate-600 text-sm">Water and sewerage pipeline installation using DI, HDPE, and RCC pipes across urban areas.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border-b-4 border-gold text-navy cursor-pointer hover:shadow-lg transition-shadow duration-300">
+          <h3 class="font-heading font-bold text-gold mb-2">CC Road Construction</h3>
+          <p class="text-slate-600 text-sm">Cement concrete road construction for municipal and urban development projects.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border-b-4 border-gold text-navy cursor-pointer hover:shadow-lg transition-shadow duration-300">
+          <h3 class="font-heading font-bold text-gold mb-2">Storm Water Drains</h3>
+          <p class="text-slate-600 text-sm">Urban drainage systems and stormwater management infrastructure for flood mitigation.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border-b-4 border-gold text-navy cursor-pointer hover:shadow-lg transition-shadow duration-300">
+          <h3 class="font-heading font-bold text-gold mb-2">Pump Stations</h3>
+          <p class="text-slate-600 text-sm">Sewage pumping stations and water distribution boosting facilities with SCADA integration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section-padding bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy mb-3">Project Gallery</h2>
+        <p class="text-slate-600">Our urban infrastructure projects delivering essential city services.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-xl overflow-hidden shadow-md group aspect-square">
+          <img src="images/urban-1.jpg" alt="Urban project 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-md group aspect-square">
+          <img src="images/urban-2.jpg" alt="Urban project 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-md group aspect-square">
+          <img src="images/urban-3.jpg" alt="Urban project 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-md group aspect-square">
+          <img src="images/urban-4.png" alt="Urban project 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-md group aspect-square">
+          <img src="images/urban-5.png" alt="Urban project 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-md group aspect-square">
+          <img src="images/urban-6.png" alt="Urban project 6" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-navy text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-white mb-4">Interested in Our Urban Projects?</h2>
+      <p class="text-white/70 mb-8">Get in touch to learn more about our urban infrastructure and water treatment capabilities.</p>
+      <a href="contact.html" class="inline-block px-8 py-3 bg-gold text-dark font-semibold rounded-lg hover:bg-amber transition-colors duration-300">Contact Us</a>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+  <script src="shared/nav.js"></script>
+  <script src="shared/footer.js"></script>
+  <script>
+  (function(){
+    var sel = ".animate-fade-in-up,.animate-fade-in-left,.animate-fade-in-right,.animate-scale-in";
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("is-visible"); obs.unobserve(e.target); } });
+    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+    document.querySelectorAll(sel).forEach(function(el){ obs.observe(el); });
+  })();
+  </script>
+</body>
+</html>

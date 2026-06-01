@@ -275,7 +275,54 @@
 
         <!-- India Map (Interactive SVG) -->
         <div class="relative animate-fade-in-left">
-          <svg id="india-map-svg" class="w-full h-auto rounded-xl shadow-lg" viewBox="0 0 612 760" preserveAspectRatio="xMidYMid meet" style="background: transparent !important;"></svg>
+          <div class="rounded-xl overflow-hidden shadow-lg" style="background-color: #112F55; padding: 20px; aspect-ratio: 4/5;">
+            <svg id="india-map-svg" class="w-full h-full" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <pattern id="stripe-blue-orange" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+                  <rect x="0" y="0" width="4" height="8" fill="#112F55"/>
+                  <rect x="4" y="0" width="4" height="8" fill="#EA640D"/>
+                </pattern>
+              </defs>
+
+              <!-- Background -->
+              <rect width="800" height="1000" fill="#112F55"/>
+
+              <!-- Andhra Pradesh (with zigzag pattern) -->
+              <path d="M 550 450 L 580 420 L 590 440 L 610 430 L 600 470 L 580 480 Z" fill="url(#stripe-blue-orange)" stroke="#112F55" stroke-width="1"/>
+
+              <!-- Telangana (with zigzag pattern) -->
+              <path d="M 480 380 L 520 360 L 540 390 L 520 420 L 480 410 Z" fill="url(#stripe-blue-orange)" stroke="#112F55" stroke-width="1"/>
+
+              <!-- Karnataka (with zigzag pattern) -->
+              <path d="M 450 520 L 500 500 L 520 550 L 480 580 L 430 560 Z" fill="url(#stripe-blue-orange)" stroke="#112F55" stroke-width="1"/>
+
+              <!-- Maharashtra (with zigzag pattern) -->
+              <path d="M 380 380 L 430 360 L 450 420 L 410 440 L 370 420 Z" fill="url(#stripe-blue-orange)" stroke="#112F55" stroke-width="1"/>
+
+              <!-- Odisha (with zigzag pattern) -->
+              <path d="M 550 320 L 590 310 L 600 360 L 570 370 Z" fill="url(#stripe-blue-orange)" stroke="#112F55" stroke-width="1"/>
+
+              <!-- Other States (Grey) -->
+              <path d="M 200 200 L 250 180 L 270 220 L 240 240 Z" fill="#A0AEC0" stroke="#112F55" stroke-width="1"/>
+              <path d="M 300 150 L 340 140 L 360 180 L 320 190 Z" fill="#A0AEC0" stroke="#112F55" stroke-width="1"/>
+              <path d="M 350 280 L 390 260 L 410 300 L 370 320 Z" fill="#A0AEC0" stroke="#112F55" stroke-width="1"/>
+              <path d="M 280 400 L 330 390 L 350 440 L 300 450 Z" fill="#A0AEC0" stroke="#112F55" stroke-width="1"/>
+              <path d="M 250 550 L 300 540 L 320 590 L 270 600 Z" fill="#A0AEC0" stroke="#112F55" stroke-width="1"/>
+              <path d="M 380 650 L 430 640 L 450 700 L 400 710 Z" fill="#A0AEC0" stroke="#112F55" stroke-width="1"/>
+              <path d="M 500 700 L 550 690 L 570 750 L 520 760 Z" fill="#A0AEC0" stroke="#112F55" stroke-width="1"/>
+              <path d="M 600 550 L 650 540 L 670 600 L 620 610 Z" fill="#A0AEC0" stroke="#112F55" stroke-width="1"/>
+              <path d="M 650 350 L 700 340 L 720 390 L 680 400 Z" fill="#A0AEC0" stroke="#112F55" stroke-width="1"/>
+
+              <!-- Legend -->
+              <g transform="translate(50, 850)">
+                <text x="0" y="20" font-family="Poppins, sans-serif" font-size="14" font-weight="bold" fill="white">Legend:</text>
+                <rect x="0" y="30" width="20" height="20" fill="url(#stripe-blue-orange)" stroke="white" stroke-width="1"/>
+                <text x="30" y="45" font-family="Inter, sans-serif" font-size="12" fill="white">Operational States</text>
+                <rect x="200" y="30" width="20" height="20" fill="#A0AEC0" stroke="white" stroke-width="1"/>
+                <text x="230" y="45" font-family="Inter, sans-serif" font-size="12" fill="white">Other States</text>
+              </g>
+            </svg>
+          </div>
         </div>
 
         <!-- State Info Panel (right column) -->

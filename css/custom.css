@@ -193,12 +193,14 @@ section.relative > img[src*="images/"] {
    4. Card Hover Effects
    ============================================ */
 .card-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .card-hover:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(15, 27, 45, 0.15);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 24px 48px rgba(15, 27, 45, 0.2);
+  border-left-color: #EA640D;
+  background-color: #FFFAF0;
 }
 
 .card-gold-border {

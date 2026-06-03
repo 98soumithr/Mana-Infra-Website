@@ -60,7 +60,7 @@
 
   function buildCompanyInfo() {
     var col = el("div", [
-      "flex: 0 0 200px",
+      "flex: 0 0 500px",
       "padding-right: 32px",
       "align-items: flex-start",
       "display: flex",
@@ -80,7 +80,7 @@
     logoImg.src = "footer.jpg";
     logoImg.alt = "Mana Infrastructure Logo";
     logoImg.style.cssText = [
-      "width: 200px",
+      "width: 500px",
       "height: auto",
       "object-fit: contain",
       "margin: 0",
@@ -648,7 +648,7 @@
         /* Desktop: restore logo size */
         var logoImg = footer.querySelector("#mana-footer img");
         if (logoImg) {
-          logoImg.style.width = "200px";
+          logoImg.style.width = "500px";
           logoImg.style.height = "auto";
         }
         var logoWrap = footer.querySelector("#mana-footer > div > div > div > div");

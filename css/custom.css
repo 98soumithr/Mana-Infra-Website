@@ -198,9 +198,9 @@ section.relative > img[src*="images/"] {
 
 .card-hover:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 24px 48px rgba(15, 27, 45, 0.2);
-  border-left-color: #EA640D;
-  background-color: #FFFAF0;
+  box-shadow: 0 12px 36px rgba(234, 100, 13, 0.15), 0 0 0 1px rgba(234, 100, 13, 0.3);
+  border-color: rgba(234, 100, 13, 0.4);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .card-gold-border {

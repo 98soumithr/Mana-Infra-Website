@@ -77,7 +77,7 @@
     ].join(";"));
 
     var logoImg = document.createElement("img");
-    logoImg.src = "footer.jpg";
+    logoImg.src = "images/foot_final.jpg";
     logoImg.alt = "Mana Infrastructure Logo";
     logoImg.style.cssText = [
       "width: 500px",

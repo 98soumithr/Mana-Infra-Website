@@ -62,6 +62,7 @@
     var col = el("div", [
       "flex: 0 0 360px",
       "padding-right: 32px",
+      "padding-top: 60px",
       "align-items: flex-start",
       "display: flex",
       "flex-direction: column",

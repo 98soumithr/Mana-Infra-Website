@@ -770,32 +770,85 @@
   <!-- Gallery Auto-Slideshow + Click -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      /* Click to swap with cross-fade transition */
+      function activateThumb(thumb) {
+        var container = thumb.closest('.img-zoom');
+        if (!container) return;
+        var mainImg = container.querySelector('img:first-child');
+        mainImg.style.transition = 'opacity 0.4s ease';
+        mainImg.style.opacity = '0.95';
+        var isNoZoom = thumb.getAttribute('data-no-zoom') === 'true';
+        setTimeout(function () {
+          mainImg.src = thumb.getAttribute('data-main');
+          mainImg.alt = thumb.getAttribute('data-alt');
+          mainImg.style.opacity = '1';
+          if (isNoZoom) {
+            container.classList.add('no-zoom-effect');
+          } else {
+            container.classList.remove('no-zoom-effect');
+          }
+        }, 200);
+        container.querySelectorAll('.project-thumb').forEach(function (t) {
+          t.classList.remove('border-gold');
+          t.classList.add('border-white/50');
+        });
+        thumb.classList.add('border-gold');
+        thumb.classList.remove('border-white/50');
+      }
+
+      /* Click to swap */
       document.querySelectorAll('.project-thumb').forEach(function (thumb) {
         thumb.addEventListener('click', function () {
-          var container = this.closest('.img-zoom');
-          var mainImg = container.querySelector('img:first-child');
-          mainImg.style.transition = 'opacity 0.4s ease';
-          mainImg.style.opacity = '0.95';
-          var self = this;
-          var isNoZoom = self.getAttribute('data-no-zoom') === 'true';
-          setTimeout(function () {
-            mainImg.src = self.getAttribute('data-main');
-            mainImg.alt = self.getAttribute('data-alt');
-            mainImg.style.opacity = '1';
-            if (isNoZoom) {
-              container.classList.add('no-zoom-effect');
-            } else {
-              container.classList.remove('no-zoom-effect');
-            }
-          }, 200);
-          container.querySelectorAll('.project-thumb').forEach(function (t) {
-            t.classList.remove('border-gold');
-            t.classList.add('border-white/50');
-          });
-          this.classList.add('border-gold');
-          this.classList.remove('border-white/50');
+          activateThumb(this);
         });
+      });
+
+      /* Auto-scroll each gallery through its thumbnails */
+      var AUTO_INTERVAL_MS = 5000;
+      document.querySelectorAll('.img-zoom').forEach(function (container) {
+        var thumbs = container.querySelectorAll('.project-thumb');
+        if (thumbs.length < 2) return;
+
+        var index = 0;
+        var timerId = null;
+        var paused = false;
+
+        function tick() {
+          if (paused) return;
+          index = (index + 1) % thumbs.length;
+          activateThumb(thumbs[index]);
+        }
+
+        function start() {
+          if (timerId) return;
+          timerId = setInterval(tick, AUTO_INTERVAL_MS);
+        }
+
+        function stop() {
+          if (timerId) { clearInterval(timerId); timerId = null; }
+        }
+
+        container.addEventListener('mouseenter', function () { paused = true; });
+        container.addEventListener('mouseleave', function () { paused = false; });
+
+        thumbs.forEach(function (t, i) {
+          t.addEventListener('click', function () {
+            index = i;
+            stop();
+            start();
+          });
+        });
+
+        if ('IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) start();
+              else stop();
+            });
+          }, { threshold: 0.1 });
+          io.observe(container);
+        } else {
+          start();
+        }
       });
     });
   </script>

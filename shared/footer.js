@@ -579,7 +579,7 @@
       "display: flex",
       "flex-wrap: wrap",
       "gap: 40px",
-      "align-items: flex-start",
+      "align-items: center",
     ].join(";"));
 
     row.appendChild(buildCompanyInfo());

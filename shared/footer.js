@@ -658,8 +658,8 @@
 
         var cols = row.children;
         if (cols[0]) {
-          cols[0].style.flex = "1";
-          cols[0].style.minWidth = "240px";
+          cols[0].style.flex = "0 0 500px";
+          cols[0].style.minWidth = "auto";
           cols[0].style.paddingRight = "32px";
         }
         if (cols[1]) {

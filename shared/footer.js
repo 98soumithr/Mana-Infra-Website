@@ -62,7 +62,7 @@
     var col = el("div", [
       "flex: 0 0 360px",
       "padding-right: 32px",
-      "padding-top: 60px",
+      "padding-top: 30px",
       "align-items: flex-start",
       "display: flex",
       "flex-direction: column",
@@ -102,7 +102,7 @@
     var col = el("div", [
       "flex: 0 0 auto",
       "min-width: 160px",
-      "padding-top: 60px",
+      "padding-top: 30px",
     ].join(";"));
 
     col.appendChild(sectionHeading("Quick Links"));
@@ -147,7 +147,7 @@
     var col = el("div", [
       "flex: 1",
       "min-width: 240px",
-      "padding-top: 60px",
+      "padding-top: 30px",
     ].join(";"));
 
     col.appendChild(sectionHeading("Our Offices"));
@@ -201,7 +201,7 @@
     var col = el("div", [
       "flex: 1",
       "min-width: 240px",
-      "padding-top: 60px",
+      "padding-top: 30px",
     ].join(";"));
 
     col.appendChild(sectionHeading("Contact & Sectors"));
@@ -527,7 +527,7 @@
     var wrapper = el("div", [
       "border-top: 1px solid " + COLORS.border,
       "margin-top: 40px",
-      "padding-top: 60px",
+      "padding-top: 30px",
       "display: flex",
       "justify-content: space-between",
       "align-items: center",

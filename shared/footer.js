@@ -73,7 +73,7 @@
       "display: flex",
       "align-items: flex-start",
       "justify-content: flex-start",
-      "margin: 20px 0 0 0",
+      "margin: -30px 0 0 0",
     ].join(";"));
 
     var logoImg = document.createElement("img");
@@ -579,7 +579,7 @@
       "display: flex",
       "flex-wrap: wrap",
       "gap: 40px",
-      "align-items: center",
+      "align-items: flex-start",
     ].join(";"));
 
     row.appendChild(buildCompanyInfo());

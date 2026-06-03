@@ -81,10 +81,10 @@
     logoImg.src = "footer.jpg";
     logoImg.alt = "Mana Infrastructure Logo";
     logoImg.style.cssText = [
-      "height: auto",
+      "height: 800px",
       "width: auto",
       "object-fit: contain",
-      "max-width: 100%",
+      "max-width: none",
       "margin: 0",
       "padding: 0",
       "display: block",
@@ -624,7 +624,7 @@
         /* Mobile: adjust logo size and center it */
         var logoImg = footer.querySelector("#mana-footer img");
         if (logoImg) {
-          logoImg.style.height = "600px";
+          logoImg.style.height = "800px";
           logoImg.style.maxWidth = "100%";
           logoImg.style.width = "auto";
         }
@@ -651,7 +651,7 @@
         /* Desktop: restore logo size */
         var logoImg = footer.querySelector("#mana-footer img");
         if (logoImg) {
-          logoImg.style.height = "400px";
+          logoImg.style.height = "800px";
         }
         var logoWrap = footer.querySelector("#mana-footer > div > div > div > div");
         if (logoWrap) {

@@ -60,12 +60,12 @@
 
   function buildCompanyInfo() {
     var col = el("div", [
-      "flex: 0 0 400px",
+      "flex: 0 0 360px",
       "padding-right: 32px",
       "align-items: flex-start",
       "display: flex",
       "flex-direction: column",
-      "justify-content: flex-start",
+      "justify-content: center",
     ].join(";"));
 
     /* Logo image */
@@ -80,7 +80,7 @@
     logoImg.src = "images/foot_final.jpg";
     logoImg.alt = "Mana Infrastructure Logo";
     logoImg.style.cssText = [
-      "width: 400px",
+      "width: 360px",
       "height: auto",
       "object-fit: contain",
       "margin: 0",
@@ -649,7 +649,7 @@
         /* Desktop: restore logo size */
         var logoImg = footer.querySelector("#mana-footer img");
         if (logoImg) {
-          logoImg.style.width = "400px";
+          logoImg.style.width = "360px";
           logoImg.style.height = "auto";
         }
         var logoWrap = footer.querySelector("#mana-footer > div > div > div > div");
@@ -659,7 +659,7 @@
 
         var cols = row.children;
         if (cols[0]) {
-          cols[0].style.flex = "0 0 400px";
+          cols[0].style.flex = "0 0 360px";
           cols[0].style.minWidth = "auto";
           cols[0].style.paddingRight = "32px";
         }

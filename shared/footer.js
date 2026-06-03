@@ -60,34 +60,29 @@
 
   function buildCompanyInfo() {
     var col = el("div", [
-      "flex: 0 0 auto",
-      "min-width: 240px",
-      "max-width: 320px",
+      "flex: 0 0 200px",
       "padding-right: 32px",
-      "align-items: center",
+      "align-items: flex-start",
       "display: flex",
       "flex-direction: column",
-      "justify-content: center",
+      "justify-content: flex-start",
     ].join(";"));
 
     /* Logo image */
     var logoWrap = el("div", [
       "display: flex",
-      "align-items: center",
-      "justify-content: center",
+      "align-items: flex-start",
+      "justify-content: flex-start",
       "margin: 0",
-      "align-self: stretch",
-      "height: 100%",
     ].join(";"));
 
     var logoImg = document.createElement("img");
     logoImg.src = "footer.jpg";
     logoImg.alt = "Mana Infrastructure Logo";
     logoImg.style.cssText = [
-      "height: 700px",
-      "width: auto",
+      "width: 200px",
+      "height: auto",
       "object-fit: contain",
-      "max-width: 100%",
       "margin: 0",
       "padding: 0",
       "display: block",
@@ -627,9 +622,8 @@
         /* Mobile: adjust logo size and center it */
         var logoImg = footer.querySelector("#mana-footer img");
         if (logoImg) {
-          logoImg.style.height = "500px";
-          logoImg.style.maxWidth = "100%";
-          logoImg.style.width = "auto";
+          logoImg.style.width = "180px";
+          logoImg.style.height = "auto";
         }
         var logoWrap = footer.querySelector("#mana-footer > div > div > div > div");
         if (logoWrap) {
@@ -654,8 +648,8 @@
         /* Desktop: restore logo size */
         var logoImg = footer.querySelector("#mana-footer img");
         if (logoImg) {
-          logoImg.style.height = "700px";
-          logoImg.style.maxWidth = "100%";
+          logoImg.style.width = "200px";
+          logoImg.style.height = "auto";
         }
         var logoWrap = footer.querySelector("#mana-footer > div > div > div > div");
         if (logoWrap) {

@@ -637,6 +637,7 @@
         }
         var logoWrap = footer.querySelector("div > div > div > div:has(> img)");
         if (logoWrap) {
+          logoWrap.style.width = "100%";
           logoWrap.style.justifyContent = "center";
           logoWrap.style.marginBottom = "24px";
         }

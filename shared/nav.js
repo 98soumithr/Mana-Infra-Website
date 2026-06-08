@@ -148,44 +148,19 @@
     ].join(";");
 
     var logoImg = document.createElement("img");
-    logoImg.src = "header_logo.png";
+    logoImg.src = "../header_logo.png";
     logoImg.alt = "Mana Infrastructure Logo";
     logoImg.style.cssText = [
-      "height: 300px",
+      "height: 50px",
       "width: auto",
-      "object-fit: cover",
-      "object-position: center 35%",
+      "object-fit: contain",
       "image-rendering: crisp-edges",
       "-webkit-optimize-contrast: on",
       "display: block",
-      "aspect-ratio: 0.47/1",
-    ].join(";");
-
-    var logoMana = document.createElement("span");
-    logoMana.textContent = "MANA";
-    logoMana.style.cssText = [
-      "font-size: 26px",
-      "font-weight: 400",
-      "color: #112F55",
-      "font-family: 'Death Star', sans-serif",
-      "letter-spacing: 0.1px",
-      "margin-right: 2px",
-    ].join(";");
-
-    var logoInfra = document.createElement("span");
-    logoInfra.textContent = "INFRASTRUCTURE";
-    logoInfra.style.cssText = [
-      "font-size: 26px",
-      "font-weight: 400",
-      "color: #EA640D",
-      "font-family: 'Death Star', sans-serif",
-      "letter-spacing: 0.1px",
-      "text-transform: uppercase",
+      "margin-right: 12px",
     ].join(";");
 
     logo.appendChild(logoImg);
-    logo.appendChild(logoMana);
-    logo.appendChild(logoInfra);
 
     /* 3D Pill — always showing all links */
     var pill = document.createElement("div");

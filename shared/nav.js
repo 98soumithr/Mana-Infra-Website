@@ -100,7 +100,7 @@
       "  .mana-nav-spacer { height: 56px; }",
       "  #mana-nav { padding: 8px 0; }",
       "  #mana-nav > div { padding: 0 12px; height: 56px; justify-content: flex-start; }",
-      "  #mana-nav a[href='index.html'] { gap: 6px; margin-right: auto; margin-left: -4px; }",
+      "  #mana-nav a[href='index.html'] { gap: 3px; margin-right: auto; margin-left: -4px; }",
       "  #mana-nav img { height: 35px !important; }",
       "  #mana-nav span { font-size: 28px !important; }",
       "}",

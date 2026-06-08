@@ -627,6 +627,9 @@
           cols[i].style.minWidth = "0";
           cols[i].style.paddingRight = "0";
           cols[i].style.flex = "1 1 100%";
+          if (i === 0) {
+            cols[i].style.width = "100%";
+          }
         }
 
         /* Mobile: adjust logo size and center it */

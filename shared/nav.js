@@ -99,10 +99,10 @@
       "  .mana-pill { display: none !important; }",
       "  .mana-nav-spacer { height: 56px; }",
       "  #mana-nav { padding: 8px 0; }",
-      "  #mana-nav > div { padding: 0 16px; height: 56px; }",
-      "  #mana-nav a[href='index.html'] { gap: 6px; }",
+      "  #mana-nav > div { padding: 0 16px; height: 56px; justify-content: flex-start; }",
+      "  #mana-nav a[href='index.html'] { gap: 8px; margin-right: auto; }",
       "  #mana-nav img { height: 35px !important; }",
-      "  #mana-nav span { font-size: 18px !important; }",
+      "  #mana-nav span { font-size: 22px !important; }",
       "}",
     ].join("\n");
     document.head.appendChild(style);
@@ -136,7 +136,7 @@
       "margin: 0 auto",
       "display: flex",
       "align-items: center",
-      "justify-content: center",
+      "justify-content: flex-start",
       "padding: 0 24px",
       "height: 72px",
     ].join(";");

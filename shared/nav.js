@@ -97,6 +97,12 @@
       /* Mobile */
       "@media (max-width: 767px) {",
       "  .mana-pill { display: none !important; }",
+      "  .mana-nav-spacer { height: 56px; }",
+      "  #mana-nav { padding: 8px 0; }",
+      "  #mana-nav > div { padding: 0 16px; height: 56px; }",
+      "  #mana-nav a[href='index.html'] { gap: 6px; }",
+      "  #mana-nav img { height: 35px !important; }",
+      "  #mana-nav span { font-size: 18px !important; }",
       "}",
     ].join("\n");
     document.head.appendChild(style);

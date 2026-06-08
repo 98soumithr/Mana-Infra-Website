@@ -46,11 +46,6 @@
     var style = document.createElement("style");
     style.textContent = [
       "@media (max-width: 767px) {",
-      "  #mana-footer > div > div:first-child {",
-      "    text-align: center;",
-      "    align-items: center;",
-      "    margin: 0 auto;",
-      "  }",
       "  #mana-footer img {",
       "    margin: 0 auto;",
       "    display: block;",
@@ -640,15 +635,6 @@
         if (logoWrap) {
           logoWrap.style.justifyContent = "center";
           logoWrap.style.marginBottom = "24px";
-        }
-
-        /* Center the first column (company info) on mobile */
-        var firstCol = row.children[0];
-        if (firstCol) {
-          firstCol.style.textAlign = "center";
-          firstCol.style.alignItems = "center";
-          firstCol.style.display = "flex";
-          firstCol.style.flexDirection = "column";
         }
 
         /* Stack bottom bar */

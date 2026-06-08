@@ -622,6 +622,15 @@
           logoWrap.style.marginBottom = "24px";
         }
 
+        /* Center the first column (company info) on mobile */
+        var firstCol = row.children[0];
+        if (firstCol) {
+          firstCol.style.textAlign = "center";
+          firstCol.style.alignItems = "center";
+          firstCol.style.display = "flex";
+          firstCol.style.flexDirection = "column";
+        }
+
         /* Stack bottom bar */
         var bottomBar = footer.querySelector("#mana-footer > div > div:last-child");
         if (bottomBar && bottomBar.style.borderTop) {

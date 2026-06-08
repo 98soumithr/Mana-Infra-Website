@@ -46,11 +46,10 @@
     var style = document.createElement("style");
     style.textContent = [
       "@media (max-width: 767px) {",
-      "  #mana-footer > div > div > div > div {",
+      "  #mana-footer > div > div > div > div:has(> img) {",
       "    justify-content: center !important;",
-      "    width: 100%;",
       "  }",
-      "  #mana-footer img {",
+      "  #mana-footer > div > div > div > div:has(> img) > img {",
       "    margin: 0 auto !important;",
       "    display: block !important;",
       "  }",

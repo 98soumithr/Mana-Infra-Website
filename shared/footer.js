@@ -635,7 +635,7 @@
         /* Mobile: adjust logo size and center it */
         var logoImg = footer.querySelector("img");
         if (logoImg) {
-          logoImg.style.width = "180px";
+          logoImg.style.width = "280px";
           logoImg.style.height = "auto";
         }
         var logoWrap = footer.querySelector("div > div > div > div:has(> img)");

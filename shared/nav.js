@@ -160,7 +160,31 @@
       "margin-right: 12px",
     ].join(";");
 
+    var logoMana = document.createElement("span");
+    logoMana.textContent = "MANA";
+    logoMana.style.cssText = [
+      "font-size: 22px",
+      "font-weight: 400",
+      "color: #112F55",
+      "font-family: 'Death Star', sans-serif",
+      "letter-spacing: 0.1px",
+      "margin-right: 2px",
+    ].join(";");
+
+    var logoInfra = document.createElement("span");
+    logoInfra.textContent = "INFRASTRUCTURE";
+    logoInfra.style.cssText = [
+      "font-size: 22px",
+      "font-weight: 400",
+      "color: #EA640D",
+      "font-family: 'Death Star', sans-serif",
+      "letter-spacing: 0.1px",
+      "text-transform: uppercase",
+    ].join(";");
+
     logo.appendChild(logoImg);
+    logo.appendChild(logoMana);
+    logo.appendChild(logoInfra);
 
     /* 3D Pill — always showing all links */
     var pill = document.createElement("div");

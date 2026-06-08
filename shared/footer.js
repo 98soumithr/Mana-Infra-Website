@@ -47,6 +47,7 @@
     style.textContent = [
       "@media (max-width: 767px) {",
       "  #mana-footer > div > div > div > div:has(> img) {",
+      "    width: 100% !important;",
       "    justify-content: center !important;",
       "  }",
       "  #mana-footer > div > div > div > div:has(> img) > img {",
@@ -634,7 +635,7 @@
           logoImg.style.width = "180px";
           logoImg.style.height = "auto";
         }
-        var logoWrap = footer.querySelector("div > div > div > div");
+        var logoWrap = footer.querySelector("div > div > div > div:has(> img)");
         if (logoWrap) {
           logoWrap.style.justifyContent = "center";
           logoWrap.style.marginBottom = "24px";
@@ -661,7 +662,7 @@
           logoImg.style.width = "360px";
           logoImg.style.height = "auto";
         }
-        var logoWrap = footer.querySelector("#mana-footer > div > div > div > div");
+        var logoWrap = footer.querySelector("#mana-footer > div > div > div > div:has(> img)");
         if (logoWrap) {
           logoWrap.style.justifyContent = "flex-start";
         }

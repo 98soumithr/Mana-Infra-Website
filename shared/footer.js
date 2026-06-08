@@ -541,17 +541,7 @@
       "margin: 0",
     ].join(";"), "\u00A9 2025 Mana Infrastructure Private Limited. All rights reserved.");
 
-    var right = el("p", [
-      "color:" + COLORS.gold,
-      "font-size: 14px",
-      "margin: 0",
-      "font-weight: 500",
-      "font-family: 'Death Star', sans-serif",
-      "letter-spacing: 0.5px",
-    ].join(";"), "Build Together, Grow Together");
-
     wrapper.appendChild(left);
-    wrapper.appendChild(right);
 
     return wrapper;
   }

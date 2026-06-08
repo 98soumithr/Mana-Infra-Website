@@ -148,7 +148,7 @@
     ].join(";");
 
     var logoImg = document.createElement("img");
-    logoImg.src = "logo.png";
+    logoImg.src = "header_logo.png";
     logoImg.alt = "Mana Infrastructure Logo";
     logoImg.style.cssText = [
       "height: 300px",

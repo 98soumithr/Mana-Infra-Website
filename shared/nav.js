@@ -163,7 +163,7 @@
     var logoMana = document.createElement("span");
     logoMana.textContent = "MANA";
     logoMana.style.cssText = [
-      "font-size: 32px",
+      "font-size: 27px",
       "font-weight: 400",
       "color: #112F55",
       "font-family: 'Death Star', sans-serif",
@@ -174,7 +174,7 @@
     var logoInfra = document.createElement("span");
     logoInfra.textContent = "INFRASTRUCTURE";
     logoInfra.style.cssText = [
-      "font-size: 32px",
+      "font-size: 27px",
       "font-weight: 400",
       "color: #EA640D",
       "font-family: 'Death Star', sans-serif",

@@ -102,7 +102,7 @@
       "  #mana-nav > div { padding: 0 8px; height: 56px; justify-content: flex-start; }",
       "  #mana-nav a[href='index.html'] { gap: 0px; margin-right: auto; margin-left: -4px; }",
       "  #mana-nav img { height: 30px !important; }",
-      "  #mana-nav span { font-size: 20px !important; }",
+      "  #mana-nav span { font-size: 18px !important; }",
       "}",
     ].join("\n");
     document.head.appendChild(style);

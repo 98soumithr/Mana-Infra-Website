@@ -40,6 +40,26 @@
     return node;
   }
 
+  /* ── Inject mobile styles ───────────────────────────────────── */
+
+  function injectMobileStyles() {
+    var style = document.createElement("style");
+    style.textContent = [
+      "@media (max-width: 767px) {",
+      "  #mana-footer > div > div:first-child {",
+      "    text-align: center;",
+      "    align-items: center;",
+      "    margin: 0 auto;",
+      "  }",
+      "  #mana-footer img {",
+      "    margin: 0 auto;",
+      "    display: block;",
+      "  }",
+      "}",
+    ].join("\n");
+    document.head.appendChild(style);
+  }
+
   /* ── Build section heading ───────────────────────────────────── */
 
   function sectionHeading(text) {
@@ -701,6 +721,7 @@
       return;
     }
 
+    injectMobileStyles();
     var footer = buildFooter();
     target.appendChild(footer);
     applyResponsive(footer);

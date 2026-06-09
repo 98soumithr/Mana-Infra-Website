@@ -175,7 +175,7 @@ html {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(22, 60, 106, 0.4);
+  background: rgba(22, 60, 106, 0.5);
   z-index: 5;
   pointer-events: none;
 }

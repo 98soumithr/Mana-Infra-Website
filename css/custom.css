@@ -1194,6 +1194,7 @@ section.relative > img[src*="images/"] {
   }
 
   /* Expertise/sector descriptions */
+  .project-content,
   .project-location,
   .project-location span {
     text-align: left !important;

@@ -1192,4 +1192,9 @@ section.relative > img[src*="images/"] {
   .text-navy.font-semibold {
     text-align: left !important;
   }
+
+  /* Expertise/sector descriptions */
+  .project-location span {
+    text-align: left !important;
+  }
 }

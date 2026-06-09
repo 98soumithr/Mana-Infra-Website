@@ -1179,3 +1179,12 @@ section.relative > img[src*="images/"] {
     animation: none !important;
   }
 }
+
+/* Mobile: Remove justified text alignment for long text elements */
+@media (max-width: 767px) {
+  /* Project titles and scope text */
+  .font-heading.text-2xl,
+  .text-navy.font-semibold {
+    text-align: left !important;
+  }
+}

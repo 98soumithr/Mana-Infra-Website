@@ -178,7 +178,7 @@
     ].join(";");
 
     var logoInfra = document.createElement("span");
-    logoInfra.textContent = "INFRASTRUCTURE";
+    logoInfra.textContent = "INFRA";
     logoInfra.style.cssText = [
       "font-size: 32px",
       "font-weight: 400",

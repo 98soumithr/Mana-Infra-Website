@@ -163,7 +163,7 @@
       "image-rendering: crisp-edges",
       "-webkit-optimize-contrast: on",
       "display: block",
-      "margin-right: 12px",
+      "margin-right: 18px",
     ].join(";");
 
     var logoMana = document.createElement("span");

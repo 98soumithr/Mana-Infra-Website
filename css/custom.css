@@ -1199,4 +1199,10 @@ section.relative > img[src*="images/"] {
   .project-location span {
     text-align: left !important;
   }
+
+  /* Project subtitle and status text */
+  .text-amber.font-semibold.text-sm,
+  .text-emerald-600.font-bold {
+    text-align: left !important;
+  }
 }

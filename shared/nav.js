@@ -97,6 +97,7 @@
       /* Mobile */
       "@media (max-width: 767px) {",
       "  .mana-pill { display: none !important; }",
+      "  #mana-nav span { font-size: 18px !important; }",
       "}",
     ].join("\n");
     document.head.appendChild(style);

@@ -2,11 +2,11 @@
   "use strict";
 
   var NAV_LINKS = [
-    { label: "Home", href: "index.html" },
-    { label: "About Us", href: "about.html" },
-    { label: "Verticals", href: "location.html" },
-    { label: "Projects", href: "projects.html" },
-    { label: "Contact Us", href: "contact.html" },
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Verticals", href: "/location" },
+    { label: "Projects", href: "/projects" },
+    { label: "Contact Us", href: "/contact" },
   ];
 
   var COLORS = {
@@ -143,7 +143,7 @@
 
     /* Logo */
     var logo = document.createElement("a");
-    logo.href = "index.html";
+    logo.href = "/";
     logo.style.cssText = [
       "display: flex",
       "flex-direction: row",

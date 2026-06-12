@@ -233,6 +233,7 @@
       "flex-direction: column",
       "gap: 5px",
       "z-index: 10001",
+      "margin-left: auto",
     ].join(";");
 
     for (var i = 0; i < 3; i++) {

@@ -1,14 +1,13 @@
-# Remove .html extension from URLs
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # Remove .html extension from URLs
+  # Remove .html extension from URLs (internal rewrite only)
+  # If the request doesn't match a file or directory
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^([^\.]+)$ $1.html [NC,L]
-
-  # Redirect .html URLs to clean URLs (optional, prevents duplicate content)
-  RewriteCond %{REQUEST_URI} \.html$ [NC]
-  RewriteRule ^(.*)\.html$ /$1 [NC,R=301,L]
+  # And doesn't already end with .html
+  RewriteCond %{REQUEST_URI} !\.html$
+  # Then rewrite to add .html
+  RewriteRule ^(.+)$ $1.html [L]
 </IfModule>

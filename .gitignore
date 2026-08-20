@@ -8,3 +8,6 @@ extracted_images/
 
 # Local debug screen recordings (not part of the site)
 output_video/
+
+# Local orchestration tool state (not part of the site)
+.claude-flow/

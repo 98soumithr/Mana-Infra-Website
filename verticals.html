@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mana Infrastructure locations and expertise - Operating across 5 Indian states with expertise in highways, railways, bridges, tunnels, irrigation, and urban infrastructure.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap">
+  <link rel="preload" as="font" href="fonts/death-star.otf" type="font/opentype" crossorigin>
+  <link rel="preload" as="image" href="images/header_logo.png">
+  <link rel="preload" as="image" href="images/footer_logo.png">
+  <title>Verticals - Mana Infrastructure</title>
+  <link rel="icon" href="favicon/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#112F55',
+            amber: '#EA640D',
+            gold: '#EA640D',
+            dark: '#112F55',
+            light: '#F8FAFC',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/custom.css">
+  <style>
+    .state-logo {
+      opacity: 0.8;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    .state-logo:hover {
+      opacity: 0.9;
+    }
+    .state-logo.active {
+      opacity: 1;
+    }
+    .state-path {
+      fill: #FFFFFF !important;
+      stroke: #EA640D !important;
+      stroke-width: 1.2 !important;
+      cursor: pointer;
+      transition: fill 0.25s ease;
+      pointer-events: auto;
+    }
+    .state-path:hover,
+    .state-path.hover {
+      stroke: #E8A435 !important;
+      stroke-width: 2 !important;
+    }
+    .state-path.active {
+      fill: #FFFFFF !important;
+      stroke: #E8A435 !important;
+      stroke-width: 2 !important;
+    }
+  </style>
+</head>
+<body class="font-body text-slate-800 text-justify">
+
+  <!-- Navbar -->
+  <div id="navbar"></div>
+
+  <!-- ============================================
+       1. HERO BANNER
+       ============================================ -->
+  <section class="relative w-full" style="height: 45vh; min-height: 320px;">
+    <img src="images/expertise-bg.jpg" alt="Aerial view of Polavaram dam barrage with spillway gates" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-dark/85" style="z-index: 5;"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+      <h1 class="font-heading text-5xl md:text-6xl font-bold mb-3 animate-fade-in-up">
+        <span class="text-gold italic">VERTICALS</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- ============================================
+       3. CORE EXPERTISE
+       ============================================ -->
+  <section class="bg-white section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="text-center mb-12 animate-fade-in-up">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mt-3 mb-4">Our Verticals</h2>
+      </div>
+
+      <!-- Expertise Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+        <!-- Highways -->
+        <a href="/expertise-highways" class="group bg-white rounded-xl shadow-md card-gold-border card-hover overflow-hidden animate-fade-in-up hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+          <div class="relative h-48 overflow-hidden bg-gray-200">
+            <img src="images/highways-1.jpg" alt="Highway construction" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="font-heading font-bold text-navy text-xl mb-2 group-hover:text-gold transition-colors">Highways</h3>
+            <p class="text-slate-600 text-sm leading-relaxed flex-grow">National and state highway construction, lane expansion, and maintenance projects</p>
+            <div class="mt-4 text-gold text-sm font-semibold group-hover:translate-x-1 transition-transform">Learn more →</div>
+          </div>
+        </a>
+
+        <!-- Bridges -->
+        <a href="/expertise-bridges" class="group bg-white rounded-xl shadow-md card-gold-border card-hover overflow-hidden animate-fade-in-up delay-100 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+          <div class="relative h-48 overflow-hidden bg-gray-200">
+            <img src="images/bridges-1.jpg" alt="Bridge construction" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="font-heading font-bold text-navy text-xl mb-2 group-hover:text-gold transition-colors">Bridges</h3>
+            <p class="text-slate-600 text-sm leading-relaxed flex-grow">Concrete and steel bridge construction, flyovers, and structural engineering</p>
+            <div class="mt-4 text-gold text-sm font-semibold group-hover:translate-x-1 transition-transform">Learn more →</div>
+          </div>
+        </a>
+
+        <!-- Tunnels -->
+        <a href="/expertise-tunnels" class="group bg-white rounded-xl shadow-md card-gold-border card-hover overflow-hidden animate-fade-in-up delay-200 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+          <div class="relative h-48 overflow-hidden bg-gray-200">
+            <img src="images/tunnels-1.jpg" alt="Tunnel construction" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="font-heading font-bold text-navy text-xl mb-2 group-hover:text-gold transition-colors">Tunnels</h3>
+            <p class="text-slate-600 text-sm leading-relaxed flex-grow">Underground tunneling, NATM Methodology, and subsurface engineering</p>
+            <div class="mt-4 text-gold text-sm font-semibold group-hover:translate-x-1 transition-transform">Learn more →</div>
+          </div>
+        </a>
+
+        <!-- Irrigation -->
+        <a href="/expertise-irrigation" class="group bg-white rounded-xl shadow-md card-gold-border card-hover overflow-hidden animate-fade-in-up delay-300 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+          <div class="relative h-48 overflow-hidden bg-gray-200">
+            <img src="images/irrigation-1.jpg" alt="Irrigation project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="font-heading font-bold text-navy text-xl mb-2 group-hover:text-gold transition-colors">Irrigation</h3>
+            <p class="text-slate-600 text-sm leading-relaxed flex-grow">Water management systems, dams, barrages, and canal infrastructure</p>
+            <div class="mt-4 text-gold text-sm font-semibold group-hover:translate-x-1 transition-transform">Learn more →</div>
+          </div>
+        </a>
+
+        <!-- Railways -->
+        <a href="/expertise-railways" class="group bg-white rounded-xl shadow-md card-gold-border card-hover overflow-hidden animate-fade-in-up delay-400 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+          <div class="relative h-48 overflow-hidden bg-gray-200">
+            <img src="images/railways-1.jpg" alt="Railway construction" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="font-heading font-bold text-navy text-xl mb-2 group-hover:text-gold transition-colors">Railways</h3>
+            <p class="text-slate-600 text-sm leading-relaxed flex-grow">Rail infrastructure, broad gauge construction, and track development</p>
+            <div class="mt-4 text-gold text-sm font-semibold group-hover:translate-x-1 transition-transform">Learn more →</div>
+          </div>
+        </a>
+
+        <!-- Urban -->
+        <a href="/expertise-urban" class="group bg-white rounded-xl shadow-md card-gold-border card-hover overflow-hidden animate-fade-in-up delay-500 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+          <div class="relative h-48 overflow-hidden bg-gray-200">
+            <img src="images/urban-1.jpg" alt="Urban infrastructure" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="font-heading font-bold text-navy text-xl mb-2 group-hover:text-gold transition-colors">Urban Infrastructure</h3>
+            <p class="text-slate-600 text-sm leading-relaxed flex-grow">City development, utility systems, and urban engineering projects</p>
+            <div class="mt-4 text-gold text-sm font-semibold group-hover:translate-x-1 transition-transform">Learn more →</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       4. ACTIVE PROJECT SITES
+       ============================================ -->
+  <section class="bg-white section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="text-center mb-12 animate-fade-in-up">
+        <span class="text-gold uppercase tracking-widest text-sm font-semibold">PROJECT LOCATIONS</span>
+        <div class="flex items-center justify-center gap-4 mt-3">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy">Where We're Currently Building</h2>
+          <div class="loadingspinner hidden sm:block" style="transform: scale(0.5); margin: 0; flex-shrink: 0;">
+            <div id="square1"></div>
+            <div id="square2"></div>
+            <div id="square3"></div>
+            <div id="square4"></div>
+            <div id="square5"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Location Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Location 1 -->
+        <div class="bg-white rounded-xl shadow-md card-gold-border card-hover p-6 animate-fade-in-up">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-navy text-base mb-1">Kandili-Tumbigura, Odisha</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">NH-130-CD Highway</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location 2 -->
+        <div class="bg-white rounded-xl shadow-md card-gold-border card-hover p-6 animate-fade-in-up delay-100">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-navy text-base mb-1">Kadapa, Andhra Pradesh</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">Bengaluru-Vijayawada Expressway</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location 3 -->
+        <div class="bg-white rounded-xl shadow-md card-gold-border card-hover p-6 animate-fade-in-up delay-200">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-navy text-base mb-1">Polavaram, Andhra Pradesh</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">Twin Tunnels (Pkg 63 &amp; 64)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location 4 -->
+        <div class="bg-white rounded-xl shadow-md card-gold-border card-hover p-6 animate-fade-in-up delay-300">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-navy text-base mb-1">Yavatmal-Nanded, Maharashtra</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">Broad Gauge Railway</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location 5 -->
+        <div class="bg-white rounded-xl shadow-md card-gold-border card-hover p-6 animate-fade-in-up delay-400">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-navy text-base mb-1">Haveri, Karnataka</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">STP Plant</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location 6 -->
+        <div class="bg-white rounded-xl shadow-md card-gold-border card-hover p-6 animate-fade-in-up delay-500">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-navy text-base mb-1">Bhuvanagiri, Telangana</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">Musi Irrigation</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       5. CTA SECTION
+       ============================================ -->
+  <section class="bg-dark section-padding">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-5 animate-fade-in-up">Ready to Partner With Us?</h2>
+      <p class="text-white/60 text-lg leading-relaxed mb-8 animate-fade-in-up delay-100">
+        With offices in Tirupati and Hyderabad, and projects spanning five states, we're always close to where India needs infrastructure.
+      </p>
+      <a href="/contact" class="inline-block bg-gold hover:bg-amber text-white font-bold py-3.5 px-10 rounded-lg transition-all duration-300 text-lg pulse-gold animate-fade-in-up delay-200">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Shared Components -->
+  <script src="shared/nav.js?v=22"></script>
+  <script src="shared/footer.js?v=11"></script>
+
+  <!-- ============================================
+       Scroll Animation (IntersectionObserver)
+       ============================================ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var animatedElements = document.querySelectorAll(
+        '.animate-fade-in-up, .animate-fade-in-left, .animate-fade-in-right, .animate-scale-in'
+      );
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: '0px 0px -50px 0px'
+        });
+
+        animatedElements.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        animatedElements.forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+      }
+    });
+  </script>
+
+  <!-- ============================================
+       Interactive India Map
+       ============================================ -->
+  <script>
+  (function () {
+    /* ── Project Data ── */
+    var MANA_PROJECTS = {
+      ap: {
+        name: 'Andhra Pradesh',
+        subtitle: 'Headquarters \u00b7 Tirupati',
+        projects: [
+          { name: 'Bengaluru-Vijayawada Expressway (Kadapa)', location: 'Kadapa District', sector: 'Highways', status: 'Active' },
+          { name: 'Polavaram Twin Tunnels \u2013 Pkg 63', location: 'Polavaram', sector: 'Irrigation', status: 'Active' },
+          { name: 'Polavaram Twin Tunnels \u2013 Pkg 64', location: 'Polavaram', sector: 'Irrigation', status: 'Active' },
+          { name: 'H.N.S.S. Project \u2013 Package 31', location: 'Anantapur', sector: 'Irrigation', status: 'Completed' },
+          { name: 'H.N.S.S. Project \u2013 Packages 28 & 29', location: 'Kurnool', sector: 'Irrigation', status: 'Completed' },
+          { name: 'H.N.S.S. Project \u2013 Packages 54, 57 & 58', location: 'Anantapur', sector: 'Irrigation', status: 'Completed' },
+          { name: 'Thottapalli Barrage \u2013 Package 1', location: 'Vizianagaram', sector: 'Irrigation', status: 'Completed' },
+          { name: 'Paleru Reservoir Project', location: 'Ongole', sector: 'Irrigation', status: 'Completed' }
+        ]
+      },
+      tg: {
+        name: 'Telangana',
+        subtitle: 'Corporate Office \u00b7 Hyderabad',
+        projects: [
+          { name: 'Musi MLCJ Irrigation Project', location: 'Bhuvanagiri', sector: 'Irrigation', status: 'Active' },
+          { name: 'Jurala Parallel Canal', location: 'Atmakur', sector: 'Irrigation', status: 'Completed' },
+          { name: 'JLNSS \u2013 Packages 100, 106 & 108', location: 'Peddapalli', sector: 'Irrigation', status: 'Completed' },
+          { name: 'Kistlapur Canal', location: 'Gajwel', sector: 'Irrigation', status: 'Completed' },
+          { name: 'JCR-DLIS Phase-3 \u2013 Package 4', location: 'Warangal', sector: 'Irrigation', status: 'Completed' }
+        ]
+      },
+      ka: {
+        name: 'Karnataka',
+        subtitle: 'Active Project Sites',
+        projects: [
+          { name: 'STP Haveri', location: 'Haveri', sector: 'Water Treatment', status: 'Active' },
+          { name: 'Mundragi Branch Canal', location: 'Koppal', sector: 'Irrigation', status: 'Completed' }
+        ]
+      },
+      mh: {
+        name: 'Maharashtra',
+        subtitle: 'Active Project Sites',
+        projects: [
+          { name: 'Yavatmal-Nanded Railway Line (Pkg 3A)', location: 'Yavatmal-Nanded', sector: 'Railways', status: 'Active' }
+        ]
+      },
+      or: {
+        name: 'Odisha',
+        subtitle: 'Active Project Sites',
+        projects: [
+          { name: 'NH-130-CD Kandili-Tumbigura (Pkg OD-08)', location: 'Kandili-Tumbigura', sector: 'Highways', status: 'Active' }
+        ]
+      }
+    };
+
+    var OPERATIONAL = ['ap', 'tg', 'ka', 'mh', 'or'];
+    var currentState = null;
+
+    /* ── Load SVG Map ── */
+    function loadMap() {
+      fetch('images/india-map.svg')
+        .then(function (r) {
+          if (!r.ok) throw new Error('Failed to fetch SVG: ' + r.status);
+          return r.text();
+        })
+        .then(function (svgText) {
+          var container = document.getElementById('india-map-svg');
+          if (!container) {
+            console.error('Map container not found');
+            return;
+          }
+          container.innerHTML = svgText;
+          var svg = container.querySelector('svg');
+          if (!svg) {
+            console.error('SVG element not found after insertion');
+            return;
+          }
+          svg.querySelectorAll('text').forEach(function (t) { t.remove(); });
+          svg.querySelectorAll('rect').forEach(function (r) { r.remove(); });
+          svg.querySelectorAll('path[id]').forEach(function (p) {
+            p.removeAttribute('fill');
+            p.setAttribute('class', 'state-path');
+          });
+          svg.style.width = '100%';
+          svg.style.height = 'auto';
+          svg.setAttribute('role', 'img');
+          svg.setAttribute('aria-label', 'Interactive India map showing Mana Infrastructure operational states');
+          initInteractions(svg);
+        })
+        .catch(function (err) {
+          console.error('Error loading India map:', err);
+          var container = document.getElementById('india-map-svg');
+          if (container) container.innerHTML = '<p style="color:#999; padding:20px; text-align:center;">Map could not load</p>';
+        });
+    }
+
+    /* ── Add Logo to States ── */
+    function addManaTexts(svg) {
+      var positionOffsets = {
+        ap: { x: -40, y: 25 },
+        mh: { x: -25, y: 0 },
+        ka: { x: -20, y: 0 }
+      };
+      OPERATIONAL.forEach(function (id) {
+        var path = svg.querySelector('#' + id);
+        if (!path) return;
+
+        var bbox = path.getBBox();
+        var cx = bbox.x + bbox.width / 2;
+        var cy = bbox.y + bbox.height / 2;
+        var logoSize = 120;
+        var offset = positionOffsets[id] || { x: 0, y: 0 };
+
+        var image = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+        image.setAttribute('x', cx - logoSize / 2 + offset.x);
+        image.setAttribute('y', cy - logoSize / 2 + offset.y);
+        image.setAttribute('width', logoSize);
+        image.setAttribute('height', logoSize);
+        image.setAttribute('href', 'images/logo.png');
+        image.setAttribute('class', 'state-logo');
+        image.setAttribute('data-state', id);
+        image.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+
+        svg.appendChild(image);
+      });
+    }
+
+    /* ── Map Interactions ── */
+    function initInteractions(svg) {
+      var paths = svg.querySelectorAll('path[id]');
+      paths.forEach(function (path) {
+        var id = path.getAttribute('id');
+        if (OPERATIONAL.indexOf(id) !== -1) {
+          path.setAttribute('data-state', id);
+          path.setAttribute('role', 'button');
+          path.setAttribute('tabindex', '0');
+          path.setAttribute('aria-label', 'View projects in ' + MANA_PROJECTS[id].name);
+
+          path.addEventListener('mouseenter', function () {
+            path.classList.add('hover');
+            highlightCard(id);
+          });
+          path.addEventListener('mouseleave', function () {
+            path.classList.remove('hover');
+            unhighlightCard(id);
+          });
+          path.addEventListener('click', function () { openPanel(id); setActive(svg, id); });
+          path.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              openPanel(id);
+              setActive(svg, id);
+            }
+          });
+        }
+      });
+
+      addManaTexts(svg);
+    }
+
+    /* ── Legend Card Hover Sync ── */
+    function highlightCard(id) {
+      var card = document.querySelector('[data-state-card="' + id + '"]');
+      if (card) {
+        card.style.transform = 'translateY(-3px)';
+        card.style.boxShadow = '0 10px 30px rgba(232,164,53,0.2)';
+        card.style.borderLeftColor = '#E8A435';
+        card.style.borderLeftWidth = '6px';
+      }
+    }
+    function unhighlightCard(id) {
+      var card = document.querySelector('[data-state-card="' + id + '"]');
+      if (card) {
+        card.style.transform = '';
+        card.style.boxShadow = '';
+        card.style.borderLeftWidth = '';
+      }
+    }
+
+    /* ── Active State on Map ── */
+    function setActive(svg, id) {
+      svg.querySelectorAll('.state-highlight').forEach(function (p) { p.classList.remove('active'); });
+      svg.querySelectorAll('.state-logo').forEach(function (logo) { logo.classList.remove('active'); });
+      var el = svg.querySelector('#' + id);
+      if (el) el.classList.add('active');
+      var logo = svg.querySelector('.state-logo[data-state="' + id + '"]');
+      if (logo) logo.classList.add('active');
+    }
+    function clearActive() {
+      var c = document.getElementById('india-map-svg');
+      if (c) {
+        c.querySelectorAll('.state-highlight').forEach(function (p) { p.classList.remove('active'); });
+        c.querySelectorAll('.state-logo').forEach(function (logo) { logo.classList.remove('active'); });
+      }
+    }
+
+    /* ── Open Detail Panel ── */
+    function openPanel(id) {
+      var data = MANA_PROJECTS[id];
+      if (!data) return;
+      currentState = id;
+
+      var legend = document.getElementById('state-legend');
+      var panel = document.getElementById('state-detail-panel');
+
+      // Populate header
+      document.getElementById('panel-state-name').textContent = data.name;
+      document.getElementById('panel-state-subtitle').textContent = data.subtitle;
+
+      var active = data.projects.filter(function (p) { return p.status === 'Active'; }).length;
+      var completed = data.projects.filter(function (p) { return p.status === 'Completed'; }).length;
+      document.getElementById('panel-active-count').textContent = active + ' Active';
+      document.getElementById('panel-completed-count').textContent = completed + ' Completed';
+
+      // Build project cards
+      var list = document.getElementById('panel-projects');
+      list.innerHTML = '';
+      data.projects.forEach(function (proj) {
+        var card = document.createElement('div');
+        card.className = 'bg-white rounded-lg shadow-sm border border-slate-100 p-4 hover:shadow-md transition-shadow';
+        card.innerHTML =
+          '<div class="flex items-start justify-between gap-3">' +
+            '<div class="flex-1">' +
+              '<h4 class="font-heading font-bold text-navy text-sm">' + proj.name + '</h4>' +
+              '<p class="text-slate-500 text-xs mt-1">' + proj.location + '</p>' +
+            '</div>' +
+            '<span class="text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0 ' +
+              (proj.status === 'Active' ? 'bg-emerald-500/10 text-emerald-600' : 'bg-slate-100 text-slate-500') +
+            '">' + proj.status + '</span>' +
+          '</div>' +
+          '<div class="flex items-center gap-2 mt-2 pt-2 border-t border-slate-50">' +
+            '<span class="inline-block text-xs font-medium bg-gold/10 text-gold px-2 py-0.5 rounded-full">' + proj.sector + '</span>' +
+          '</div>';
+        list.appendChild(card);
+      });
+
+      // Transition: legend out, panel in
+      legend.style.opacity = '0';
+      legend.style.transform = 'translateX(-20px)';
+      setTimeout(function () {
+        legend.classList.add('hidden');
+        panel.classList.remove('hidden');
+        // Mobile: show backdrop
+        if (window.innerWidth < 1024) showBackdrop();
+        requestAnimationFrame(function () {
+          panel.style.opacity = '1';
+          panel.style.transform = 'translateX(0)';
+        });
+      }, 250);
+    }
+
+    /* ── Close Detail Panel ── */
+    function closePanel() {
+      currentState = null;
+      var legend = document.getElementById('state-legend');
+      var panel = document.getElementById('state-detail-panel');
+
+      panel.style.opacity = '0';
+      panel.style.transform = window.innerWidth < 1024 ? 'translateY(100%)' : 'translateX(20px)';
+      hideBackdrop();
+      setTimeout(function () {
+        panel.classList.add('hidden');
+        legend.classList.remove('hidden');
+        requestAnimationFrame(function () {
+          legend.style.opacity = '1';
+          legend.style.transform = 'translateX(0)';
+        });
+      }, 250);
+      clearActive();
+      document.querySelectorAll('.state-path.active').forEach(function (path) {
+        path.classList.remove('active');
+      });
+    }
+
+    /* ── Mobile Backdrop ── */
+    var backdrop = null;
+    function createBackdrop() {
+      if (backdrop) return;
+      backdrop = document.createElement('div');
+      backdrop.id = 'map-backdrop';
+      backdrop.className = 'fixed inset-0 bg-black/40 z-[9997] hidden';
+      backdrop.style.opacity = '0';
+      backdrop.style.transition = 'opacity 0.3s ease';
+      document.body.appendChild(backdrop);
+      backdrop.addEventListener('click', closePanel);
+    }
+    function showBackdrop() {
+      if (!backdrop) createBackdrop();
+      backdrop.classList.remove('hidden');
+      requestAnimationFrame(function () { backdrop.style.opacity = '1'; });
+    }
+    function hideBackdrop() {
+      if (!backdrop) return;
+      backdrop.style.opacity = '0';
+      setTimeout(function () { backdrop.classList.add('hidden'); }, 300);
+    }
+
+    /* ── Init ── */
+    document.addEventListener('DOMContentLoaded', function () {
+      loadMap();
+      createBackdrop();
+
+      // Back button
+      var backBtn = document.getElementById('panel-back-btn');
+      if (backBtn) backBtn.addEventListener('click', closePanel);
+
+      // Legend card clicks → open panel
+      document.querySelectorAll('[data-state-card]').forEach(function (card) {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', function () {
+          var id = card.getAttribute('data-state-card');
+          openPanel(id);
+          var svg = document.querySelector('#india-map-svg svg');
+          if (svg) setActive(svg, id);
+        });
+      });
+
+      // Escape key closes panel
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && currentState) closePanel();
+      });
+    });
+  })();
+  </script>
+
+</body>
+</html>

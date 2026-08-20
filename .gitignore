@@ -11,3 +11,6 @@ output_video/
 
 # Local orchestration tool state (not part of the site)
 .claude-flow/
+
+# Video source files (transcoded copies live in videos/)
+*.mov
